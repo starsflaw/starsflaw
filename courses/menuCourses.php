@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.php">
-            <img src="deathstarw.png" width="40" height="40" alt="" loading="lazy">
+            <a class="navbar-brand" href="../index.php">
+            <img src="../deathstarw.png" width="40" height="40" alt="" loading="lazy">
             </a>
-            <a class="navbar-brand" href="index.php">
-            <img src="starsflaww.png" width="93.255" height="40" alt="" loading="lazy">
+            <a class="navbar-brand" href="../index.php">
+            <img src="../starsflaww.png" width="93.255" height="40" alt="" loading="lazy">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
                     {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.php">Cours</a>
+                        <a class="nav-link" href="../courses.php">Cours</a>
                     </li>
                     <?php
                     }
@@ -31,10 +31,10 @@
                     {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Se déconnecter</a>
+                        <a class="nav-link" href="../logout.php">Se déconnecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profil.php">Profil</a>
+                        <a class="nav-link" href="../profil.php">Profil</a>
                     </li>
                     <?php
                     }
@@ -42,10 +42,10 @@
                     {
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.php">S'inscrire</a>
+                        <a class="nav-link" href="../register.php">S'inscrire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Se connecter</a>
+                        <a class="nav-link" href="../login.php">Se connecter</a>
                     </li>
                     <?php
                     }

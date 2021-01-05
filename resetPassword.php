@@ -20,10 +20,18 @@
     </head>
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="form-row justify-content-center">
-            <div class="form-group col-sm-4">
-                </br>
-                <h1>Réinitialisation du mot de passe</h1>
+        <div class="container">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-0">
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <h1>Réinitialisation du mot de passe</h1>
+                </div>
             </div>
         </div>
         <?php
@@ -34,9 +42,11 @@
         {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: red;"> Le lien est erroné </strong>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
                 </div>
             </div>
             <?php
@@ -45,9 +55,11 @@
         {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: red;"> Le lien est erroné </strong>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
                 </div>
             </div>
             <?php
@@ -61,21 +73,23 @@
                 ?>
                 <!-- Formulaire -->
                 <form action="resetPassword.php?id=<?php echo $_GET['id'].'&token_password='.$_GET['token_password']; ?>" method="POST">
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-4">
-                            <label for="password">Votre nouveau mot de passe</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                    <div class="container">
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-sm-4">
+                                <label for="password">Votre nouveau mot de passe</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-4">
-                            <label for="password2">Confirmer ce nouveau mot de passe (obligatoire)</label>
-                            <input type="password" class="form-control" id="password2" name="password2" required>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-sm-4">
+                                <label for="password2">Confirmer ce nouveau mot de passe (obligatoire)</label>
+                                <input type="password" class="form-control" id="password2" name="password2" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-sm-4">
-                            <button type="submit" class="btn btn-primary" id="register" name="register">Valider</button>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-sm-4">
+                                <button type="submit" class="btn btn-primary" id="register" name="register">Valider</button>
+                            </div>
                         </div>
                     </div>
                     <!-- Vérification -->
@@ -91,9 +105,11 @@
                             {
                                 $valid2 = 0;
                                 ?>
-                                <div class="row justify-content-center">
-                                    <div class="group col-sm-1.5">
-                                        <strong style="color: red;"> Le mot de passe ne peut pas être vide !</strong>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="group col-sm-1.5">
+                                            <strong style="color: red;"> Le mot de passe ne peut pas être vide !</strong>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php
@@ -102,9 +118,11 @@
                             {
                                 $valid2 = 0;
                                 ?>
-                                <div class="row justify-content-center">
-                                    <div class="group col-sm-1.5">
-                                        <strong style="color: red;"> Veuillez confirmer votre mot de passe !</strong>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="group col-sm-1.5">
+                                            <strong style="color: red;"> Veuillez confirmer votre mot de passe !</strong>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php
@@ -113,9 +131,11 @@
                             {
                                 $valid2 = 0;
                                 ?>
-                                <div class="row justify-content-center">
-                                    <div class="group col-sm-1.5">
-                                        <strong style="color: red;"> La confirmation du mot de passe ne correspond pas !</strong>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="group col-sm-1.5">
+                                            <strong style="color: red;"> La confirmation du mot de passe ne correspond pas !</strong>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php
@@ -129,8 +149,13 @@
                                 $result4 = $db->query("SELECT nickname FROM user WHERE id = '$id'");
 					            $data_log = $result4->fetch();
                                 $_SESSION['nickname'] = $data_log['nickname'];
-                                header('Location: index.php');
-                                exit();
+                                ?>
+                                echo '<script language="Javascript">
+                                <!--
+                                document.location.replace("index.php");
+                                // -->
+                                </script>';
+                                <?php
                             }
                         }
                     ?>
@@ -141,9 +166,11 @@
             {
                 $valid = 0;
                 ?>
-                <div class="row justify-content-center">
-                    <div class="group col-sm-1.5">
-                        <strong style="color: red;"> Le lien est erroné </strong>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="group col-sm-1.5">
+                            <strong style="color: red;"> Le lien est erroné </strong>
+                        </div>
                     </div>
                 </div>
                 <?php

@@ -20,10 +20,18 @@
 
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="form-row justify-content-center">
-            <div class="form-group col-sm-4">
-                </br>
-                <h1>Confirmation compte</h1>
+        <div class="container">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-0">
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <h1>Confirmation compte</h1>
+                </div>
             </div>
         </div>
         <?php
@@ -36,9 +44,11 @@
         {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: red;"> Le lien est erroné </strong>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
                 </div>
             </div>
             <?php
@@ -47,9 +57,11 @@
         {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: red;"> Le lien est erroné </strong>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
                 </div>
             </div>
             <?php
@@ -64,9 +76,11 @@
                 $req = $db->prepare('UPDATE user SET token = 0, confirmation_token = :confirmation_token WHERE id = :id');
                 $req->execute(array('confirmation_token' => date('Y-m-d H:i:s'), 'id' => $data_token['id']));
                 ?>
-                <div class="row justify-content-center">
-                    <div class="group col-sm-1.5">
-                        <strong style="color: green;"> Votre compte a bien été validé </strong>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="group col-sm-0">
+                            <strong style="color: green;"> Votre compte a bien été validé </strong>
+                        </div>
                     </div>
                 </div>
                 <?php
@@ -75,9 +89,11 @@
             {
                 $valid = 0;
                 ?>
-                <div class="row justify-content-center">
-                    <div class="group col-sm-1.5">
-                        <strong style="color: red;"> Le lien est erroné </strong>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="group col-sm-0">
+                            <strong style="color: red;"> Le lien est erroné </strong>
+                        </div>
                     </div>
                 </div>
                 <?php

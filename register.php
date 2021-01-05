@@ -21,43 +21,48 @@
 
   <body>
     <?php require_once('menu.php'); ?>
-    <div class="form-row justify-content-center">
-      <div class="form-group col-sm-4">
-        </br>
-        <h1>Inscription</h1>
+    <div class="container">
+      <div class="form-row justify-content-center">
+        <div class="form-group col-sm-0">
+          </br>
+          </br>
+          </br>
+          <h1>Inscription</h1>
+        </div>
       </div>
     </div>
 
     <!-- Formulaire d'inscription -->
     <form action="register.php" method="POST">
-
-      <div class="form-row justify-content-center">
-        <div class="form-group col-sm-4">
-          <label for="nickname">Votre nom ou votre pseudo (obligatoire)</label>
-          <input type="text" class="form-control" id="nickname" name="nickname" required>
+      <div class="container">
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <label for="nickname">Votre nom ou votre pseudo (obligatoire)</label>
+            <input type="text" class="form-control" id="nickname" name="nickname" required>
+          </div>
         </div>
-      </div>
-      <div class="form-row justify-content-center">
-        <div class="form-group col-sm-4">
-          <label for="email">Votre adresse mail (obligatoire)</label>
-          <input type="email" class="form-control" id="email" name="email"required>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <label for="email">Votre adresse mail (obligatoire)</label>
+            <input type="email" class="form-control" id="email" name="email"required>
+          </div>
         </div>
-      </div>
-      <div class="form-row justify-content-center">
-        <div class="form-group col-sm-4">
-          <label for="password">Votre mot de passe (obligatoire)</label>
-          <input type="password" class="form-control" id="password" name="password" required>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <label for="password">Votre mot de passe (obligatoire)</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
         </div>
-      </div>
-      <div class="form-row justify-content-center">
-        <div class="form-group col-sm-4">
-          <label for="password2">Confirmer ce nouveau mot de passe (obligatoire)</label>
-          <input type="password" class="form-control" id="password2" name="password2" required>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <label for="password2">Confirmer ce nouveau mot de passe (obligatoire)</label>
+            <input type="password" class="form-control" id="password2" name="password2" required>
+          </div>
         </div>
-      </div>
-      <div class="form-row justify-content-center">
-        <div class="form-group col-sm-4">
-          <button type="submit" class="btn btn-primary" id="register" name="register">Valider</button>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <button type="submit" class="btn btn-primary" id="register" name="register">Valider</button>
+          </div>
         </div>
       </div>
     
@@ -86,9 +91,11 @@
           {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-              <div class="group col-sm-1.5">
-                <strong style="color: red;"> Ce nom/pseudo est déjà pris </strong>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                  <strong style="color: red;"> Ce nom/pseudo est déjà pris </strong>
+                </div>
               </div>
             </div>
             <?php
@@ -105,9 +112,11 @@
         {
           $valid = 0;
           ?>
-          <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-              <strong style="color: red;"> Le mail n'est pas valide </strong>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="group col-sm-1.5">
+                <strong style="color: red;"> Le mail n'est pas valide </strong>
+              </div>
             </div>
           </div>
           <?php
@@ -122,9 +131,11 @@
           {
             $valid = 0;
             ?>
-            <div class="row justify-content-center">
-              <div class="group col-sm-1.5">
-                <strong style="color: red;"> Cet email est déjà pris </strong>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                  <strong style="color: red;"> Cet email est déjà pris </strong>
+                </div>
               </div>
             </div>
             <?php
@@ -140,9 +151,11 @@
         {
           $valid = 0;
           ?>
-          <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-              <strong style="color: red;"> La confirmation du mot de passe ne correspond pas </strong>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="group col-sm-1.5">
+                <strong style="color: red;"> La confirmation du mot de passe ne correspond pas </strong>
+              </div>
             </div>
           </div>
           <?php
@@ -152,7 +165,7 @@
         if($valid == 1)
         {
           $dateRegister = date('Y-m-d H:i:s');
-          $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
+          $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 16]); 
           // bin2hex(random_bytes($length))
           $token = bin2hex(random_bytes(12));
           $token_password = 0;
@@ -184,8 +197,13 @@
           mail($mail_to, 'Confirmation de votre compte', $content, $header);
 
           $_SESSION['nickname'] = $data_email['nickname'];
-          header('Location: index.php');
-          exit();
+          ?>
+          echo '<script language="Javascript">
+          <!--
+          document.location.replace("index.php");
+          // -->
+          </script>';
+          <?php
         }
       }
       ?>

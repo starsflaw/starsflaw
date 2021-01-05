@@ -20,22 +20,33 @@
     </head>
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="form-row justify-content-center">
-            <div class="form-group col-sm-4">
-                </br>
-                <h1>Mot de passe oublié ?</h1>
+        <div class="container">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-0">
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <h1>Mot de passe oublié ?</h1>
+                    </br>
+                </div>
             </div>
         </div>
         <form action="password.php" method="POST">
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-4">
-                    <label for="email">Votre adresse mail (obligatoire)</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($mail)){ echo $email; }?>" required>
+            <div class="container">
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <label for="email">Votre adresse mail (obligatoire)</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($mail)){ echo $email; }?>" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-4">
-                    <button type="submit" class="btn btn-primary" id="forgotten" name="forgotten">Envoyer</button>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <button type="submit" class="btn btn-primary" id="forgotten" name="forgotten">Envoyer</button>
+                    </div>
                 </div>
             </div>
             <?php
@@ -48,9 +59,11 @@
                     {
                         $valid = 0;
                         ?>
-                        <div class="row justify-content-center">
-                            <div class="group col-sm-1.5">
-                                <strong style="color: red;"> Veuillez mettre votre adresse mail </strong>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="group col-sm-0">
+                                    <strong style="color: red;"> Veuillez mettre votre adresse mail </strong>
+                                </div>
                             </div>
                         </div>
                         <?php
@@ -82,9 +95,11 @@
                             mail($mail_to, 'Réinitialisation de votre mot de passe', $content, $header);
 
                             ?>
-                            <div class="row justify-content-center">
-                                <div class="group col-sm-1.5">
-                                    <strong style="color: green;"> Une demande de réinitialisation de mot de passe vous a bien été envoyé par mail</strong>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="group col-sm-0">
+                                        <strong style="color: green;"> Une demande de réinitialisation de mot de passe vous a bien été envoyé par mail</strong>
+                                    </div>
                                 </div>
                             </div>
                             <?php
@@ -92,9 +107,11 @@
                         else
                         {
                             ?>
-                            <div class="row justify-content-center">
-                                <div class="group col-sm-1.5">
-                                    <strong style="color: red;"> Aucun compte associé a cet identifiant </strong>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="group col-sm-0">
+                                        <strong style="color: red;"> Aucun compte associé a cet identifiant </strong>
+                                    </div>
                                 </div>
                             </div>
                             <?php

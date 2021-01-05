@@ -20,25 +20,27 @@ session_start();
 
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="row justify-content-center">
-            <div class="form-group col-sm-0">
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                <h1>Hello 
-                <?php 
-                if(isset($_SESSION['nickname']))
-                {
-                    echo $_SESSION['nickname'];
-                }
-                else echo 'World'
-                ?>
-                </h1>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="form-group col-sm-0">
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <h1>Hello 
+                    <?php 
+                    if(isset($_SESSION['nickname']))
+                    {
+                        echo $_SESSION['nickname'];
+                    }
+                    else echo 'World'
+                    ?>
+                    </h1>
+                </div>
             </div>
         </div>
     </body>

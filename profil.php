@@ -21,11 +21,20 @@
 
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="form-row justify-content-center">
-            <div class="form-group col-sm-0">
-            </br>
-            <h1>Profil</h1>
-            </br>
+        <div class="container">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-0">
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                <h1>Profil</h1>
+                </br>
+                </div>
             </div>
         </div>
 
@@ -34,25 +43,31 @@
         $result2 = $db->query("SELECT nickname, email, point FROM user WHERE nickname = '$nickname'");
         $data_profil = $result2->fetch();
         ?>
-        <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-                <strong style="color: black;"> Nom/pseudo : <?php echo $data_profil['nickname'];?></strong>
-                </br>
-                </br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                    <strong style="color: black;"> Nom/pseudo : <?php echo $data_profil['nickname'];?></strong>
+                    </br>
+                    </br>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-                <strong style="color: black;"> Email : <?php echo $data_profil['email'];?></strong>
-                </br>
-                </br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                    <strong style="color: black;"> Email : <?php echo $data_profil['email'];?></strong>
+                    </br>
+                    </br>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-                <strong style="color: black;"> Score : <?php echo $data_profil['point'];?></strong>
-                </br>
-                </br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                    <strong style="color: black;"> Score : <?php echo $data_profil['point'];?></strong>
+                    </br>
+                    </br>
+                </div>
             </div>
         </div>
         

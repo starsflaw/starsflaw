@@ -21,31 +21,39 @@
 
     <body>
         <?php require_once('menu.php'); ?>
-        <div class="form-row justify-content-center">
-            <div class="form-group col-sm-4">
-            </br>
-            <h1>Connexion</h1>
+        <div class="container">
+            <div class="form-row justify-content-center">
+                <div class="form-group col-sm-1.5">
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                <h1>Connexion</h1>
+                </div>
             </div>
         </div>
 
         <!-- Formulaire d'inscription -->
         <form action="login.php" method="POST">
-
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-4">
-                    <label for="pseudo">Votre nom/pseudo ou votre mail</label>
-                    <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+            <div class="container">
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <label for="pseudo">Votre nom/pseudo ou votre mail</label>
+                        <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-4">
-                    <label for="password">Votre mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <label for="password">Votre mot de passe</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-4">
-                    <button type="submit" class="btn btn-primary" id="login" name="login">Valider</button>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <button type="submit" class="btn btn-primary" id="login" name="login">Valider</button>
+                    </div>
                 </div>
             </div>
 
@@ -61,9 +69,11 @@
                 {
                     $valid = 0;
                     ?>
-                    <div class="row justify-content-center">
-                        <div class="group col-sm-1.5">
-                            <strong style="color: red;"> Le nom d'utilisateur ne peut pas être vide </strong>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="group col-sm-0">
+                                <strong style="color: red;"> Le nom d'utilisateur ne peut pas être vide </strong>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -73,9 +83,11 @@
                 {
                     $valid = 0;
                     ?>
-                    <div class="row justify-content-center">
-                        <div class="group col-sm-1.5">
-                            <strong style="color: red;"> Le mot de passe ne peut pas être vide </strong>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="group col-sm-1.5">
+                                <strong style="color: red;"> Le mot de passe ne peut pas être vide </strong>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -96,9 +108,11 @@
                         else
                         {
                             ?>
-                            <div class="row justify-content-center">
-                                <div class="group col-sm-1.5">
-                                    <strong style="color: red;"> Votre mot de passe est incorrect </strong>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="group col-sm-0">
+                                        <strong style="color: red;"> Votre mot de passe est incorrect </strong>
+                                    </div>
                                 </div>
                             </div>
                             <?php
@@ -107,9 +121,11 @@
                     else
                     {
                         ?>
-                        <div class="row justify-content-center">
-                            <div class="group col-sm-1.5">
-                                <strong style="color: red;"> Aucun compte associé a cet identifiant </strong>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="group col-sm-0">
+                                    <strong style="color: red;"> Aucun compte associé a cet identifiant </strong>
+                                </div>
                             </div>
                         </div>
                         <?php
@@ -118,9 +134,11 @@
             }
             ?>
         </form>
-        <div class="row justify-content-center">
-            <div class="group col-sm-1.5">
-                <a href="http://localhost/projet/password.php" style="color: blue;"> Mot de passe oublié ? </a>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="group col-sm-0">
+                    <a href="http://localhost/projet/password.php" style="color: blue;"> Mot de passe oublié ? </a>
+                </div>
             </div>
         </div>
     </body>
