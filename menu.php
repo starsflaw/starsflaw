@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.php">
-            <img src="deathstarw.png" width="40" height="40" alt="" loading="lazy">
+            <img src="images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
             </a>
             <a class="navbar-brand" href="index.php">
-            <img src="starsflaww.png" width="93.255" height="40" alt="" loading="lazy">
+            <img src="images/starsflaww.png" width="93.255" height="40" alt="" loading="lazy">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

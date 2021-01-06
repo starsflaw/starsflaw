@@ -17,21 +17,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <title>VSFTPD</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/deathstarw.png">
   </head>
 
   <body>
     <?php require_once('menuCourses.php'); ?>
     
     <div class="centrer">  
-    <div class="breadcrumb">
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.php">Accueil</a></li>
-            <li class="breadcrumb-item"><a href="../courses.php">Cours</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité de ports : VSFTPD</li>
-          </ol>
-        </nav>
-    </div> 
+      <div class="breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.php">Accueil</a></li>
+              <li class="breadcrumb-item"><a href="../courses.php">Cours</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité de ports : VSFTPD</li>
+            </ol>
+          </nav>
+      </div> 
          
       <h1>Exploitez une vulnérabilité de ports : VSFTPD</h1>
       </br>
@@ -89,7 +90,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-0">      
-        <img src="../vsftpd.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
+        <img src="../images/vsftpd.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -147,7 +148,7 @@
         <div class="group col-sm-0"> 
           <p style="font-size: 18px;">   
             </br>
-            <img src="../vsftpd2.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
+            <img src="../images/vsftpd2.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
             </br>
           </p>
         </div>
@@ -155,7 +156,7 @@
       <div class="row justify-content-center">
         <div class="group col-sm-0"> 
           <p style="font-size: 18px;">   
-            <img src="../vsftpd3.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
+            <img src="../images/vsftpd3.png" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);"/>
             </br>
             </br>
           </p>
