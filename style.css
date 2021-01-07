@@ -20,6 +20,10 @@ img.img-fluid {
     background-color: #2d3645;
 }
 
+.white {
+    background-color: white;
+}
+
 #carouselExample {
     width: 75%;
     margin: 0 auto;
@@ -66,7 +70,7 @@ img.img-fluid {
 
 .bg-light {
     background-color: #1e272e!important;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1); 
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -96,7 +100,7 @@ img.img-fluid {
 }
 
 .poster:hover {
-    box-shadow: 0px 16px 10px -8px rgba(0, 0, 0, .4);
+    box-shadow: 0px 20px 14px -12px rgba(0, 0, 0, .6);
 }
 
 .card-img-top {

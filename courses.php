@@ -20,17 +20,15 @@
     <title>S'inscrire</title>
   </head>
 
-  <body>
+  <body style="background-color: rgba(61,72,92)">
     <?php require_once('menu.php'); ?>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="group col-sm-0">
-          </br>
-          </br>
-          <h1>Cours</h1>
-          </br>
-        </div>
-      </div>
+    <div class="centrer" style="box-shadow: 0 5px 5px rgba(0, 0, 0, .2);"> 
+      </br>
+      </br> 
+      </br>
+      <h1>Cours</h1>
+      </br>
+      </br>
     </div>
 
     <!-- BUG RESPONSIVE A CORRIGER -->
@@ -38,8 +36,10 @@
       <div class="row justify-content-center">
         <div class="group col-sm-100">
           <div class="poster">
+            </br>
+            </br>
             <a href="courses/vsftpd.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem; border: 3px solid #1e272e!important">
+              <div class="card mb-3" style="width: 60rem">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/metasploit.jpg" class="img-fluid" width="150" height="150">
@@ -49,6 +49,28 @@
                       <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité de ports</h6>
                       <h5 class="card-title" style="color: black">VSFTPD</h5>
                       <p class="card-text" style="color: black">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Nmap et Metasploitable.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="group col-sm-100">
+          <div class="poster">
+            <a href="courses/sqlmap.php" style="text-decoration:none">
+              <div class="card mb-3" style="width: 60rem">
+                <div class="row no-gutters">
+                  <div class="col-lg-4">
+                    <img src="images/sqlmap.png" class="img-fluid" width="150" height="150">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité web</h6>
+                      <h5 class="card-title" style="color: black">Faille SQL</h5>
+                      <p class="card-text" style="color: black">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé.</p>
                     </div>
                   </div>
                 </div>

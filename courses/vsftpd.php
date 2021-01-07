@@ -23,7 +23,7 @@
   <body>
     <?php require_once('menuCourses.php'); ?>
     
-    <div class="centrer">  
+    <div class="centrer" style="box-shadow: 0 5px 5px rgba(0, 0, 0, .2);">  
       <div class="breadcrumb">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -42,11 +42,13 @@
     </br>
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="group col-sm-0">
-          <iframe width="560" height="315" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);" src="https://www.youtube.com/embed/wWbjUSlbk5Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div> 
+          <div class="group col-sm-0">
+            <iframe width="560" height="315" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);" src="https://www.youtube.com/embed/wWbjUSlbk5Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div> 
+      </div> 
+      <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px;">
+          <p style="font-size: 18px; text-align: justify">
             </br>
             Dans ce cours nous allons apprendre à installer une Backdoor sur Metasploitable2 utilisant l’application VSFTPD. 
             Nous allons exploiter VSFTPD v2.3.4 avec Metasploit.

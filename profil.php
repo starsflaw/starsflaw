@@ -20,57 +20,40 @@
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
-    <body>
+    <body style="background-color: rgba(61,72,92)">
         <?php require_once('menu.php'); ?>
-        <div class="container">
-            <div class="form-row justify-content-center">
-                <div class="form-group col-sm-0">
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                <h1>Profil</h1>
-                </br>
+        <div class="centrer" style="box-shadow: 0 5px 5px rgba(0, 0, 0, .2);">  
+            </br>
+            </br> 
+            </br>
+            <h1>Profil</h1>
+            </br>
+            </br>
+        </div>
+        <div>
+            </br>
+            </br>
+            <?php
+            $nickname = $_SESSION['nickname'];
+            $result2 = $db->query("SELECT nickname, email, point FROM user WHERE nickname = '$nickname'");
+            $data_profil = $result2->fetch();
+            ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        </br>
+                        <strong style="color: white;"> Nom/pseudo : <?php echo $data_profil['nickname'];?></strong>
+                        </br>
+                        </br>
+                        <strong style="color: white;"> Email : <?php echo $data_profil['email'];?></strong>
+                        </br>
+                        </br>
+                        <strong style="color: white;"> Score : <?php echo $data_profil['point'];?></strong>
+                        </br>
+                        </br>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <?php
-        $nickname = $_SESSION['nickname'];
-        $result2 = $db->query("SELECT nickname, email, point FROM user WHERE nickname = '$nickname'");
-        $data_profil = $result2->fetch();
-        ?>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: black;"> Nom/pseudo : <?php echo $data_profil['nickname'];?></strong>
-                    </br>
-                    </br>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: black;"> Email : <?php echo $data_profil['email'];?></strong>
-                    </br>
-                    </br>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="group col-sm-1.5">
-                    <strong style="color: black;"> Score : <?php echo $data_profil['point'];?></strong>
-                    </br>
-                    </br>
-                </div>
-            </div>
-        </div>
-        
     </body>
 </html>
