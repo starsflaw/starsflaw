@@ -32,7 +32,7 @@ session_start();
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
                     <p style="font-size: 40px; font-family: Star Jedi; color: white; text-align: center">
-                    stAR'S fLaw
+                    STAR'S fLaw
                     </p>
                     </br>
                     <h5 style="color: white; text-align: center";> 
