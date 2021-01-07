@@ -19,7 +19,7 @@
         <title>Mot de passe oublié</title>
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
-    <body>
+    <body class="blue">
         <?php require_once('menu.php'); ?>
         <div class="container">
             <div class="form-row justify-content-center">
@@ -31,7 +31,7 @@
                     </br>
                     </br>
                     </br>
-                    <h1>Mot de passe oublié ?</h1>
+                    <h1 style="color:white">Mot de passe oublié ?</h1>
                     </br>
                 </div>
             </div>
@@ -40,8 +40,8 @@
             <div class="container">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="email">Votre adresse mail (obligatoire)</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($mail)){ echo $email; }?>" required>
+                        <label for="email" style="color:rgba(55,150,255)">Votre adresse mail (obligatoire)</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($mail)){ echo $email; }?>" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
@@ -92,14 +92,14 @@
                             // LIEN A MODIFIER QUAND ON AURA LE DOMAINE 
                             //=====Ajout du message au format HTML          
                             $content = 'Bonjour ' . $data_email['nickname'] . ',
-                            Veuillez réinitialiser votre mot de passe en cliquant sur le lien : http://localhost/projet/resetPassword.php?id=' . $data_email['id'] . '&token_password=' . $token_password;		
+                            Veuillez réinitialiser votre mot de passe en cliquant sur le lien : http://localhost/starsflaw/resetPassword.php?id=' . $data_email['id'] . '&token_password=' . $token_password;		
                             mail($mail_to, 'Réinitialisation de votre mot de passe', $content, $header);
 
                             ?>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="group col-sm-0">
-                                        <strong style="color: green;"> Une demande de réinitialisation de mot de passe vous a bien été envoyé par mail</strong>
+                                        <strong style="color: rgba(0,176,0);"> Une demande de réinitialisation de mot de passe vous a bien été envoyé par mail</strong>
                                     </div>
                                 </div>
                             </div>

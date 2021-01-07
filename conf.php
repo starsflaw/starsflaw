@@ -19,7 +19,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
-    <body>
+    <body class="blue">
         <?php require_once('menu.php'); ?>
         <div class="container">
             <div class="form-row justify-content-center">
@@ -31,7 +31,7 @@
                     </br>
                     </br>
                     </br>
-                    <h1>Confirmation compte</h1>
+                    <h1 style="color:white">Confirmation compte</h1>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="group col-sm-0">
-                            <strong style="color: green;"> Votre compte a bien été validé </strong>
+                            <strong style="color: rgba(0,176,0);"> Votre compte a bien été validé </strong>
                         </div>
                     </div>
                 </div>

@@ -70,7 +70,7 @@
                     <div class="card-body">
                       <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité web</h6>
                       <h5 class="card-title" style="color: black">Faille SQL</h5>
-                      <p class="card-text" style="color: black">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé.</p>
+                      <p class="card-text" style="color: black">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé avec SQLMAP.</p>
                     </div>
                   </div>
                 </div>

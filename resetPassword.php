@@ -19,7 +19,7 @@
         <title>Réinitialisation mot de passe</title>
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
-    <body>
+    <body class="blue">
         <?php require_once('menu.php'); ?>
         <div class="container">
             <div class="form-row justify-content-center">
@@ -31,7 +31,7 @@
                     </br>
                     </br>
                     </br>
-                    <h1>Réinitialisation du mot de passe</h1>
+                    <h1 style="color:white">Réinitialisation du mot de passe</h1>
                 </div>
             </div>
         </div>
@@ -77,14 +77,14 @@
                     <div class="container">
                         <div class="form-row justify-content-center">
                             <div class="form-group col-sm-4">
-                                <label for="password">Votre nouveau mot de passe</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="password" style="color:rgba(55,150,255)">Votre nouveau mot de passe</label>
+                                <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                             </div>
                         </div>
                         <div class="form-row justify-content-center">
                             <div class="form-group col-sm-4">
-                                <label for="password2">Confirmer ce nouveau mot de passe (obligatoire)</label>
-                                <input type="password" class="form-control" id="password2" name="password2" required>
+                                <label for="password2" style="color:rgba(55,150,255)">Confirmer ce nouveau mot de passe (obligatoire)</label>
+                                <input type="password" class="form-control" id="password2" name="password2" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                             </div>
                         </div>
                         <div class="form-row justify-content-center">
@@ -151,11 +151,9 @@
 					            $data_log = $result4->fetch();
                                 $_SESSION['nickname'] = $data_log['nickname'];
                                 ?>
-                                echo '<script language="Javascript">
-                                <!--
+                                <script language="Javascript">
                                 document.location.replace("index.php");
-                                // -->
-                                </script>';
+                                </script>
                                 <?php
                             }
                         }

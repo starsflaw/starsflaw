@@ -20,7 +20,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
-    <body>
+    <body class="blue">
         <?php require_once('menu.php'); ?>
         <div class="container">
             <div class="form-row justify-content-center">
@@ -31,7 +31,7 @@
                 </br>
                 </br>
                 </br>
-                <h1>Connexion</h1>
+                <h1 style="color:white">Connexion</h1>
                 </div>
             </div>
         </div>
@@ -41,14 +41,14 @@
             <div class="container">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="pseudo">Votre nom/pseudo ou votre mail</label>
-                        <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                        <label for="pseudo" style="color:rgba(55,150,255)">Votre nom/pseudo ou votre mail</label>
+                        <input type="text" class="form-control" id="pseudo" name="pseudo" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="password">Votre mot de passe</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <label for="password" style="color:rgba(55,150,255)">Votre mot de passe</label>
+                        <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
@@ -103,8 +103,11 @@
                         if(password_verify($password, $data_psswd['password']))
                         {
                             $_SESSION['nickname'] = $data_psswd['nickname'];
-                            header('Location: index.php');
-                            exit();
+                            ?>
+                            <script language="Javascript">
+                            document.location.replace("index.php");
+                            </script>
+                            <?php
                         }
                         else
                         {
@@ -138,7 +141,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <a href="http://localhost/projet/password.php" style="color: blue;"> Mot de passe oublié ? </a>
+                    <a href="password.php" style="color: rgba(55,150,255);"> Mot de passe oublié ? </a>
                 </div>
             </div>
         </div>
