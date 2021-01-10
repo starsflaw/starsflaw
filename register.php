@@ -61,8 +61,13 @@
           </div>
         </div>
         <div class="form-row justify-content-center">
-          <div class="form-group col-sm-5">
-            <button type="submit" class="btn btn-primary" id="register" name="register">Valider</button>
+          <div class="form-group col-sm-0">
+            <button type="submit" class="btn btn-primary" id="register" name="register">S'inscrire</button>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-0">
+            <p style="color:white">Vous avez déjà un compte ? <a href="login.php" style="color: rgba(55,150,255);">Connectez-vous</a> </p>
           </div>
         </div>
       </div>

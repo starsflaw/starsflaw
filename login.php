@@ -49,11 +49,13 @@
                     <div class="form-group col-sm-5">
                         <label for="password" style="color:rgba(55,150,255)">Votre mot de passe</label>
                         <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
+                        </br>
+                        <a href="password.php" style="color: rgba(55,150,255)"> Mot de passe oublié ? </a>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-sm-5">
-                        <button type="submit" class="btn btn-primary" id="login" name="login">Valider</button>
+                    <div class="form-group col-sm-0">
+                        <button type="submit" class="btn btn-primary" id="login" name="login">Se connecter</button>
                     </div>
                 </div>
             </div>
@@ -141,7 +143,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <a href="password.php" style="color: rgba(55,150,255);"> Mot de passe oublié ? </a>
+                <p style="color:white">Vous n'avez pas encore de compte ? <a href="register.php" style="color: rgba(55,150,255);">Inscrivez-vous gratuitement</a> </p>
                 </div>
             </div>
         </div>
