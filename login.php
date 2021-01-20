@@ -1,6 +1,14 @@
 <?php
-  require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-  session_start();
+    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
+    session_start();
+    if(isset($_SESSION['nickname']))
+    { 
+        ?>
+        <script language="Javascript">
+        document.location.replace("index.php");
+        </script>
+        <?php
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +44,12 @@
             </div>
         </div>
 
-        <!-- Formulaire d'inscription -->
+        <!-- Formulaire de connexion -->
         <form action="login.php" method="POST">
             <div class="container">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="pseudo" style="color:rgba(55,150,255)">Votre nom/pseudo ou votre mail</label>
+                        <label for="pseudo" style="color:rgba(55,150,255)">Votre pseudo ou votre e-mail</label>
                         <input type="text" class="form-control" id="pseudo" name="pseudo" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
@@ -64,7 +72,7 @@
             <?php
             if(isset($_POST['login']))
             {
-                $pseudo = htmlspecialchars(trim($_POST['pseudo'])); // On récupère le nom/pseudo
+                $pseudo = htmlspecialchars(trim($_POST['pseudo'])); // On récupère le pseudo
                 $password = trim($_POST['password']); // On récupère le mot de passe 
                 $valid = 1;
                 // Vérification du nom

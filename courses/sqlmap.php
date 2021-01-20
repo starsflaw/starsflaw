@@ -1,6 +1,14 @@
 <?php
   include('../db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
   session_start();
+  if(!isset($_SESSION['nickname']))
+  { 
+    ?>
+    <script language="Javascript">
+    document.location.replace("../register.php");
+    </script>
+    <?php
+  }
 ?>
 
 <!DOCTYPE html>

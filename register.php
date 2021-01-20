@@ -1,6 +1,14 @@
 <?php
-  include('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
+  require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
   session_start();
+  if(isset($_SESSION['nickname']))
+    { 
+        ?>
+        <script language="Javascript">
+        document.location.replace("index.php");
+        </script>
+        <?php
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +36,9 @@
           </br>
           </br>
           </br>
+          </br>
+          </br>
+          </br>
           <h1 style="color:white">Inscription</h1>
         </div>
       </div>
@@ -38,13 +49,13 @@
       <div class="container">
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="nickname" style="color:rgba(55,150,255)">Votre nom ou votre pseudo (obligatoire)</label>
+            <label for="nickname" style="color:rgba(55,150,255)">Votre pseudo (obligatoire)</label>
             <input type="text" class="form-control" id="nickname" name="nickname" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="email" style="color:rgba(55,150,255)">Votre adresse mail (obligatoire)</label>
+            <label for="email" style="color:rgba(55,150,255)">Votre adresse e-mail (obligatoire)</label>
             <input type="email" class="form-control" id="email" name="email" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
@@ -121,7 +132,7 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> Le mail n'est pas valide </strong>
+                <strong style="color: red;"> L'adresse e-mail n'est pas valide </strong>
               </div>
             </div>
           </div>
@@ -140,7 +151,7 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
-                  <strong style="color: red;"> Cet email est déjà pris </strong>
+                  <strong style="color: red;"> Cette adresse e-mail est déjà prise </strong>
                 </div>
               </div>
             </div>
@@ -172,19 +183,16 @@
         {
           $dateRegister = date('Y-m-d H:i:s');
           $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
-          // bin2hex(random_bytes($length))
           $token = bin2hex(random_bytes(12));
-          $token_password = 0;
           // On insert nos données dans la table utilisateur
-          $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token, token_password)
-          VALUES(:nickname, :email, :password, :dateRegister, :token, :token_password)');
+          $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token)
+          VALUES(:nickname, :email, :password, :dateRegister, :token)');
           $req->execute(array(
           'nickname' => $nickname,
           'email' => $email,
           'password' => $hash,
           'dateRegister' => $dateRegister,
           'token' => $token,
-          'token_password' => $token_password,
           ));
 
           $result2 = $db->query("SELECT * FROM user WHERE email= '$email'");
@@ -199,14 +207,16 @@
           // LIEN A MODIFIER QUAND ON AURA LE DOMAINE 
           //=====Ajout du message au format HTML          
           $content = 'Bonjour ' . $data_email['nickname'] . ',
-          Veuillez confirmer votre compte en cliquant sur le lien : http://localhost/starsflaw/conf.php?id=' . $data_email['id'] . '&token=' . $token;		
+          Veuillez confirmer votre compte en cliquant sur le lien : http://localhost/starsflaw/confAccount.php?id=' . $data_email['id'] . '&token=' . $token;		
           mail($mail_to, 'Confirmation de votre compte', $content, $header);
-
-          $_SESSION['nickname'] = $data_email['nickname'];
           ?>
-          <script language="Javascript">
-          document.location.replace("index.php");
-          </script>
+          <div class="container">
+            <div class="row justify-content-center">
+                <div class="group col-sm-0">
+                    <strong style="color: rgba(0,176,0);"> Un e-mail de confirmation vous a été envoyé à votre adresse <?php echo $data_email['email'];?></strong>
+                </div>
+            </div>
+          </div>
           <?php
         }
       }

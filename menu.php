@@ -12,17 +12,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <?php
-                    if(isset($_SESSION['nickname']))
-                    //Si utilisateur connecté alors liens Cours (à gauche)
-                    {
-                    ?>
                     <li class="nav-item">
                         <a class="nav-link" href="courses.php">Cours</a>
-                    </li>
-                    <?php
-                    }
-                    ?>  
+                    </li>  
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <?php

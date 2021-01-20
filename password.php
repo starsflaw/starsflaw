@@ -1,6 +1,14 @@
 <?php
+    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
     session_start();
-    include('db/connexionDB.php');
+    if(isset($_SESSION['nickname']))
+    { 
+        ?>
+        <script language="Javascript">
+        document.location.replace("index.php");
+        </script>
+        <?php
+    }
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +53,8 @@
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-sm-5">
+                    <div class="form-group col-sm-0">
+                        </br>
                         <button type="submit" class="btn btn-primary" id="forgotten" name="forgotten">Envoyer</button>
                     </div>
                 </div>
@@ -76,9 +85,9 @@
                         if($email == $data_psswd['email'])
                         {
                             // bin2hex(random_bytes($length))
-                            $token_password = bin2hex(random_bytes(12));
-                            $req = $db->prepare('UPDATE user SET token_password = :token_password WHERE email = :email');
-                            $req->execute(array('token_password' => $token_password, 'email' => $email));
+                            $token = bin2hex(random_bytes(12));
+                            $req = $db->prepare('UPDATE user SET token = :token WHERE email = :email');
+                            $req->execute(array('token' => $token, 'email' => $email));
 
                             $result3 = $db->query("SELECT * FROM user WHERE email= '$email'");
                             $data_email = $result3->fetch();
@@ -92,7 +101,7 @@
                             // LIEN A MODIFIER QUAND ON AURA LE DOMAINE 
                             //=====Ajout du message au format HTML          
                             $content = 'Bonjour ' . $data_email['nickname'] . ',
-                            Veuillez réinitialiser votre mot de passe en cliquant sur le lien : http://localhost/starsflaw/resetPassword.php?id=' . $data_email['id'] . '&token_password=' . $token_password;		
+                            Veuillez réinitialiser votre mot de passe en cliquant sur le lien : http://localhost/starsflaw/resetPassword.php?id=' . $data_email['id'] . '&token=' . $token;		
                             mail($mail_to, 'Réinitialisation de votre mot de passe', $content, $header);
 
                             ?>

@@ -1,6 +1,14 @@
 <?php
+    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
     session_start();
-    include('db/connexionDB.php');
+    if(isset($_SESSION['nickname']))
+    { 
+        ?>
+        <script language="Javascript">
+        document.location.replace("index.php");
+        </script>
+        <?php
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +45,7 @@
         </div>
         <?php
         $id = (int)$_GET['id'];
-        $token_password = (String)htmlspecialchars($_GET['token_password']);
+        $token = (String)htmlspecialchars($_GET['token']);
         $valid = 1;
         if(!isset($id))
         {
@@ -52,7 +60,7 @@
             </div>
             <?php
         }
-        if(!isset($token_password))
+        if(!isset($token))
         {
             $valid = 0;
             ?>
@@ -67,13 +75,13 @@
         }
         if($valid == 1)
         {
-            $result2 = $db->query("SELECT id, token_password FROM user WHERE id = '$id' AND token_password = '$token_password'");
+            $result2 = $db->query("SELECT id, token FROM user WHERE id = '$id' AND token = '$token'");
             $data_token = $result2->fetch();
-            if($id == $data_token['id'] AND $token_password == $data_token['token_password'])
+            if($id == $data_token['id'] AND $token == $data_token['token'])
             {
                 ?>
                 <!-- Formulaire -->
-                <form action="resetPassword.php?id=<?php echo $_GET['id'].'&token_password='.$_GET['token_password']; ?>" method="POST">
+                <form action="resetPassword.php?id=<?php echo $_GET['id'].'&token='.$_GET['token']; ?>" method="POST">
                     <div class="container">
                         <div class="form-row justify-content-center">
                             <div class="form-group col-sm-4">
@@ -144,8 +152,8 @@
                             if($valid2 == 1)
                             {
                                 $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
-                                $req = $db->prepare('UPDATE user SET token_password = 0, confirmation_token_password =:confirmation_token_password, password =:password WHERE id = :id');
-                                $req->execute(array('confirmation_token_password' => date('Y-m-d H:i:s'),'password' => $hash, 'id' => $data_token['id']));
+                                $req = $db->prepare('UPDATE user SET token = 0, confirmation_token =:confirmation_token, password =:password WHERE id = :id');
+                                $req->execute(array('confirmation_token' => date('Y-m-d H:i:s'),'password' => $hash, 'id' => $data_token['id']));
 
                                 $result4 = $db->query("SELECT nickname FROM user WHERE id = '$id'");
 					            $data_log = $result4->fetch();
