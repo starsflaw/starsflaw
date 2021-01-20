@@ -112,7 +112,7 @@
                     {
                         if(password_verify($password, $data_psswd['password']))
                         {
-                            if($data_psswd['token'] !== 0)
+                            if($data_psswd['token'] !== '0')
                             {
                                 ?>
                                 <div class="container">
