@@ -106,18 +106,33 @@
                 // Si toutes les conditions sont remplies alors on fait le traitement
                 if($valid == 1)
                 {
-                    $result2 = $db->query("SELECT nickname, email, password FROM user WHERE (nickname = '$pseudo' OR email= '$pseudo')");
+                    $result2 = $db->query("SELECT nickname, email, password, token FROM user WHERE (nickname = '$pseudo' OR email= '$pseudo')");
 					$data_psswd = $result2->fetch();
                     if($pseudo == $data_psswd['nickname'] OR $pseudo == $data_psswd['email'])
                     {
                         if(password_verify($password, $data_psswd['password']))
                         {
-                            $_SESSION['nickname'] = $data_psswd['nickname'];
-                            ?>
-                            <script language="Javascript">
-                            document.location.replace("index.php");
-                            </script>
-                            <?php
+                            if($data_psswd['token'] !== 0)
+                            {
+                                ?>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="group col-sm-0">
+                                            <strong style="color: red;"> Veuillez confirmer votre compte en cliquant sur le lien envoyé par e-mail </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            else
+                            {
+                                $_SESSION['nickname'] = $data_psswd['nickname'];
+                                ?>
+                                <script language="Javascript">
+                                document.location.replace("index.php");
+                                </script>
+                                <?php
+                            }
                         }
                         else
                         {
