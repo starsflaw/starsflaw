@@ -1,7 +1,7 @@
 <?php
-    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-    session_start();
-    if(isset($_SESSION['nickname']))
+    require('db/connexionDB.php');                  // Fichier PHP contenant la connexion à la BDD
+    session_start();                                // On démarre la session
+    if(isset($_SESSION['nickname']))                // S'il y a un utilisateur connecté, redirection vers la page d'accueil
     { 
         ?>
         <script language="Javascript">
@@ -14,16 +14,21 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <?php // Balises meta responsive ?>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale-1">
 
+        <?php // Bootstrap CSS ?>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        
+        <?php // jQuery and Bootstrap JS ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <?php // Feuille de style ?>
         <link rel="stylesheet" href="style.css">
+
+        <?php // Titre principal et icône de la page ?>
         <title>Mot de passe oublié</title>
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
@@ -80,7 +85,8 @@
                     }
                     if($valid == 1)
                     {
-                        $result2 = $db->query("SELECT email FROM user WHERE email= '$email'");
+                        $result2 = $db->prepare('SELECT email FROM user WHERE email = :email');
+                        $result2->execute(array('email' => $email));
                         $data_psswd = $result2->fetch();
                         if($email == $data_psswd['email'])
                         {
@@ -89,7 +95,8 @@
                             $req = $db->prepare('UPDATE user SET token = :token WHERE email = :email');
                             $req->execute(array('token' => $token, 'email' => $email));
 
-                            $result3 = $db->query("SELECT * FROM user WHERE email= '$email'");
+                            $result3 = $db->prepare('SELECT * FROM user WHERE email = :email');
+                            $result3->execute(array('email' => $email));
                             $data_email = $result3->fetch();
 
                             $mail_to = $data_email['email'];
