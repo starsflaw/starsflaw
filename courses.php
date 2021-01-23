@@ -1,6 +1,6 @@
 <?php
-  include('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-  session_start();
+  include('db/connexionDB.php');          // Fichier PHP contenant la connexion à la BDD
+  session_start();                        // On démarre la session
 ?>
 
 <!DOCTYPE html>

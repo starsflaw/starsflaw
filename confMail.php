@@ -1,14 +1,6 @@
 <?php
-    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-    session_start();
-    if(isset($_SESSION['nickname']))
-    { 
-        ?>
-        <script language="Javascript">
-        document.location.replace("index.php");
-        </script>
-        <?php
-    }
+    require('db/connexionDB.php');                  // Fichier PHP contenant la connexion à la BDD
+    session_start();                                // On démarre la session
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,15 +36,52 @@
                     </br>
                     </br>
                     </br>
-                    <h1 style="color:white">Confirmation de votre nouvelle adresse mail</h1>
                 </div>
             </div>
         </div>
         <?php
-
-        $id = (int)$_GET['id'];
-        $token = (String)htmlspecialchars($_GET['token']);
-        $valid = 1;
+        if(!isset($_GET['id']))
+        {
+            $valid = 0;
+            ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
+                </div>
+            </div>
+            <script language="Javascript">
+                document.location.replace("index.php");
+            </script>
+            <?php
+        }
+        else
+        {
+            $id = (int)$_GET['id'];
+            $valid = 1;
+        }
+        if(!isset($_GET['token']))
+        {
+            $valid = 0;
+            ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: red;"> Le lien est erroné </strong>
+                    </div>
+                </div>
+            </div>
+            <script language="Javascript">
+                document.location.replace("index.php");
+            </script>
+            <?php
+        }
+        else
+        {
+            $token = (String)htmlspecialchars($_GET['token']);
+            $valid = 1;
+        }
 
         if(!isset($id))
         {
@@ -65,6 +94,9 @@
                     </div>
                 </div>
             </div>
+            <script language="Javascript">
+                document.location.replace("index.php");
+            </script>
             <?php
         }
         if(!isset($token))
@@ -78,6 +110,9 @@
                     </div>
                 </div>
             </div>
+            <script language="Javascript">
+                document.location.replace("index.php");
+            </script>
             <?php
         }
 
@@ -95,7 +130,7 @@
                 $req->execute(array('confirmation_token' => $confirmation_token, 'email' => $valid_email, 'id' => $data_token['id']));
                 ?>
                 <script language="Javascript">
-                document.location.replace("profil.php");
+                    document.location.replace("profil.php");
                 </script>
                 <?php
             }

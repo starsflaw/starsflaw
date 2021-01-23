@@ -1,7 +1,7 @@
 <?php
-    require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-    session_start();
-    if(isset($_SESSION['nickname']))
+    require('db/connexionDB.php');                // Fichier PHP contenant la connexion à la BDD
+    session_start();                              // On démarre la session
+    if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connecté, redirection vers la page d'accueil
     { 
         ?>
         <script language="Javascript">

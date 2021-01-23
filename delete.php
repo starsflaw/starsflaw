@@ -1,11 +1,11 @@
 <?php
-  require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-  session_start();
-  if(!isset($_SESSION['nickname']))
+  require('db/connexionDB.php');                // Fichier PHP contenant la connexion à la BDD
+  session_start();                              // On démarre la session
+  if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur connecté, redirection vers la page de connexion
   { 
     ?>
     <script language="Javascript">
-    document.location.replace("register.php");
+    document.location.replace("login.php");
     </script>
     <?php
   }
