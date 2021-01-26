@@ -243,6 +243,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
                     <strong style="color: rgba(0,176,0);"> Un e-mail de confirmation vous a été envoyé à votre adresse <?php echo $data_email['email'];?></strong>
+                    </br>
+                    </br>
                 </div>
             </div>
           </div>

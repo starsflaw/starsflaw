@@ -42,6 +42,7 @@ session_start();                                // On démarre la session
                     </br>
                     </br>
                     </br>
+                    <h1 style="color:white"></h1>
                 </div>
             </div>
         </div>

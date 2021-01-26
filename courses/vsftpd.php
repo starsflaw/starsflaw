@@ -1,14 +1,14 @@
 <?php
-  include('../db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
-  session_start();
-  if(!isset($_SESSION['nickname']))
-  { 
-    ?>
-    <script language="Javascript">
+require('../db/connexionDB.php');           // Fichier PHP contenant la connexion à la BDD
+session_start();                            // On démarre la session
+if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur connecté, redirection vers la page de connexion
+{ 
+  ?>
+  <script language="Javascript">
     document.location.replace("../login.php");
-    </script>
-    <?php
-  }
+  </script>
+  <?php
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
     <?php // Bootstrap CSS ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
-    <?php // jQuery and Bootstrap JS ?>
+    <?php // jQuery et Bootstrap JS ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
@@ -38,9 +38,10 @@
   <body>
     <?php 
     // Inclusion de la barre de navigation
-    require_once('menuCourses.php'); 
+    require_once('menuCourses.php');
+
+    // Mise en place d'un fil d'Arianne
     ?>
-    
     <div class="centrer" style="box-shadow: 0 5px 5px rgba(0, 0, 0, .2);">  
       <div class="breadcrumb">
         <nav aria-label="breadcrumb">
@@ -50,15 +51,16 @@
               <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité de ports : VSFTPD</li>
             </ol>
           </nav>
-      </div> 
-         
+      </div>
       <h1>Exploitez une vulnérabilité de ports : VSFTPD</h1>
       </br>
       </br>
     </div>
     </br>
     </br>
+    <?php // Cours ?>
     <div class="container-fluid">
+      <?php // Insertion de la vidéo Youtube du tutoriel ?>
       <div class="row justify-content-center">
           <div class="group col-sm-0">
             <iframe width="560" height="315" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);" src="https://www.youtube.com/embed/wWbjUSlbk5Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
