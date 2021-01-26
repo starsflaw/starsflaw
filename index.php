@@ -111,7 +111,7 @@ session_start();      // On démarre la session
                 </div>
             </div>
         </div>
-        <?php // Script pour Carousel : même au survol de la souris les slides continuent de défiler
+        <?php // Script pour Carousel : même au survol de la souris les slides continuent de défiler ?>
         <script>
         $('.carousel').carousel({
 
