@@ -1,7 +1,7 @@
 <?php
 require('db/connexionDB.php');                  // Fichier PHP contenant la connexion à la BDD
 session_start();                                // On démarre la session
-if(isset($_SESSION['nickname']))                // S'il y a un utilisateur connecté, redirection vers la page d'accueil
+if(isset($_SESSION['nickname']))                // S'il y a un utilisateur connecté => redirection vers la page d'accueil
 { 
   ?>
   <script language="Javascript">
@@ -13,6 +13,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
 
 <!DOCTYPE html>
 <html lang="fr">
+  <?php // En-tête de la page ?>
   <head>
     <?php // Balises meta responsive ?>
     <meta charset="utf-8">
@@ -21,7 +22,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
     <?php // Bootstrap CSS ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
-    <?php // jQuery and Bootstrap JS ?>
+    <?php // jQuery et Bootstrap JS ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
@@ -33,8 +34,12 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
     <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
   </head>
 
+  <?php // Corps de la page ?>
   <body class="blue">
-    <?php require_once('menu.php'); ?>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('menu.php'); 
+    ?>
     <div class="container">
       <div class="form-row justify-content-center">
         <div class="form-group col-sm-0">
@@ -49,7 +54,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
       </div>
     </div>
 
-    <!-- Formulaire d'inscription -->
+    <?php // Formulaire d'inscription ?>
     <form action="register.php" method="POST">
       <div class="container">
         <div class="form-row justify-content-center">
@@ -88,16 +93,17 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         </div>
       </div>
     
-      <!-- Vérification -->
       <?php
+      // Vérification du formulaire d'inscription
       if(isset($_POST['register']))
       {
-        $nickname = htmlspecialchars(trim($_POST['nickname'])); // On récupère le nom/pseudo
+        $nickname = htmlspecialchars(trim($_POST['nickname'])); // On récupère le pseudonyme
         $email = htmlspecialchars(strtolower(trim($_POST['email']))); // On récupère le mail
         $password = trim($_POST['password']); // On récupère le mot de passe 
         $password2 = trim($_POST['password2']); //  On récupère la confirmation du mot de passe
         $valid = 1;
-        // Vérification du nom
+        // Vérification du pseudo
+        // Si pas de pseudo => message d'erreur
         if(empty($nickname))
         {
           $valid = 0;
@@ -105,10 +111,14 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         }
         else
         {
-          // On vérifit que le nom/pseudo est disponible
-          $req_nickname = $db->prepare('SELECT nickname FROM user WHERE nickname =?');
-          $req_nickname->execute([$nickname]);
-          $data = $req_nickname->fetch();
+          // On vérifie que le pseudo est disponible
+          // Requête préparée avec marqueurs nominatifs : Sélectionner le champ nickname de la table user lorsque nickname = $nickname
+          // $data est un array qui contient champ par champ les valeurs de la ligne sélectionnée de la table
+          $req_pseudo = $db->prepare('SELECT nickname FROM user WHERE nickname = :nickname');
+          $req_pseudo->execute(array('nickname' => $nickname));
+          $data = $req_pseudo->fetch();
+
+          // Si data n'est pas vide => message d'erreur
           if($data)
           {
             $valid = 0;
@@ -116,7 +126,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="container">
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
-                  <strong style="color: red;"> Ce nom/pseudo est déjà pris </strong>
+                  <strong style="color: red;"> Ce pseudo est déjà pris </strong>
                 </div>
               </div>
             </div>
@@ -124,12 +134,13 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           }
         }
         // Vérification du mail
+        // Si pas de mail => message d'erreur
         if(empty($email))
         {
           $valid = 0;
           echo "Le mail ne peut pas être vide";
         }
-        // On vérifit que le mail est dans le bon format
+        // On vérifie que le mail est dans le bon format
         elseif(!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $email))
         {
           $valid = 0;
@@ -145,10 +156,14 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         }
         else
         {
-          // On vérifit que le mail est disponible
-          $req_email = $db->prepare('SELECT email FROM user WHERE email =?');
-          $req_email->execute([$email]);
+          // On vérifie que le mail est disponible
+          // Requête préparée avec marqueurs nominatifs : Sélectionner le champ email de la table user lorsque email = $email
+          // $data est un array qui contient champ par champ les valeurs de la ligne sélectionnée de la table
+          $req_email = $db->prepare('SELECT email FROM user WHERE email = :email');
+          $req_email->execute(array('email' => $email));
           $data = $req_email->fetch();
+
+          // Si data n'est pas vide => message d'erreur
           if($data)
           {
             $valid = 0;
@@ -164,11 +179,13 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           }
         }
         // Vérification du mot de passe
+        // Si pas de mot de passe => message d'erreur
         if(empty($password))
         {
           $valid = 0;
           echo "Le mot de passe ne peut pas être vide";
         }
+        // Si mot de passe différent de confirmation de mot de passe => message d'erreur
         if($password !== $password2)
         {
           $valid = 0;
@@ -189,7 +206,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           $dateRegister = date('Y-m-d H:i:s');
           $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
           $token = bin2hex(random_bytes(12));
-          // On insert nos données dans la table utilisateur
+          // Requête préparée avec marqueurs nominatifs : On insert les données nickname, email, password, dateRegister et token dans les champs de la table user
           $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token)
           VALUES(:nickname, :email, :password, :dateRegister, :token)');
           $req->execute(array(
@@ -200,9 +217,13 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           'token' => $token,
           ));
 
-          $result2 = $db->prepare('SELECT * FROM user WHERE email = :email');
+          // Requête préparée avec marqueurs nominatifs : Sélectionner les champs id, nickname et email de la table user lorsque email = $email
+          // $data_email est un array qui contient champ par champ les valeurs de la ligne sélectionnée de la table
+          $result2 = $db->prepare('SELECT id, nickname, email FROM user WHERE email = :email');
           $result2->execute(array('email' => $email));
           $data_email = $result2->fetch();
+
+          // Création d'un email
           
           $mail_to = $data_email['email'];
 
@@ -215,6 +236,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           $content = 'Bonjour ' . $data_email['nickname'] . ',
           Veuillez confirmer votre compte en cliquant sur le lien : http://localhost/starsflaw/confAccount.php?id=' . $data_email['id'] . '&token=' . $token;		
           mail($mail_to, 'Confirmation de votre compte', $content, $header);
+
+          // Une fois le mail envoyé => message de confirmation d'envoi
           ?>
           <div class="container">
             <div class="row justify-content-center">

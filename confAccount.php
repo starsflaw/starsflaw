@@ -10,8 +10,10 @@
         <?php
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+    <?php // En-tête de la page ?>
     <head>
         <?php // Balises meta responsive ?>
         <meta charset="utf-8">
@@ -32,8 +34,12 @@
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
+    <?php // Corps de la page ?>
     <body class="blue">
-        <?php require_once('menu.php'); ?>
+        <?php 
+        // Inclusion de la barre de navigation
+        require_once('menu.php'); 
+        ?>
         <div class="container">
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-0">

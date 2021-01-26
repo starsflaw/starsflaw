@@ -13,6 +13,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+  <?php // En-tête de la page ?>
   <head>
     <?php // Balises meta responsive ?>
     <meta charset="utf-8">
@@ -33,8 +34,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../images/deathstarw.png">
   </head>
 
+  <?php // Corps de la page ?>
   <body>
-    <?php require_once('menuCourses.php'); ?>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('menuCourses.php'); 
+    ?>
     
     <div class="centrer" style="box-shadow: 0 5px 5px rgba(0, 0, 0, .2);">  
       <div class="breadcrumb">
