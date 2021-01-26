@@ -1,2 +1,0 @@
-Pseudo : admin
-Mot de passe : azerty
