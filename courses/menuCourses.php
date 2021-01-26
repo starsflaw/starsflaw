@@ -6,6 +6,11 @@
         <img src="../images/starsflaw.png" width="93.255" height="40" alt="" loading="lazy">
     </a>
 
+    <?php // Rendre le menu responsive ?>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <?php // Utilisateur connecté ou non => liens Cours et À propos ?>
         <ul class="navbar-nav mr-auto">
