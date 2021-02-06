@@ -232,7 +232,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                             $_SESSION['nickname'] = $data_log['nickname'];
                             ?>
                             <script language="Javascript">
-                                document.location.replace("index.php");
+                                document.location.replace("profil.php");
                             </script>
                             <?php
                         }

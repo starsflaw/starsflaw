@@ -47,8 +47,6 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </br>
           </br>
           </br>
-          </br>
-          </br>
           <h1 style="color:white">Inscription</h1>
         </div>
       </div>

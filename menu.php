@@ -16,6 +16,9 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="courses.php">Cours</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.php">À propos</a>
             </li>  
         </ul>
         <ul class="navbar-nav ml-auto">
