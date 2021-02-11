@@ -48,7 +48,6 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                 </br>
                 </br>
                 </br>
-                </br>
                 <h1 style="color:white">Connexion</h1>
                 </div>
             </div>
