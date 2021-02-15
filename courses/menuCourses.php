@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-lights">
     <a class="navbar-brand" href="../index.php">
         <img src="../images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
     </a>

@@ -27,7 +27,7 @@ session_start();                        // On démarre la session
   </head>
 
   <?php // Corps de la page ?>
-  <body style="background-color: rgba(61,72,92)">
+  <body style="background-color: rgba(45,54,69)">
     <?php 
     // Inclusion de la barre de navigation
     require_once('menu.php'); 
@@ -50,16 +50,16 @@ session_start();                        // On démarre la session
             </br>
             </br>
             <a href="courses/vsftpd.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem">
+              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
-                    <img src="images/metasploit.jpg" class="img-fluid" width="150" height="150">
+                    <img src="images/metasploit.png" class="img-fluid" width="150" height="150">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité de ports</h6>
-                      <h5 class="card-title" style="color: black">VSFTPD</h5>
-                      <p class="card-text" style="color: black">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Nmap et Metasploitable.</p>
+                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité de ports</h6>
+                      <h5 class="card-title" style="color: white">VSFTPD</h5>
+                      <p class="card-text" style="color: white">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Nmap et Metasploitable.</p>
                     </div>
                   </div>
                 </div>
@@ -72,16 +72,16 @@ session_start();                        // On démarre la session
         <div class="group col-sm-100">
           <div class="poster">
             <a href="courses/sqlmap.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem">
+              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/sqlmap.png" class="img-fluid" width="150" height="150">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité web</h6>
-                      <h5 class="card-title" style="color: black">Faille SQL</h5>
-                      <p class="card-text" style="color: black">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé avec SQLMAP.</p>
+                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité web</h6>
+                      <h5 class="card-title" style="color: white">Faille SQL</h5>
+                      <p class="card-text" style="color: white">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé avec SQLMAP.</p>
                     </div>
                   </div>
                 </div>
@@ -95,16 +95,16 @@ session_start();                        // On démarre la session
         <div class="group col-sm-100">
           <div class="poster">
             <a href="courses/tomcat.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem">
+              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/tomcat.png" class="img-fluid" width="150" height="150">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h6 class="card-subtitle mb-2 text-muted">Vulnérabilité de ports</h6>
-                      <h5 class="card-title" style="color: black">Tomcat-Apache </h5>
-                      <p class="card-text" style="color: black">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Tomcat-Apache</p>
+                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité de ports</h6>
+                      <h5 class="card-title" style="color: white">Tomcat-Apache </h5>
+                      <p class="card-text" style="color: white">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Tomcat-Apache</p>
                     </div>
                   </div>
                 </div>

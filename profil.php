@@ -35,7 +35,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
     </head>
 
     <?php // Corps de la page ?>
-    <body style="background-color: rgba(61,72,92)">
+    <body style="background-color: rgba(45,54,69)">
         <?php 
         // Inclusion de la barre de navigation
         require_once('menu.php');
@@ -69,7 +69,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
                     <?php // Tableau regroupant les informations de l'utilisateur connecté ?>
-                    <table class="table" style="background-color: rgba(61,72,92)">
+                    <table class="table" style="background-color: rgba(45,54,69)">
                         <tbody>
                         <tr>
                             <th scope="col" style="color: white;">Pseudo</th>

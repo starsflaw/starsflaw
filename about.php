@@ -64,15 +64,12 @@ session_start();      // On démarre la session
                         cyberattaques, les infrastructures informatiques doivent être testées en passant par des tests d’intrusions pour s’assurer du bon niveau de sécurité.
                         </br>
                         </br>
-                        Nous avons alors choisi ce projet pour apprendre dans un premier temps à comment mener un test
-                        d’intrusion, les diverses méthodes d’attaques ainsi que les correctifs à appliquer. Puis dans second temps, nous voulions transmettre nos connaissances.
+                        Nous avons alors choisi ce projet pour apprendre dans un premier temps, à comment mener un test
+                        d’intrusion, les diverses méthodes d’attaques ainsi que les correctifs à appliquer. Puis dans second temps, nous voulions transmettre nos connaissances à travers une plateforme mélangeant cours et challenges dans le but d'apporter un enseignement ludique sur la Sécurité des systèmes d'informations.
                         </br>
                         </br>
                         C'est donc pour cela que nous avons créer Star's Flaw : pour apporter des notions de Pentesting et de Cybersécurité plus globalement, 
                         pour celles et ceux qui s'y intéresseraient.
-                        </br>
-                        </br>
-                        Star's Flaw est ainsi une plateforme mélangeant cours et challenges dans le but d'apporter un enseignement ludique sur la Sécurité des systèmes d'informations.
                     </p>
                 </div>
             </div>

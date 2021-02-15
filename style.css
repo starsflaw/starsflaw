@@ -10,14 +10,14 @@ img.img-fluid {
 
 .breadcrumb {
     margin-bottom: 0;
-    background-color: #2d3645;
+    background-color: rgba(37, 43, 54);
 }
 
 .blue {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: #2d3645;
+    background-color: rgba(37, 43, 54);
 }
 
 .white {
@@ -63,13 +63,13 @@ img.img-fluid {
 }
 
 .centrer {
-    background-color: rgba(45, 54, 69);
+    background-color: rgba(37, 43, 54);
     text-align: center;
     color:white;
 }
 
-.bg-light {
-    background-color: #1e272e!important;
+.bg-lights {
+    background-color: rgba(26, 33, 38);
     box-shadow: 0 5px 5px rgba(0, 0, 0, .1); 
 }
 

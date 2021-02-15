@@ -35,7 +35,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
   </head>
 
   <?php // Corps de la page ?>
-  <body style="background-color: rgba(61,72,92)">
+  <body style="background-color: rgba(45,54,69)">
     <?php 
     // Inclusion de la barre de navigation
     require_once('menuCourses.php');
