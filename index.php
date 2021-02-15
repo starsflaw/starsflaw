@@ -123,4 +123,8 @@ session_start();      // On démarre la session
         </br>
         </br>
     </body>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('footer.php'); 
+    ?>
 </html>

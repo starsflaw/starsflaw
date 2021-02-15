@@ -35,7 +35,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
   </head>
 
   <?php // Corps de la page ?>
-  <body>
+  <body style="background-color: rgba(61,72,92)">
     <?php 
     // Inclusion de la barre de navigation
     require_once('menuCourses.php');
@@ -68,7 +68,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div> 
       <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px; text-align: justify">
+          <p style="font-size: 18px; text-align: justify; color: white">
             </br>
             Dans ce cours nous allons apprendre à installer une Backdoor sur Metasploitable2 utilisant l’application VSFTPD. 
             Nous allons exploiter VSFTPD v2.3.4 avec Metasploit.
@@ -102,7 +102,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px;">
+          <p style="font-size: 18px; color: white">
             </br>
             On peut également taper directement <kbd>nmap &lt;ip&gt;</kbd> sans options. Nmap réalisera par défaut un scan SYN du protocole TCP. 
             </br>
@@ -117,7 +117,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px;">
+          <p style="font-size: 18px; color: white">
             </br>
             </br>
             On remarque que le port 21 est ouvert avec la version vsftpd 2.3.4. Le Framework Metasploit contient un exploit spécifique pour exploiter la vulnérabilité de l’application VSFTPD de cette version. 
@@ -131,7 +131,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-0"> 
-          <p style="font-size: 18px;">   
+          <p style="font-size: 18px; color: white">   
             <samp>
               <kbd> msf> search vsftpd </kbd>
               </br>
@@ -146,7 +146,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px;">
+          <p style="font-size: 18px; color: white">
           Il faut maintenant préciser l’addresse IP de notre hôte-cible :
           </br>
           </p>
@@ -154,7 +154,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-0"> 
-          <p style="font-size: 18px;">   
+          <p style="font-size: 18px; color: white">   
             <samp>
               <kbd> msf> set RHOST &lt;IP_CIBLE&gt; </kbd>
               </br>
@@ -186,7 +186,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
       <div class="row justify-content-center">
         <div class="group col-sm-8">
-          <p style="font-size: 18px;">
+          <p style="font-size: 18px; color: white">
           Nous avons donc exploité une vulnérabilité de l’application VSFTPD v2.3.4 avec Metasploit. 
           Le service VSFTPD v2.3.4 est en cours d’exécution en tant que root, ce qui nous a donné un shell-root sur notre terminal. 
           </br>
@@ -198,4 +198,8 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
       </div>
     </div>
   </body>
+  <?php 
+  // Inclusion de la barre de navigation
+  require_once('footerCourses.php'); 
+  ?>
 </html>

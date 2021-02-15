@@ -31,7 +31,6 @@ session_start();      // On démarre la session
         // Inclusion de la barre de navigation
         require_once('menu.php'); 
         ?>
-        
         <div class="container-fluid">
             </br>
             </br>
@@ -89,4 +88,8 @@ session_start();      // On démarre la session
         </div>
         </br>
     </body>
+    <?php 
+    // Inclusion de la barre de navigation
+    require_once('footer.php'); 
+    ?>
 </html>
