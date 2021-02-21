@@ -74,17 +74,17 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                         <tr>
                             <th scope="col" style="color: white;">Pseudo</th>
                             <th scope="col" style="color: white; font-weight: normal"><?php echo $data_profil['nickname'];?></th>
-                            <th scope="col"><a href="modifyName.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
+                            <th scope="col"><a href="modify-name.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
                         </tr>
                         <tr>
                             <th scope="col" style="color: white;">Email</th>
                             <th scope="col" style="color: white; font-weight: normal"><?php echo $data_profil['email'];?></th>
-                            <th scope="col"><a href="modifyMail.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
+                            <th scope="col"><a href="modify-email.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
                         </tr>
                         <tr>
                             <th scope="col" style="color: white;">Mot de passe</th>
                             <th scope="col" style="color: white; font-weight: normal">##########################</th>
-                            <th scope="col"><a href="modifyPassword.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
+                            <th scope="col"><a href="modify-password.php" style="color: rgba(55,150,255); font-weight: normal">Modifier</a></th>
                         </tr>
                         <tr>
                             <th scope="col" style="color: white;">Score</th>

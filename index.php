@@ -66,10 +66,10 @@ session_start();      // On démarre la session
                             <img src="images/cours.png" class="d-block">
                             </div>
                             <div class="carousel-item">
-                            <img src="images/Kali.JPG" class="d-block">
+                            <img src="images/kali.png" class="d-block">
                             </div>
                             <div class="carousel-item">
-                            <img src="images/metasploitdraw.PNG" class="d-block">
+                            <img src="images/metasploitdraw.png" class="d-block">
                             </div>
                         </div>
                         <a href="#carouselExample" class="carousel-control-prev"  role="button" data-slide="prev">

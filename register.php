@@ -252,8 +252,4 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
       ?>
     </form>   
   </body>
-  <?php 
-  // Inclusion de la barre de navigation
-  require_once('footer.php'); 
-  ?>
 </html>

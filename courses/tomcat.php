@@ -84,13 +84,9 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
                     <p style="font-size: 18px; text-align: justify; color: white">
-                        </br>
-                        </br>
                         On cherche le module tomcat_mgr_login sur metasploitable.
                         </br>
                         On parametre ensuite l'address IP de la machine cible:
-                        </br>
-                        </br>
                     </p>
                 </div>
             </div>
@@ -129,7 +125,6 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         <kbd> run </kbd>
                         </br>
                         </samp>
-                        </br>
                     </p>
                 </div>
             </div>
@@ -198,7 +193,6 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         <kbd> run </kbd>
                         </br>
                         </samp>
-                        </br>
                     </p>
                 </div>
             </div>

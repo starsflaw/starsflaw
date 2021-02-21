@@ -36,7 +36,7 @@
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
                     <a style="color:white; font-size: 14px" href="confidentiality.php">Confidentialité </a>
                     |
-                    <a style="color:white; font-size: 14px" href="legalNotice.php"> Mentions légales </a>
+                    <a style="color:white; font-size: 14px" href="legal-notice.php"> Mentions légales </a>
                     |
                     <a style="color:white; font-size: 14px" href="gcu.php"> Conditions Générales d'Utilisation </a>
                 </div>
