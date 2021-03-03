@@ -133,7 +133,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                 // Vérification du mot de passe actuel
                 if(password_verify($password, $data_psswd['password']))
                 {
-                    $hash = password_hash($password2, PASSWORD_DEFAULT, ['cost' => 18]); 
+                    $hash = password_hash($password2, PASSWORD_DEFAULT, ['cost' => 12]); 
                     // Requête préparée avec marqueurs nominatifs : Mettre à jour le champ password de la table user lorsque id = $data2['id']
                     $req = $db->prepare('UPDATE user SET password = :password WHERE id = :id');
                     $req->execute(array('password' => $hash, 'id' => $data2['id']));

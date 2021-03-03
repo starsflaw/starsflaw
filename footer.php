@@ -38,7 +38,7 @@
                     |
                     <a style="color:white; font-size: 14px" href="legal-notice.php"> Mentions légales </a>
                     |
-                    <a style="color:white; font-size: 14px" href="gcu.php"> Conditions Générales d'Utilisation </a>
+                    <a style="color:white; font-size: 14px" href="terms-of-service.php"> Conditions Générales d'Utilisation </a>
                 </div>
             </div>
             <div class="row justify-content-center">

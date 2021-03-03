@@ -81,6 +81,14 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-0">
+            <input class="form-check-input" type="checkbox" id="check" name="check">
+            <label class="form-check-label" for="defaultCheck1" style="color:white; font-size:12px">
+              J’ai lu et j’accepte <a target="_blank" href="terms-of-service.php">les conditions générales d'utilisation</a> </br>ainsi que <a target="_blank" href="confidentiality.php">la politique de confidentialité</a>
+            </label>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="form-group col-sm-0">
             <button type="submit" class="btn btn-primary" id="register" name="register">S'inscrire</button>
           </div>
         </div>
@@ -125,6 +133,10 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
                   <strong style="color: red;"> Ce pseudo est déjà pris </strong>
+                  </br>
+                  </br>
+                  </br>
+                  </br>
                 </div>
               </div>
             </div>
@@ -147,6 +159,10 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
                 <strong style="color: red;"> L'adresse e-mail n'est pas valide </strong>
+                </br>
+                </br>
+                </br>
+                </br>
               </div>
             </div>
           </div>
@@ -170,6 +186,10 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
                   <strong style="color: red;"> Cette adresse e-mail est déjà prise </strong>
+                  </br>
+                  </br>
+                  </br>
+                  </br>
                 </div>
               </div>
             </div>
@@ -192,6 +212,28 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
                 <strong style="color: red;"> La confirmation du mot de passe ne correspond pas </strong>
+                </br>
+                </br>
+                </br>
+                </br>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+        
+        if(empty($_POST['check']))
+        {
+          $valid = 0;
+          ?>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="group col-sm-0">
+                <strong style="color: red"> Vous ne pouvez pas créer de compte sans accepter les conditions générales d'utilisation et la politique de confidentialité </strong>
+                </br>
+                </br>
+                </br>
+                </br>
               </div>
             </div>
           </div>
@@ -202,7 +244,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         if($valid == 1)
         {
           $dateRegister = date('Y-m-d H:i:s');
-          $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
+          $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]); 
           $token = bin2hex(random_bytes(12));
           // Requête préparée avec marqueurs nominatifs : On insert les données nickname, email, password, dateRegister et token dans les champs de la table user
           $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token)

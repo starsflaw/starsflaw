@@ -61,7 +61,7 @@ session_start();      // On démarre la session
                         <li data-target="#carouselExample" data-slide-to="1"></li>
                         <li data-target="#carouselExample" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" style="max-width: 1600px !important;">
                             <div class="carousel-item active">
                             <img src="images/cours.png" class="d-block">
                             </div>
@@ -83,13 +83,9 @@ session_start();      // On démarre la session
                     </div>
                 </div>
             </div>
-            </br>
-            </br>
-            </br>
-            </br>
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <img src="images/icons.png" class="img-fluid" style="width: 90%; display: block; margin-left: auto; margin-right: auto;"/>
+                    <img src="images/icons.png" class="img-fluid" style="width: 90%; display: block; margin-left: auto; margin-right: auto; margin-top: 150px"/>
                     </br>
                 </div>
             </div>

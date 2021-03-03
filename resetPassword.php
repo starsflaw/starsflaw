@@ -217,7 +217,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                         if($valid2 == 1)
                         {
                             // On hash le mot de passe et on remplace le hash précédent par le nouveau hash du mot de passe saisi
-                            $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 18]); 
+                            $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]); 
                             // Requête préparée avec marqueurs nominatifs : Mettre à jour les champs token, confirmation_token et password de la table user lorsque id = $id (<=> $data_token['id'])
                             $req = $db->prepare('UPDATE user SET token = 0, confirmation_token =:confirmation_token, password =:password WHERE id = :id');
                             $req->execute(array('confirmation_token' => date('Y-m-d H:i:s'),'password' => $hash, 'id' => $data_token['id']));

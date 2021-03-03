@@ -21,7 +21,7 @@ session_start();      // On démarre la session
         <link rel="stylesheet" href="style.css">
 
         <?php // Titre principal et icône de la page ?>
-        <title>Politique de confidentialité</title>
+        <title>Mentions Légales</title>
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
@@ -46,101 +46,71 @@ session_start();      // On démarre la session
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-1.5">
                     </br>
-                    <h1 style="color:white">Politique de confidentialité</h1>
+                    <h1 style="color:white">Mentions Légales</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-8">
                     </br>
-                    <h2 style="color:white">1. Introduction</h2>
                     <p style="font-size: 18px; text-align: justify; color:white">
-                        Dans le cadre de son activité le Projet Star's Flaw traite des données à caractère personnel vous concernant en tant que responsable de traitement dans le cadre de l’utilisation de son site internet accessible à l’adresse url suivante : <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a>
+                        Conformément aux dispositions de l’article 6 III 1° de la loi n°2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, nous vous informons que : 
+                        </br>
+                        </br>
+                        Ce site est édité par Star's Flaw, association loi de 1901 à but non lucratif dont l’objectif est de promouvoir la diffusion libre du savoir relatif au pentesting, ou plus globalement à la Cybersécurité et à la sécurité des systèmes d'informations. 
+                        </br>
+                        </br>
+                        L’hébergement est assuré par La société IKOULA.
+                        </br>
+                        </br>
+                        Le directeur de la publication est la Directrice générale déléguée de l'école ESME Sudria, Véronique Bonnet.
                         </br>
                         </br>
                     </p>
-                    <h2 style="color:white">2. Responsable de traitement</h2>
+                    <h2 style="color:white">Objet</h2>
                     <p style="font-size: 18px; text-align: justify; color:white">
-                        Le Projet Star's Flaw réalise un traitement de données à caractère personnel, en tant que responsable du traitement.
-                        </br>
-                        Adresse : 38 Rue Molière – 94200 Ivry-sur-Seine - France
-                        </br>
-                        Courriel : starsflaw@gmail.com
+                        Les présentes ont pour objet de fixer les conditions d’utilisation du site web accessible à l’adresse <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a>
                         </br>
                         </br>
                     </p>
-                    <h2 style="color:white">3. Objet</h2>
+                    <h2 style="color:white">Création de lien vers www.starsflaw.fr</h2>
                     <p style="font-size: 18px; text-align: justify; color:white">
-                        Cette politique a pour objet d’informer les utilisateurs, des modalités de collecte, de traitement, et d’utilisation de leurs données personnelles et de leurs droits en matière de protection de ces données au regard du RGPD et de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, modifiée.
+                        Star's Flaw autorise tout site Internet ou tout autre support à citer le site ou à mettre en place un lien hypertexte pointant vers son contenu. L’autorisation de mise en place d’un lien est valable pour tout site, à l’exception de ceux diffusant des informations à caractère polémique, pornographique, xénophobe ou pouvant, dans une plus large mesure, porter atteinte à la sensibilité du plus grand nombre, ou causer un préjudice quelconque à Star's Flaw, à son image ainsi qu’à celle de l’ensemble de ses utilisateurs.
                         </br>
                         </br>
                     </p>
-                    <h2 style="color:white">4. Quand traitons-nous des données ?</h2>
+                    <h2 style="color:white">Informatique et libertés</h2>
                     <p style="font-size: 18px; text-align: justify; color:white">
-                        Les données personnelles sont collectées par Star's Flaw à travers le site <a style="text-decoration:underline" href="https://www.starsflaw.fr">www.starsflaw.fr</a> pour des finalités déterminées, explicites et légitimes, à l’occasion : 
+                        La création d’un compte nécessite pour l’internaute de renseigner des données personnelles par le biais d'un formulaire en ligne.
                         </br>
-                        </br>
-                        1. de l’utilisation du site <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a>
-                        </br>
-                        2. du formulaire de création d’un compte
+                        Ces informations concernent les traitements de données personnelles mis en œuvre pour la gestion administrative des membres.
                         </br>
                         </br>
                     </p>
-                    <h2 style="color:white">5. Quelles catégories de données collectées traitons-nous ?</h2>
+                    <h2 style="color:white">Législation</h2>
                     <p style="font-size: 18px; text-align: justify; color:white">
-                        Dans le cadre de l’utilisation du site <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a> plusieurs types de données à caractère personnel peuvent être collectés. Principalement, les données collectées correspondant aux catégories suivantes :
+                        Conformément à la loi n° 2004-801 du 6 août 2004 relative à la protection des personnes physiques à l’égard des traitements de données à caractère personnel modifiant la loi n°78-17 du 6 janvier 1978, les internautes disposent d’un droit d’accès, de rectification et de suppression des données les concernant et d’opposition à leur traitement en nous contactant par email à l'adresse : starsflaw@gmail.com
                         </br>
                         </br>
-                        1. données d’identification (pseudo et mot de passe) ;
+                        L’internaute peut à tout moment avoir accès et changer les informations le concernant dans l’espace dédié : « Profil ».
                         </br>
-                        2. données aux fins de communication (adresse de courrier électronique) ;
                         </br>
-                        3. données résultants de vos activités sur le site et en particulier les données issues des challenges ;
+                        <b>Les activités du site Star's Flaw sont soumises à la loi française et en particulier aux dispositions de la loi Godfrain, ci-après rappelées : </b>
                         </br>
-                        4. données de connexion(nom du site internet, URL du site internet, adresse IPv4 et IPv6, à compléter le cas échéant) ;
+                        </br>
+                        Article 323-1, alinéa 1 du Code pénal : "<i>Le fait d’accéder ou de se maintenir, frauduleusement, dans tout ou partie d’un système de traitement automatisé de données est puni de deux ans d’emprisonnement et de 30000 euros d’amende</i>". La simple tentative est réprimée de la même manière (article 323-7 du Code pénal).
+                        </br>
+                        </br>
+                        Article 321-1, alinéa 2 du Code pénal : "<i>Lorsqu’il en est résulté soit la suppression ou la modification de données contenues dans le système, soit une altération du fonctionnement de ce système, la peine est de trois ans d’emprisonnement et de 45000 euros d’amende</i>".
+                        </br>
+                        </br>
+                        Article 323-3 du Code pénal : "<i>Le fait d’introduire frauduleusement des données dans un système de traitement automatisé ou de supprimer ou de modifier frauduleusement les données qu’il contient est puni de cinq ans d’emprisonnement et de 75000 euros d’amende</i>".
+                        </br>
+                        </br>
+                        Article 323-2 du Code pénal : "<i>Le fait d’entraver ou de fausser le fonctionnement d’un système de traitement automatisé de données est puni de cinq ans d’emprisonnement et de 75000 euros d’amende. Lorsque cette infraction a été commise à l’encontre d’un système de traitement automatisé de données à caractère personnel mis en œuvre par l’Etat, la peine est portée à sept ans d’emprisonnement et à 100 000 € d’amende</i>".
                         </br>
                         </br>
                     </p>
-                    <h2 style="color:white">6. Pour quelles finalités les données sont-elles collectées ?</h2>
-                    <p style="font-size: 18px; text-align: justify; color:white">
-                        La collecte de données personnelles par Star's Flaw dans le cadre du site <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a> a comme finalité : 
-                        </br>
-                        </br>
-                        1. La gestion et l’amélioration de l’accès et du fonctionnement du service uniquement
-                        </br>
-                        2. la mise en place de la page Profil de l'utilisateur.
-                        </br>
-                        </br>
-                        La base juridique de ces traitements est l’intérêt légitime à fournir un service d’activités ludiques auxquels les internautes souscrivent librement ou encore à répondre au mieux à toute éventuelle sollicitation. La base légale repose sur le consentement de l’utilisation. Les champs identifiés dans le formulaire d’inscription sont strictement nécessaires à la finalité poursuivie par Star's Flaw. En l’absence de réponse ou si les informations fournies sont erronées, Star's Flaw ne pourra pas garantir la qualité du service fourni.
-                        </br>
-                        </br>
-                    </p>
-                    <h2 style="color:white">7. A qui ces données sont-elles transmises ?</h2>
-                    <p style="font-size: 18px; text-align: justify; color:white">
-                        Les informations communiquées par l’utilisateur sont destinées au personnel habilité de Star's Flaw, tenue à une obligation de confidentialité. 
-                        Star's Flaw s’engage à ne pas transférer vos données personnelles en dehors de son utilisation fonctionelle, le tout afin de garantir un bon niveau de protection de celles-ci.
-                        </br>
-                        </br>
-                    </p>
-                    <h2 style="color:white">8. Combien de temps les données sont-elles conservées ?</h2>
-                    <p style="font-size: 18px; text-align: justify; color:white">
-                        Star's Flaw conserve les données collectées dans le cadre de l’utilisation du site <a style="text-decoration:underline" href="https://www.starsflaw.fr">https://www.starsflaw.fr</a> pour une durée proportionnelle à la finalité pour laquelle elles sont collectées. A ce titre, les données du Profil utilisateur pour toute la durée de votre inscription.
-                        </br>
-                        </br>
-                    </p>
-                    <h2 style="color:white">9. Quels sont vos droits ?</h2>
-                    <p style="font-size: 18px; text-align: justify; color:white">
-                        Vous êtes informé que vous disposez d’un droit d’accès, d’interrogation, de limitation, de portabilité, d’effacement et de rectification relativement à l’ensemble de vos données qui vous permet, le cas échéant, de faire rectifier, compléter, mettre à jour, verrouiller ou effacer les données personnelles vous concernant qui sont inexactes, incomplètes, équivoques, périmées ou dont la collecte, l’utilisation, la communication ou la conservation est interdite. Par ailleurs, vous disposez du droit de formuler des directives spécifiques et générales concernant la conservation, l’effacement et la communication de vos données post-mortem.
-                        </br>
-                        Star's Flaw se tient disponible pour apporter toute précision nécessaire concernant sa politique de protection des données personnelles. Vous pouvez exercer vos droits ou poser toute question auprès du responsable interne Protection des données Julien Maccario par mail à : starsflaw@gmail.com. Dans un souci de confidentialité et de protection des données personnelles, Star's Flaw doit s’assurer de l’identité de l’utilisateur avant de répondre à sa demande. Aussi, toute demande tendant à l’exercice de ces droits devra être accompagnée d’une copie signée d’un titre d’identité en cours de validité. Enfin, l’utilisateur est tenu de respecter les dispositions de la loi Informatique et Libertés du 6 janvier 1978 modifiée, dont la violation est passible de sanctions pénales.
-                        </br>
-                        Vous disposez également d’un droit d’opposition au traitement de vos données pour des motifs légitimes.
-                        </br>
-                        </br>
-                    </p>
-                    <h2 style="color:white">10. La sécurité des données personnelles</h2>
-                    <p style="font-size: 18px; text-align: justify; color:white">
-                        Star's Flaw a mis en place des mesures techniques et organisationnelles adaptées au degré de sensibilité des données personnelles, en vue d’assurer l’intégrité et la confidentialité les données et de les protéger contre toute intrusion malveillante, toute perte, altération ou divulgation à des tiers non autorisés. Star's Flaw s’engage à prendre les mesures de sécurité physiques, techniques et organisationnelles nécessaires pour : protéger ses activités ; préserver la sécurité des données personnelles des utilisateurs contre tout accès, modification, déformation, divulgation, destruction ou accès non autorisés des données personnelles qu’elle détient. Néanmoins, la sécurité et la confidentialité des données personnelles reposent sur les bonnes pratiques de chacun, ainsi la personne concernée est invitée à rester vigilante sur la question.
-                    </p>
+                    <h2 style="color:white">Ces informations peuvent être modifiées à tout moment sans communication préalable.</h2>
                 </div>
             </div>
         </div>
