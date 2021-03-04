@@ -50,7 +50,7 @@ session_start();                        // On démarre la session
             </br>
             </br>
             <a href="courses/prerequisite.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white">
+              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/kali-pre.png" class="img-fluid" width="150" height="150">
@@ -72,7 +72,7 @@ session_start();                        // On démarre la session
         <div class="group col-sm-100">
           <div class="poster">
             <a href="courses/vsftpd.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white">
+              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/metasploit.png" class="img-fluid" width="150" height="150">
@@ -94,7 +94,7 @@ session_start();                        // On démarre la session
         <div class="group col-sm-100">
           <div class="poster">
             <a href="courses/sqlmap.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white">
+              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/sqlmap.png" class="img-fluid" width="150" height="150">
@@ -117,7 +117,7 @@ session_start();                        // On démarre la session
         <div class="group col-sm-100">
           <div class="poster">
             <a href="courses/tomcat.php" style="text-decoration:none">
-              <div class="card mb-3" style="width: 60rem; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
+              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
                 <div class="row no-gutters">
                   <div class="col-lg-4">
                     <img src="images/tomcat.png" class="img-fluid" width="150" height="150">
