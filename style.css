@@ -118,3 +118,7 @@ img.img-fluid {
 .a:link {
     text-decoration:none;
 }
+
+#search::placeholder{
+    color: rgba(170,170,170);
+}
