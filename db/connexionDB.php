@@ -3,7 +3,7 @@
 try
 {
   // Sous WAMP
-  $db = new PDO('mysql:host=localhost;dbname=db;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  $db = new PDO('mysql:host=localhost;dbname=starsflawdb;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
   // Sous MAMP
   // $db = new PDO('mysql:host=localhost;dbname=db;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
