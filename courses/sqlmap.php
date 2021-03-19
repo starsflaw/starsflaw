@@ -70,7 +70,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-8">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                        Dans ce cours nous allons apprendre à faire des injections SQL avec Kali et l’outil SQLMAP sur la machine web victime « My Awesome Photoblog ». 
+                        Dans ce cours nous allons apprendre à faire des injections SQL avec Kali et l’outil SQLMAP sur la machine web victime « My Awesome Photoblog ». Pour télécharger cette machine virtuelle cliquez sur le lien suivant : <a href="../vm/CTF3.ova">CTF3.ova</a>
                         </br>
                         </br>
                         SQLMAP est un outil open source permettant d'identifier et d'exploiter une injection SQL sur des applications web. Outre la simple exploitation d'une injection SQL, 
