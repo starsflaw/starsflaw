@@ -44,147 +44,80 @@ session_start();                        // On démarre la session
       </br>
     </div>
 
-    <!-- BUG RESPONSIVE A CORRIGER -->
-    <?php // Cartes de cours ?>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="group col-sm-100">
-          <div class="form-group">
-            </br>
-            </br>
-            <input class="form-control" type="text" id="search" name="search" style="border:2px solid white;background-color:rgba(61,72,92);color:white;text-align:center" placeholder="Rechercher (cours, mots-clés...)"/>
-          </div>
-          <div class="poster">
-            <a href="courses/prerequisite.php" style="text-decoration:none">
-              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
-                <div class="row no-gutters">
-                  <div class="col-lg-4">
-                    <img src="images/kali-pre.png" class="img-fluid" width="150" height="150">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Installation des outils</h6>
-                      <h5 class="card-title" style="color: white">Prérequis</h5>
-                      <p class="card-text" style="color: white">Installez les outils qui vous permettront de suivre les cours et réaliser les challenges qui vous sont proposés.</p>
-                    </div>
-                  </div>
-                </div>
+    <?php // Barre de recherche ?>
+    <form action="courses.php" method="GET">
+      <div class="container">
+          <div class="form-row justify-content-center">
+              <div class="form-group col-sm-50">
+                </br>
+                <input type="search" class="form-control" id="search" name="search" style="border:2px solid white;background-color:rgba(61,72,92);color:white;margin-top:25px" placeholder="Rechercher">
               </div>
-            </a>
+              <div class="form-group col-sm-0">
+                </br>
+                <input type="image" name="submit" src=images/search.png alt="Submit" style="width: 20px;text-align:center;margin-top:33px"/>
+              </div>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="group col-sm-100">
-          <div class="poster">
-            <a href="courses/vsftpd.php" style="text-decoration:none">
-              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
-                <div class="row no-gutters">
-                  <div class="col-lg-4">
-                    <img src="images/metasploit.png" class="img-fluid" width="150" height="150">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité de ports</h6>
-                      <h5 class="card-title" style="color: white">VSFTPD</h5>
-                      <p class="card-text" style="color: white">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Nmap et Metasploitable.</p>
+
+      <?php // Cartes de cours
+      if(isset($_GET['search']) AND !empty($_GET['search']))
+      {
+        $search = htmlspecialchars($_GET['search']);
+        $result2 = $db->prepare('SELECT id FROM courses WHERE description LIKE :search ORDER BY id ASC');
+        $result2->execute(array('search' => '%'.$search.'%'));
+
+        while($data_courses = $result2->fetch())
+        {
+          if($data_courses['id'] == 1)
+          {
+            include('menu-courses/prerequisite.php');
+          }
+          if($data_courses['id'] == 2)
+          {
+            include('menu-courses/vsftpd.php');
+          }
+          if($data_courses['id'] == 3)
+          {
+            include('menu-courses/sqlmap.php');
+          }
+          if($data_courses['id'] == 4)
+          {
+            include('menu-courses/sqldvwa.php');
+          }
+          if($data_courses['id'] == 5)
+          {
+            include('menu-courses/tomcat.php');
+          }
+          if($data_courses['id'] == 6)
+          {
+            include('menu-courses/ssh.php');
+          }
+          if($data_courses == NULL)
+          {
+            ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="group col-sm-0">
+                        <strong style="color: white;"> Aucun résultat </strong>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="group col-sm-100">
-          <div class="poster">
-            <a href="courses/sqlmap.php" style="text-decoration:none">
-              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
-                <div class="row no-gutters">
-                  <div class="col-lg-4">
-                    <img src="images/sqlmap.png" class="img-fluid" width="150" height="150">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité web</h6>
-                      <h5 class="card-title" style="color: white">Faille SQL</h5>
-                      <p class="card-text" style="color: white">Découvrez comment récupérer les informations d'une base de données d'un site non sécurisé avec SQLMAP.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="group col-sm-100">
-          <div class="poster">
-            <a href="courses/sqldvwa.php" style="text-decoration:none">
-              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
-                <div class="row no-gutters">
-                  <div class="col-lg-4">
-                    <img src="images/sqldvwa.png" class="img-fluid" width="150" height="150">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité Web</h6>
-                      <h5 class="card-title" style="color: white">Injection SQL </h5>
-                      <p class="card-text" style="color: white">Découvrez comment exploiter une injection SQL à travers une application Web vulnérable (DWVA) locale.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="group col-sm-100">
-          <div class="poster">
-            <a href="courses/tomcat.php" style="text-decoration:none">
-              <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
-                <div class="row no-gutters">
-                  <div class="col-lg-4">
-                    <img src="images/tomcat.png" class="img-fluid" width="150" height="150">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité de ports</h6>
-                      <h5 class="card-title" style="color: white">Tomcat-Apache</h5>
-                      <p class="card-text" style="color: white">Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Tomcat-Apache.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-          <div class="group col-sm-100">
-            <div class="poster">
-              <a href="courses/ssh.php" style="text-decoration:none">
-                <div class="card mb-3" style="max-width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white;">
-                  <div class="row no-gutters">
-                    <div class="col-lg-4">
-                      <img src="images/ssh.png" class="img-fluid" width="150" height="150">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité de ports</h6>
-                        <h5 class="card-title" style="color: white">SSH</h5>
-                        <p class="card-text" style="color: white">Découvrez comment effectuer une attaque par brute force sur le protocle SSH sous trois différentes manières.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
             </div>
-          </div>
-        </div>
-    </div>
+            <?php
+          }
+        }
+      }
+      else
+      {
+        include('menu-courses/prerequisite.php');
+        include('menu-courses/vsftpd.php');
+        include('menu-courses/sqlmap.php');
+        include('menu-courses/sqldvwa.php');
+        include('menu-courses/tomcat.php');
+        include('menu-courses/ssh.php');
+      }
+      ?>
+    </form>
   </body>
   <?php 
   // Inclusion de la barre de navigation
