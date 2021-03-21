@@ -69,31 +69,38 @@ session_start();                        // On démarre la session
 
         while($data_courses = $result2->fetch())
         {
-          if($data_courses['id'] == 1)
+          if($data_courses)
           {
-            include('menu-courses/prerequisite.php');
+            if($data_courses['id'] == 1)
+            {
+              include('menu-courses/prerequisite.php');
+            }
+            if($data_courses['id'] == 2)
+            {
+              include('menu-courses/vsftpd.php');
+            }
+            if($data_courses['id'] == 3)
+            {
+              include('menu-courses/sqlmap.php');
+            }
+            if($data_courses['id'] == 4)
+            {
+              include('menu-courses/sqldvwa.php');
+            }
+            if($data_courses['id'] == 5)
+            {
+              include('menu-courses/tomcat.php');
+            }
+            if($data_courses['id'] == 6)
+            {
+              include('menu-courses/ssh.php');
+            }
+            if($data_courses['id'] == 7)
+            {
+              include('menu-courses/challenge1.php');
+            }
           }
-          if($data_courses['id'] == 2)
-          {
-            include('menu-courses/vsftpd.php');
-          }
-          if($data_courses['id'] == 3)
-          {
-            include('menu-courses/sqlmap.php');
-          }
-          if($data_courses['id'] == 4)
-          {
-            include('menu-courses/sqldvwa.php');
-          }
-          if($data_courses['id'] == 5)
-          {
-            include('menu-courses/tomcat.php');
-          }
-          if($data_courses['id'] == 6)
-          {
-            include('menu-courses/ssh.php');
-          }
-          if($data_courses == NULL)
+          else
           {
             ?>
             <div class="container">
@@ -115,6 +122,7 @@ session_start();                        // On démarre la session
         include('menu-courses/sqldvwa.php');
         include('menu-courses/tomcat.php');
         include('menu-courses/ssh.php');
+        include('menu-courses/challenge1.php');
       }
       ?>
     </form>

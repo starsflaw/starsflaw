@@ -10,7 +10,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité Web</h6>
+                                    <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Vulnérabilité web</h6>
                                     <h5 class="card-title" style="color: white">Injection SQL</h5>
                                     <p class="card-text" style="color: white">Découvrez comment exploiter une injection SQL à travers une application Web vulnérable (DWVA) locale.</p>
                                 </div>
