@@ -30,7 +30,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
         <link rel="stylesheet" href="../style.css">
 
         <?php // Titre principal et icône de la page ?>
-        <title>Challenge n°1</title>
+        <title>Challenge n°2</title>
         <link rel="icon" type="image/png" sizes="16x16" href="../images/deathstarw.png">
     </head>
 
@@ -48,11 +48,11 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../index.php">Accueil</a></li>
                         <li class="breadcrumb-item"><a href="../courses.php">Cours</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité : Challenge n°1</li>
+                        <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité web : Challenge n°2</li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploitez une vulnérabilité : Challenge n°1</h1>
+            <h1>Exploitez une vulnérabilité web : Challenge n°2</h1>
             </br>
             </br>
         </div>
@@ -64,24 +64,61 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-7">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                        Bienvenue dans ce premier challenge !
+                        Bienvenue dans ce second challenge !
                         </br>
                         </br>
-                        Voici une machine vulnérable avec un mot de passe à l'intérieur. 
+                        Vous trouverez ci-dessous le formulaire divin à travers lequel vous pourrez trouver le mot de passe du challenge n°2.
                         </br>
                         </br>
-                        L'objectif : exploitez une vulnérabilité de la machine et trouvez le mot de passe pour obtenir <strong>10 points !</strong>
+                        Malheureusement, il se peut que celui rencontre quelques difficultés pour fonctionner&#10060;, si c'est le cas, merci de revenir plus tard. &#128519;
                         </br>
                         </br>
-                        Pour télécharger la machine virtuelle vulnérable, cliquez sur le lien suivant : <a href="../vm/Challenge1.ova">Challenge1.ova</a>
+                        L'objectif : Trouvez le mot de passe pour obtenir <strong>20 points !</strong>
                         </br>
                         </br>
                     </p>
-                    <form action="challenge1.php" method="POST">
+                    <form action="challenge2.php" method="POST">
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                    <label for="password" style="color:rgba(55,150,255)">Mot de passe du Challenge n°1 :</label>
+                                    <label for="findpassword" style="color:rgba(255,193,7)">Formulaire Divin :</label>
+                                    <input disabled type="text" class="form-control" name="findpassword" style="border:2px solid rgba(255,193,7);background-color:#2d3645;color:white"/>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="form-group col-sm-0">
+                                    <button disabled type="submit" class="btn btn-warning" id="valid" name="valid">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        // Vérification du formulaire "divin"
+                        if(isset($_POST['valid']))
+                        {
+                            ?>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="group col-sm-0">
+                                        <strong style="color: rgba(45,54,69);"> Mot de passe : Le_Développeur_Est_Une_Ordure </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </form>
+                    <div class="container" style="margin-top:200px">
+                                <div class="row justify-content-center">
+                                    <div class="group col-sm-0">
+                                        <strong style="color: white;"> ________________________________________________________________ </strong>
+                                    </div>
+                                </div>
+                            </div>
+                    <form action="challenge2.php" method="POST" style="margin-top:200px">
+                        <div class="container">
+                            <div class="form-row justify-content-center">
+                                <div class="form-group col-sm-5">
+                                    <label for="password" style="color:rgba(55,150,255)">Mot de passe du Challenge n°2 :</label>
                                     <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                                 </div>
                             </div>
@@ -97,26 +134,26 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 7));
+                            $result2->execute(array('id' => 8));
                             $data_psswd = $result2->fetch();
 
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
                             if(password_verify($password, $data_psswd['password']))
                             {
                                 $user = $_SESSION['nickname'];
-                                $result3 = $db->prepare('SELECT point, challenge1 FROM user WHERE nickname = :nickname');
+                                $result3 = $db->prepare('SELECT point, challenge2 FROM user WHERE nickname = :nickname');
                                 $result3->execute(array('nickname' => $user));
                                 $data_name = $result3->fetch();
-                                if($data_name['challenge1'] == 0)
+                                if($data_name['challenge2'] == 0)
                                 {
-                                    $score = $data_name['point'] + 10;
-                                    $req = $db->prepare('UPDATE user SET point =:point, challenge1 =:challenge1 WHERE nickname = :nickname');
-                                    $req->execute(array('point' => $score, 'challenge1' => 1, 'nickname' => $user));
+                                    $score = $data_name['point'] + 20;
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge2 =:challenge2 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge2' => 1, 'nickname' => $user));
                                     ?>
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                <strong style="color: rgba(0,176,0);"> Bravo ! +10 points ! </strong>
+                                                <strong style="color: rgba(0,176,0);"> Bravo ! +20 points ! </strong>
                                             </div>
                                         </div>
                                     </div>
