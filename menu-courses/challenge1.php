@@ -10,7 +10,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Challenge</h6>
+                                    <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Difficulté Facile</h6>
                                     <h5 class="card-title" style="color: white">Challenge n°1</h5>
                                     <p class="card-text" style="color: white">Une machine vulnérable avec un mot de passe à l'intérieur, trouvez-le et obtenez une récompense de 10 points !</p>
                                 </div>
