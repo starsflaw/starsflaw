@@ -99,6 +99,10 @@ session_start();                        // On démarre la session
             {
               include('menu-courses/challenge1.php');
             }
+            if($data_courses['id'] == 8)
+            {
+              include('menu-courses/challenge2.php');
+            }
           }
           else
           {
@@ -123,6 +127,7 @@ session_start();                        // On démarre la session
         include('menu-courses/tomcat.php');
         include('menu-courses/ssh.php');
         include('menu-courses/challenge1.php');
+        include('menu-courses/challenge2.php');
       }
       ?>
     </form>
