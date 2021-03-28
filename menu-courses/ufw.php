@@ -12,7 +12,7 @@
                                 <div class="card-body">
                                     <h6 class="card-subtitle mb-2" style="color: rgba(170, 170, 170)">Configuration firewall</h6>
                                     <h5 class="card-title" style="color: white">UFW</h5>
-                                    <p class="card-text" style="color: white">Configuration firewall UFW Découvrez comment configurer un Firewall UFW sur la machine virtuelle vulnérable metasploitable2.</p>
+                                    <p class="card-text" style="color: white">Découvrez comment configurer un Firewall UFW sur la machine virtuelle vulnérable metasploitable2.</p>
                                 </div>
                             </div>
                         </div>
