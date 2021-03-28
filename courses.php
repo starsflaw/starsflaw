@@ -66,56 +66,66 @@ session_start();                        // On démarre la session
         $search = htmlspecialchars($_GET['search']);
         $result2 = $db->prepare('SELECT id FROM courses WHERE description LIKE :search ORDER BY id ASC');
         $result2->execute(array('search' => '%'.$search.'%'));
-
+        $counter = 0;
         while($data_courses = $result2->fetch())
         {
-          if($data_courses)
+          if($data_courses['id'] == 1)
           {
-            if($data_courses['id'] == 1)
-            {
-              include('menu-courses/prerequisite.php');
-            }
-            if($data_courses['id'] == 2)
-            {
-              include('menu-courses/vsftpd.php');
-            }
-            if($data_courses['id'] == 3)
-            {
-              include('menu-courses/sqlmap.php');
-            }
-            if($data_courses['id'] == 4)
-            {
-              include('menu-courses/sqldvwa.php');
-            }
-            if($data_courses['id'] == 5)
-            {
-              include('menu-courses/tomcat.php');
-            }
-            if($data_courses['id'] == 6)
-            {
-              include('menu-courses/ssh.php');
-            }
-            if($data_courses['id'] == 7)
-            {
-              include('menu-courses/challenge1.php');
-            }
-            if($data_courses['id'] == 8)
-            {
-              include('menu-courses/challenge2.php');
-            }
+            include('menu-courses/prerequisite.php');
+            $counter++; 
           }
-          else
+          if($data_courses['id'] == 2)
           {
-            ?>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="group col-sm-0">
-                        <strong style="color: white;"> Aucun résultat </strong>
-                    </div>
+            include('menu-courses/vsftpd.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 3)
+          {
+            include('menu-courses/sqlmap.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 4)
+          {
+            include('menu-courses/sqldvwa.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 5)
+          {
+            include('menu-courses/tomcat.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 6)
+          {
+            include('menu-courses/ssh.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 7)
+          {
+            include('menu-courses/challenge1.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 8)
+          {
+            include('menu-courses/challenge2.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 9)
+          {
+            include('menu-courses/ufw.php');
+            $counter++;
+          }
+        }
+        if($counter == 0)
+        {
+          ?>
+          <div class="container" style="margin-top: 80px">
+            <div class="row justify-content-center">
+                <div class="group col-sm-0">
+                    <strong style="color: white;"> Aucun résultat </strong>
                 </div>
             </div>
-            <?php
-          }
+          </div>
+          <?php
         }
       }
       else
@@ -126,6 +136,7 @@ session_start();                        // On démarre la session
         include('menu-courses/sqldvwa.php');
         include('menu-courses/tomcat.php');
         include('menu-courses/ssh.php');
+        include('menu-courses/ufw.php');
         include('menu-courses/challenge1.php');
         include('menu-courses/challenge2.php');
       }

@@ -116,7 +116,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                <strong style="color: rgba(0,176,0);"> Bravo ! +10 points ! </strong>
+                                                &#9989; <strong style="color: rgba(0,176,0);"> Bravo ! +10 points ! </strong> &#9989; 
                                             </div>
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                <strong style="color: red;"> Challenge déjà validé ! </strong>
+                                                &#10060; <strong style="color: red;"> Challenge déjà validé ! </strong> &#10060;
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            <strong style="color: red;"> Mot de passe incorrect </strong>
+                                            &#10060; <strong style="color: red;"> Mot de passe incorrect </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
