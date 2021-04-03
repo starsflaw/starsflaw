@@ -52,7 +52,31 @@
                 </div>
             </div>            
         </div>
-        <div class="sharethis-inline-share-buttons" style="margin-top: 25px; margin-bottom: 10px"></div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="group col-sm-0" style="margin-top: 25px; margin-bottom: 10px">
+                    <?php // Facebook ?>
+                    <a href="https://www.facebook.com/Stars-Flaw-101014698769677" target="_blank">
+                        <img class="image" src='images/fbw.png' onmouseover="this.src='images/fb.png'" onmouseout="this.src='images/fbw.png'" width="40" height="40">
+                    </a>
+                    &nbsp;
+                    <?php // Twitter ?>
+                    <a href="https://twitter.com/FlawStars" target="_blank">
+                        <img class="image" src='images/twitterw.png' onmouseover="this.src='images/twitter.png'" onmouseout="this.src='images/twitterw.png'" width="40" height="40">
+                    </a>
+                    &nbsp;
+                    <?php // Github ?>
+                    <a href="https://github.com/starsflaw/starsflaw" target="_blank">
+                        <img class="image" src='images/githubw.png' onmouseover="this.src='images/github.png'" onmouseout="this.src='images/githubw.png'" width="40" height="40">
+                    </a>
+                    &nbsp;
+                    <?php // Sharelink ?>
+                    <a href="#">
+                        <img class="image" src='images/sharelinkw.png' onmouseover="this.src='images/sharelink.png'" onmouseout="this.src='images/sharelinkw.png'" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
         </br>
     </body>
 </html>
