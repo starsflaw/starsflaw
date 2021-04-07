@@ -82,8 +82,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `nickname`, `email`, `password`, `dateRegister`, `token`, `confirmation_token`, `validation`, `point`, `challenge1`, `challenge2`) VALUES
-(49, 'admin', 'starsflaw@gmail.com', '$2y$14$BFFFMZk9YvCljo.z7SZt2OHwkbSaP556RKaeREd6B0Okj797VOM.a', '2021-03-21 19:41:41', '0', '2021-03-21 19:42:04', NULL, 0, 0, 0),
-(52, 'bigmaccario', 'maccario.julien@gmail.com', '$2y$14$fysNzxoGcW7ME.9kWZxsCeqwBAEssTYp.JLlq7k1Wh.lxI5vNC0Qa', '2021-03-24 11:02:29', '0', '2021-03-24 11:03:02', NULL, 10, 1, 0);
+(49, 'admin', 'starsflaw@gmail.com', '$2y$14$BFFFMZk9YvCljo.z7SZt2OHwkbSaP556RKaeREd6B0Okj797VOM.a', '2021-03-21 19:41:41', '0', '2021-03-21 19:42:04', NULL, 0, 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
