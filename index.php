@@ -46,7 +46,7 @@ session_start();      // On démarre la session
                     </p>
                     </br>
                     <h5 style="color: white; text-align: center";> 
-                     - La plateforme d’apprentissage pour s'initier à la Cybersécurité / Pentest / Sécurité des systèmes d'informations - 
+                     - The learning platform to learn about Cybersecurity / Pentest / Information systems security -
                     </br>
                     </br>
                     </h5>
@@ -92,17 +92,17 @@ session_start();      // On démarre la session
             <div class="row justify-content-center">
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center;margin-left:83px">
-                    Des cours et tutos pour apprendre
+                    Lessons and tutorials to learn
                     </p>
                 </div>
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center">
-                    Des challenges pour s'exercer 
+                    Challenges to practice
                     </p>
                 </div>
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center; margin-right:83px">
-                    Un score pour s'évaluer
+                    A score to assess yourself
                     </p>
                 </div>
             </div>

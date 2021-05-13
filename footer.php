@@ -34,16 +34,16 @@
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
-                    <a style="color:white; font-size: 14px" href="confidentiality.php">Confidentialité </a>
+                    <a style="color:white; font-size: 14px" href="EN/confidentiality">Confidentiality </a>
                     |
-                    <a style="color:white; font-size: 14px" href="legal-notice.php"> Mentions légales </a>
+                    <a style="color:white; font-size: 14px" href="EN/legal-notice"> Legales Notices </a>
                     |
-                    <a style="color:white; font-size: 14px" href="terms-of-service.php"> Conditions Générales d'Utilisation </a>
+                    <a style="color:white; font-size: 14px" href="EN/terms-of-service"> Terms of Service </a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
-                    Star's Flaw : plateforme d’apprentissage pour s'initier à la Cybersécurité
+                    Star's Flaw: learning platform for learning about Cybersecurity
                 </div>
             </div>
             <div class="row justify-content-center">

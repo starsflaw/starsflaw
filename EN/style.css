@@ -1,0 +1,125 @@
+img.img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+    background-color: rgba(37, 43, 54);
+}
+
+.blue {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgba(37, 43, 54);
+}
+
+.white {
+    background-color: white;
+}
+
+#carouselExample {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 5px solid white;
+    border-radius: 7px;
+    box-shadow: 5px 5px 20px 10px rgb(24, 24, 24);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.breadcrumb li a {
+    color: white;
+}
+
+@font-face {
+    font-family: "Star Jedi Hollow";
+    src: url('font-style/Starjhol.eot') format('eot'),
+         url('font-style/Starjhol.woff') format('woff'),
+         url('font-style/Starjhol.ttf') format('truetype'),
+         url('font-style/Starjhol.svg#StarJediHollow') format('svg');
+         font-weight:normal;
+         font-style:normal;
+}
+
+@font-face {
+    font-family: "Star Jedi";
+    src: url('font-style/Starjedi.eot') format('eot'),
+         url('font-style/Starjedi.woff') format('woff'),
+         url('font-style/Starjedi.ttf') format('truetype'),
+         url('font-style/Starjedi.svg#StarJedi') format('svg');
+         font-weight:normal;
+         font-style:normal;
+}
+
+.centrer {
+    background-color: rgba(37, 43, 54);
+    text-align: center;
+    color:white;
+}
+
+.bg-lights {
+    background-color: rgba(26, 33, 38);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1); 
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #f5f6fa;
+    border-bottom: 2px solid #f5f6fa;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+    color: #979384;
+    border-bottom: 2px solid #979384;
+}
+
+.poster {
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.poster img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.poster:hover {
+    box-shadow: 0px 20px 14px -12px rgba(0, 0, 0, .6);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card-body {
+    position: relative;
+    text-align: left;
+    color: black;
+}
+
+.a:link {
+    text-decoration:none;
+}
+
+#search::placeholder{
+    color: rgba(170,170,170);
+}
+
