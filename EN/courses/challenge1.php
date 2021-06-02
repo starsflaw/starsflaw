@@ -73,7 +73,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         The goal: exploit a vulnerability in the machine and find the password to get <strong> 10 points! </strong>
                         </br>
                         </br>
-                        To download the vulnerable virtual machine, click on the following link: <a href="../vm/Challenge1.ova"> Challenge1.ova </a>
+                        To download the vulnerable virtual machine, click on the following link: <a href="../../vm/Challenge1.ova"> Challenge1.ova </a>
                         </br>
                         </br>
                     </p>

@@ -119,6 +119,21 @@ session_start();                        // On démarre la session
             include('menu-courses/unrealircd.php');
             $counter++;
           }
+          if($data_courses['id'] == 11)
+          {
+            include('menu-courses/challenge3.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 12)
+          {
+            include('menu-courses/challenge4.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 13)
+          {
+            include('menu-courses/postgreSQL.php');
+            $counter++;
+          }
         }
         if($counter == 0)
         {
@@ -143,8 +158,11 @@ session_start();                        // On démarre la session
         include('menu-courses/ssh.php');
         include('menu-courses/ufw.php');
         include('menu-courses/unrealircd.php');
+        include('menu-courses/postgreSQL.php');
         include('menu-courses/challenge1.php');
         include('menu-courses/challenge2.php');
+        include('menu-courses/challenge3.php');
+        include('menu-courses/challenge4.php');
       }
       ?>
     </form>

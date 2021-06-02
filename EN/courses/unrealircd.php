@@ -67,6 +67,44 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 </div> 
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div class="group col-sm-8">
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                </br>
+                IRC protocol or Internet Relay Chat is a layer protocol in OSI-model and is used for communication using a chat. </p>
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                A chat can be considered as a channel for the text messages. IRC implements client-server architecture. And IRC-net is a group of servers, 
+                connected to each other. The most popular server based on IRC-protocol is <strong>unreal IRCd</strong>. This <strong>UnrealIRCd 3.2.8.1 - Remote 
+                Downloader/Execute </strong> vulnarability basically send the backdoor in the socket information to create a connection with irc server that allows to execute the command shell remotely. 
+                To exploit the unreal IRCd vulnerability we have preinstalled <a href="https://www.virtualbox.org/" target="_blank" style="color:white"><u>virtual machines</u></a> with <a href="https://www.kali.org/downloads/" target="_blank" style="color: white"><u>kali linux</u></a> as an attacker and the second <a href="https://www.exploit-db.com/exploits/13853" target="_blank" style="color: white"><u>metasploit </u></a>linux as a victim. </p>
+                <img src="../images/screens.png" alt="screens" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4)">
+                <p style="font-size: 18px; text-align: justify; color: white"> </br>
+                To check the reachability people can use <kbd>ping</kbd> command, to find ip-addresses on both machines - ifconfig. In our example, Kali linux has the 1pv4 address 192.168.0.1 and metasplot machine - 192.168.0.2. With a <kbd>ping</kbd> command, we test the connection and is stable.</p>
+
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                On kali linux, the attacker, we enter into the metasploit console called <strong>msfconsole</strong>. It should be run under a super user. MsfConsole is an interface of metasploit framework and represents by itself an interactive command line. Using this command line user can easily find the existing vulnurabilities and launch the script that exploitsthem. 
+                <kbd>Nmap</kbd> command is used for analyzing the opened ports of victims (metasploit) machine. Our goal is irc protocol. On our preinstalled matasploit machine irc  works on 6667 port. After we have outlined the irc protocol port, we need to understand which version of irc exactly is running on metasplot machine.</p>
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                We will use <kbd>nmap</kbd> with a parameter <kbd>A</kbd>, which stand for activation. We activate a function that defines the version of the scanning object. And for an object we put port number. </p>
+                <img src="../images/6667.png" alt="6667" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4)">
+                <p style="font-size: 18px; text-align: justify; color: white"> </br>
+                After the scanning process ended, we can explore the information about irc. In our example, on port 6667 using irc proptocol is currently running unreal ircd server with version 3.2.8.1.
+                We want to find a vulnerability of this 3.2.8.1 unreal ircd server. We type at msfconsole search and then the name of the server like ircd. We found an exploit with the script and description inside witch can violate unreal ircd v 3.2.8.1. </p>
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                We want to use it now, so we literally type <kbd>use</kbd> and the path to exploit. We see all the summary about the explot and the description.
+                We type <kbd>show options</kbd> to see what can we actually do with this explot. We see two module options called: RHOSt and Rport. They are kind of variables in i script that we want to run. So we supposed to identify them. We already have the target port number, so the only thing we need to fill is rhost, because it is marked as required. We type <kbd>set rhosts</kbd> and the ip of our victim. </p>
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                We need to set a <strong>payload</strong> too. Payload is basically the script, and depends on different situations we can execute different explot scripts. Let us type <kbd>show payloads</kbd> to see the list of them. </p>
+                <img src="../images/payload.png" alt="payload" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4)">
+                <p style="font-size: 18px; text-align: justify; color: white"> </br>
+                We have different languages here (Ruby, Perl), bind tcp, reverse tcp, double reverse tdcp, ssl protocol, telnet protocol and so on. Depending on the situation we can choose different scripts. And everywhere we see a command shell. Let us take the first one as an example. So we identifying the payload (the script) right now. </br>We type <kbd>set payload</kbd> and the name of the payload. </p>
+                <p style="font-size: 18px; text-align: justify; color: white"> 
+                RHOSTS and the payload are set know and we can run our script. 
+                And we have the remote access to 192.168.0.2 through the unreal ircd server!
+                This script basically send the backdoor in the socket info to create a connection with irc server that allows to execute the shell remotely. And depending on the payload we can violet different versions of the explot. The code of the script you can find on <a href="https://www.exploit-db.com/exploits/13853" target="_blank" style="color: white"><u>explot.db</u></a> for the unreal ircd remote executer page.
+                </p>
+            </div>
+        </div>
     </body>
     <?php 
     // Inclusion de la barre de navigation

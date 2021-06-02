@@ -67,7 +67,14 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                         <label for="password" style="color:rgba(55,150,255)">Your password</label>
                         <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                         </br>
-                        <a href="password" style="color: rgba(55,150,255)"> Password forgotten ? </a>
+                        <a href="password" style="color: rgba(55,150,255);"> Password forgotten ? </a>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <label style="color:rgba(55,150,255)" for="captcha">Please enter 3 black symbols</label> 
+                        <img src="captcha.php" alt="captcha image" style="margin:0 0 0 3px;border:2px solid #2d3645;border-radius:10px;">
+				        <input type="text" name="captcha" id="captcha" class="form-control" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white;margin:0 0 -10px 0;" required><br>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
@@ -114,8 +121,21 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                     </div>
                     <?php
                 }
+                if(empty($_POST["captcha"])) 
+                {
+                    $valid = 0;
+                    ?>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="group col-sm-0">
+                                <strong style="color: red;"> Captcha can't be empty </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
                 // Si toutes les conditions sont remplies alors on fait le traitement
-                if($valid == 1)
+                if($valid == 1 AND $_SESSION["captcha"]==$_POST["captcha"])
                 {
                     // Requête préparée avec marqueurs nominatifs : Sélectionner les champs nickname, email, password, token de la table user lorsque nickname = $pseudo OU que email = $pseudo
                     // $data_psswd est un array qui contient champ par champ les valeurs de la ligne sélectionnée de la table
@@ -180,6 +200,16 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                         </div>
                         <?php
                     }
+                } else {
+                    ?>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="group col-sm-0">
+                                    <strong style="color: red;"> Incorrect Captcha </strong>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
                 }
             }
             ?>

@@ -80,6 +80,13 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </div>
         </div>
         <div class="form-row justify-content-center">
+          <div class="form-group col-sm-5">
+            <label style="color:rgba(55,150,255)" for="captcha">Please enter 3 black symbols</label> 
+            <img src="captcha.php" alt="captcha image" style="margin:0 0 0 3px;border:2px solid #2d3645;border-radius:10px;">
+				    <input type="text" name="captcha" id="captcha" class="form-control" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white;margin:0 0 -10px 0;" required><br>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
           <div class="form-group col-sm-0">
             <input class="form-check-input" type="checkbox" id="check" name="check">
             <label class="form-check-label" for="defaultCheck1" style="color:white; font-size:12px">
@@ -244,6 +251,24 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <?php
         }
         
+        if($_SESSION["captcha"] !== $_POST["captcha"])
+        {
+          $valid = 0;
+          ?>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="group col-sm-1.5">
+                <strong style="color: red;"> Captcha is invalid </strong>
+                </br>
+                </br>
+                </br>
+                </br>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+
         if(empty($_POST['check']))
         {
           $valid = 0;
