@@ -1,58 +1,58 @@
-!(/images/deathstarw.png)
+![](/images/deathstarw.png)
 
 # Star's Flaw
 
 
-###### - The learning platform to learn about Cybersecurity / Pentest / Information systems security -
+##  The learning platform to learn about Cybersecurity / Pentest / Information systems security 
 
 Star's Flaw is an learning platform that teaches cyber security through gamified real-world labs. We have courses, Capture The Flag and challenges to cater for different learning styles.
 
-Table of Contents:
+## Table of Contents:
 
-    - [Installation](#installation)
-    - [Getting started](#getting-started)
-    - [All features](#features)
-    - [About us](#about-us)
+   - [Installation](#installation)
+   - [Getting started](#getting-started)
+   - [Features](#features)
+   - [About us](#about-us)
 
 
-###### Installation
+## Installation
 
 Star's Flaw 
 
-    -
+   -
 
 
-    - Installing VirtualBox
+   - Installing VirtualBox
 
 
-    - Installing Kali linux
+   - Installing Kali linux
 
 
-###### Getting started
+## Getting started
 
 
 
-###### All features
+## Features
 
-    - 4 Courses
+   - 4 Courses       
         -
         -
         -
         -
     
-    - 3 levels of Challenges
+   - 3 levels of Challenges
         - Easy  
         - Medium
         - Intermediate
 
 
-    - 4 Capture The Flag
+   - 4 Capture The Flag
         -
         -
         -
         -
 
-###### About us
+## About us
 
 We are students in fourth year of engineering school, majoring in Cybersecurity at ESME Sudria.
 
