@@ -20,8 +20,6 @@ Star's Flaw is an learning platform that teaches cyber security through gamified
 
 ## Installation
 
-Star's Flaw 
-
    - Cloning the project
    
       We are Xampp to interact with the database and the web page. Go to [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html) if you want to download it.
@@ -99,7 +97,7 @@ Star's Flaw
         - Intermediate
 
 
-   - **4 Capture The Flag **
+   - **4 Capture The Flag**
         - 
         -
         -
