@@ -210,8 +210,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           $valid = 0;
           echo "Le mot de passe ne peut pas être vide";
         }
-        // Si la taille du mot de passe < à 12 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
-        if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{12,}$#', $password))
+        // Si la taille du mot de passe < à 8 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
+        if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#', $password))
         {
           $valid = 1;
         }
@@ -222,7 +222,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> Le mot de passe doit contenir majuscules, minuscules, chiffres et caractères spéciaux et doit faire au moins 12 caractères</strong>
+                <strong style="color: red;"> Le mot de passe doit contenir majuscules, minuscules, chiffres et caractères spéciaux et doit faire au moins 8 caractères</strong>
                 </br>
                 </br>
                 </br>
@@ -291,8 +291,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         if($valid == 1)
         {
           $dateRegister = date('Y-m-d H:i:s');
-          $hashpwd = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]); 
-          $hashnickname = password_hash($nickname, PASSWORD_DEFAULT, ['cost' => 12]); 
+          $hashpwd = password_hash($password, PASSWORD_DEFAULT, ['cost' => 8]); 
+          $hashnickname = password_hash($nickname, PASSWORD_DEFAULT, ['cost' => 8]); 
           $token = bin2hex(random_bytes(12));
           // Requête préparée avec marqueurs nominatifs : On insert les données nickname, email, password, dateRegister et token dans les champs de la table user
           $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token)
