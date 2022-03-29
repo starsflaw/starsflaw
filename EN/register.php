@@ -210,8 +210,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           $valid = 0;
           echo "Password can't be empty";
         }
-        // Si la taille du mot de passe < à 12 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
-        if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{12,}$#', $password))
+        // Si la taille du mot de passe < à 8 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
+        if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#', $password))
         {
           $valid = 1;
         }
@@ -222,7 +222,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> The password must contain upper case, lower case, numbers and special characters and must be at least 12 characters </strong>
+                <strong style="color: red;"> The password must contain upper case, lower case, numbers and special characters and must be at least 8 characters </strong>
                 </br>
                 </br>
                 </br>
@@ -250,7 +250,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </div>
           <?php
         }
-        
+
         if($_SESSION["captcha"] !== $_POST["captcha"])
         {
           $valid = 0;
@@ -268,7 +268,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </div>
           <?php
         }
-
+        
         if(empty($_POST['check']))
         {
           $valid = 0;
@@ -291,8 +291,8 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
         if($valid == 1)
         {
           $dateRegister = date('Y-m-d H:i:s');
-          $hashnickname = password_hash($nickname, PASSWORD_DEFAULT, ['cost' => 12]); 
-          $hashpwd = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]); 
+          $hashnickname = password_hash($nickname, PASSWORD_DEFAULT, ['cost' => 8]); 
+          $hashpwd = password_hash($password, PASSWORD_DEFAULT, ['cost' => 8]); 
           $token = bin2hex(random_bytes(12));
           // Requête préparée avec marqueurs nominatifs : On insert les données nickname, email, password, dateRegister et token dans les champs de la table user
           $req = $db->prepare('INSERT INTO user (nickname, email, password, dateRegister, token)

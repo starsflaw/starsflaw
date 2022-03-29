@@ -107,6 +107,28 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                 $valid = 0;
                 echo "Le mot de passe ne peut pas être vide";
             }
+            // Si la taille du mot de passe < à 8 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
+            if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#', $password2))
+            {
+            $valid = 1;
+            }
+            else
+            {
+            $valid = 0;
+            ?>
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="group col-sm-1.5">
+                    <strong style="color: red;"> Le mot de passe doit contenir majuscules, minuscules, chiffres et caractères spéciaux et doit faire au moins 8 caractères</strong>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                </div>
+                </div>
+            </div>
+            <?php
+            }
             // Si mot de passe différent de confirmation de mot de passe => message d'erreur
             if($password2 !== $password3)
             {
@@ -133,7 +155,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                 // Vérification du mot de passe actuel
                 if(password_verify($password, $data_psswd['password']))
                 {
-                    $hash = password_hash($password2, PASSWORD_DEFAULT, ['cost' => 12]); 
+                    $hash = password_hash($password2, PASSWORD_DEFAULT, ['cost' => 8]); 
                     // Requête préparée avec marqueurs nominatifs : Mettre à jour le champ password de la table user lorsque id = $data2['id']
                     $req = $db->prepare('UPDATE user SET password = :password WHERE id = :id');
                     $req->execute(array('password' => $hash, 'id' => $data2['id']));
