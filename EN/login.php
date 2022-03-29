@@ -135,7 +135,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                     <?php
                 }
                 // Si toutes les conditions sont remplies alors on fait le traitement
-                if($valid == 1 AND $_SESSION["captcha"]==$_POST["captcha"])
+                if($valid == 1)
                 {
                     // Requête préparée avec marqueurs nominatifs : Sélectionner les champs nickname, email, password, token de la table user lorsque nickname = $pseudo OU que email = $pseudo
                     // $data_psswd est un array qui contient champ par champ les valeurs de la ligne sélectionnée de la table
