@@ -9,6 +9,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </script>
     <?php
 }
+include "../config.php"
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +31,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
         <link rel="stylesheet" href="../style.css">
 
         <?php // Titre principal et icône de la page ?>
-        <title>Challenge n°1</title>
+        <title> <?php echo $challenge1['challenge'] ?> </title>
         <link rel="icon" type="image/png" sizes="16x16" href="../images/deathstarw.png">
     </head>
 
@@ -48,7 +49,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../index">Home</a></li>
                         <li class="breadcrumb-item"><a href="../course">Courses</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploit a vulnerability: Challenge n°1</li>
+                        <li class="breadcrumb-item active" aria-current="page"> <?php echo $challenge1['title'] ?> </li>
                     </ol>
                 </nav>
             </div> 
