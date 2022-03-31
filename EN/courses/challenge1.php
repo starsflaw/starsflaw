@@ -53,7 +53,7 @@ include "../config.php"
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploit a vulnerability: Challenge n°1</h1>
+            <h1> <?php echo $challenge1['title'] ?> </h1>
             </br>
             </br>
         </div>
