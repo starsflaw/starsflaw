@@ -21,10 +21,15 @@ Star's Flaw is an learning platform that teaches cyber security through gamified
 ## Installation
 
    - Cloning the project
-   
-      We are Xampp to interact with the database and the web page. Go to [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html) if you want to download it.
+
+      We are using Xampp to interact with the database and the web page. Go to [https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html) if you want to download it.
       Then you need to clone the projet in xampp/htdocs/ and run apache and MySQL to display the web page.
       
+   - Enabling extension gd in xampp folder
+      Go to your xampp folder /xampp/php/php.init-development and remove semicolon for extension=gd
+      ![](/images/xampp_extension.png)
+   
+     
 
 ## Prerequisites
 
