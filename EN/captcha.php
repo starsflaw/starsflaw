@@ -8,8 +8,8 @@ header("Pragma: no-cache");
   
 function _generateRandom($length=6)  
 {  
-    $_rand_src = array(  
-        array(48,57) //digits  
+    $_rand_src = array(
+      array(48,57) //digits  
         , array(97,122) //lowercase chars  
 //      , array(65,90) //uppercase chars  
     );  
@@ -17,12 +17,12 @@ function _generateRandom($length=6)
     $random_string = "";  
     for($i=0;$i<$length;$i++){  
         $i1=rand(0,sizeof($_rand_src)-1);  
-        $random_string .= chr(rand($_rand_src[$i1][0],$_rand_src[$i1][1]));  
+        $random_string .= '0');  
     }  
     return $random_string;  
 }  
   
-$im = @imagecreatefromjpeg("images/captcha.jpg");   
+$im = @imagecreatefromjpeg("/htdocs/EN/images/captcha.jpg");   
 $rand = _generateRandom(3);  
 $_SESSION['captcha'] = $rand;  
 ImageString($im, 5, 2, 2, $rand[0]." ".$rand[1]." ".$rand[2]." ", ImageColorAllocate ($im, 0, 0, 0));  

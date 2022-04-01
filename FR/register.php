@@ -250,25 +250,6 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </div>
           <?php
         }
-
-        if($_SESSION["captcha"] !== $_POST["captcha"])
-        {
-          $valid = 0;
-          ?>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="group col-sm-1.5">
-                <strong style="color: red;"> Captcha n'est pas valide </strong>
-                </br>
-                </br>
-                </br>
-                </br>
-              </div>
-            </div>
-          </div>
-          <?php
-        }
-        
         if(empty($_POST['check']))
         {
           $valid = 0;
