@@ -26,7 +26,7 @@ Star's Flaw is an learning platform that teaches cyber security through gamified
       Then you need to clone the projet in xampp/htdocs/ and run apache and MySQL to display the web page.
       
    - Enabling extension gd in xampp folder
-      Go to your xampp folder /xampp/php/php.init-development and remove semicolon for extension=gd
+      Go to your xampp folder /xampp/php/php.ini-development and remove semicolon for extension=gd
       ![](/images/xampp_extension.png)
    
      
