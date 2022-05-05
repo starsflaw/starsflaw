@@ -134,6 +134,11 @@ session_start();                        // On démarre la session
             include('menu-courses/postgreSQL.php');
             $counter++;
           }
+          if($data_courses['id'] == 14)
+          {
+            include('menu-courses/Rsa_common_modulus.php');
+            $counter++; 
+          }
         }
         if($counter == 0)
         {
@@ -163,6 +168,8 @@ session_start();                        // On démarre la session
         include('menu-courses/challenge2.php');
         include('menu-courses/challenge3.php');
         include('menu-courses/challenge4.php');
+        include('menu-courses/Rsa_challenge.php');
+        include('menu-courses/RSA.php');
       }
       ?>
     </form>
