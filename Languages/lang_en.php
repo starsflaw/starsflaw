@@ -1,23 +1,27 @@
 <?php  
-    //challenge1.php
+
+    $menu = array(
+        "home" => "Home",
+        "courses" => "Courses",
+    );
+
+    //Can be used for all challenges
+    $challenge = array(
+        "download" => "To download the vulnerable virtual machine, click on the following link: ",
+        "password" => "Password for Challenge n°",
+        "confirm" => "Confirm",
+        "bravo" => " Congratulations !",
+        "already_val" => " Challenge already validated ! ",
+        "incorrect" => " Incorrect password !"
+    );
+
+    //challenge1
     $challenge1 = array(
         "challenge" => "Challenge n°1",
         "title" => "Exploit a vulnerability: Challenge n°1",
         "welcome" => "Welcome to this first challenge!",
         "description" => "Here is a vulnerable machine with a password inside.",
         "goal" => "The goal: exploit a vulnerability in the machine and find the password to get ",
-        "download" => "To download the vulnerable virtual machine, click on the following link: ",
-        "password" => "Password for Challenge n°1 :",
-        "confirm" => "Confirm",
-        "bravo" => " Bravo ! +10 points ! ",
-        "already_val" => " Challenge already validated! ",
-        "incorrect" => " Incorrect password "
-    );
-
-    $menu = array(
-        "home" => "Home",
-        "courses" => "Courses",
-
     );
 
     //RSA
@@ -27,7 +31,7 @@
         "description1" => "The idea of an asymmetric public-private key cryptosystem is attributed to Whitfield Diffie and Martin Hellman, who published this concept in 1976.",
         "description2" => "Clifford Cocks, an English mathematician working for the British intelligence agency Government Communications Headquarters (GCHQ), 
         had developed an equivalent system in 1973, but this was not declassified until 1997.",
-        "description3" => "The most widely used public-key cryptosystem. It may be used to provide both secrecy and digital signatures and its security is based on the intractability of the integer factorization problem. ",
+        "description3" => "This is the most widely used public-key cryptosystem. It may be used to provide both secrecy and digital signatures and its security is based on the intractability of the integer factorization problem. ",
         "key_gen" => "Key Generation",
         "step1" => "Generate two large random (and distinct) primes p and q.",
         "puce1.1" => "For security purposes, the integers <i>p</i> and <i>q</i> should be similar in magnitude but differ in length by a few digits to make factoring harder. ",
@@ -41,7 +45,7 @@
         "puce3.1" => "<i>e</i> and <i>φ(n)</i> are coprime ",
         "step4" => "Use the Bezout algorithm to compute efficiently the unique integer <i>d</i>, such that :",
         "puce4.1" => "e*d = 1 mod φ(n).",
-        "puce4.2" => "d = e-1 mod (p-1)(q-1)",
+        "puce4.2" => "d = e<sup>-1</sup> mod (p-1)(q-1)",
         "key_info1" => "p and q are no longer needed. They should be discarded , never revealed.",
         "key_info2" => "The integers <i>e</i> and <i>d</i> in RSA key generation are called the encryption exponent and the decryption exponent, 
         respectively,while <i>n</i> is called the modulus",
@@ -49,7 +53,7 @@
         "enc_info1" => "Obtain authentic public key (n; e). ",
         "enc_info2" => "c = m<sup>e</sup> mod (n)",
         "decryption" => "Decryption",
-        "dec_info1" => "To recover plaintext, use the private key <i>d</i> to recover",
+        "dec_info1" => "To recover plaintext, use the private key <i>d</i>",
         "dec_info2" => "m = c<sup>d</sup> mod (n)",
     );
 
@@ -73,8 +77,8 @@
     $rsa_chall = array(
         "challenge" => "RSA Challenge",
         "title" => "Decipher the message",
-        "description" => "We intercept a message, fortunately you are an expert to decrypt it",
-        "goal" => "The goal: the password is encrypt in hexadecimal, decrypt it to get"
+        "description" => "We intercepted a message, fortunately you are an expert to decrypt it",
+        "goal" => "The goal: the password is encrypt in hexadecimal, decrypt it to get the flag"
     );
 
 ?>

@@ -19,7 +19,7 @@ include "../config.php"
     <head>
         <?php 
         //Include header
-        include "../../header.php" 
+        include "../header.php" 
         ?>
         <title><?php echo $rsa_chall['challenge'] ?></title>
     </head>
@@ -70,13 +70,13 @@ include "../config.php"
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                    <label for="password" style="color:rgba(55,150,255)">Password for RSA Challenge :</label>
+                                    <label for="password" style="color:rgba(55,150,255)"><?php echo $challenge['password'] ?></label>
                                     <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirm</button>
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit"><?php echo $challenge['confirm'] ?></button>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ include "../config.php"
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#9989; <strong style="color: rgba(0,176,0);"> Bravo ! +10 points ! </strong> &#9989; 
+                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +10 points ! </strong> &#9989; 
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@ include "../config.php"
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#10060; <strong style="color: red;"> Challenge already validated! </strong> &#10060;
+                                                &#10060; <strong style="color: red;"> <?php echo $challenge['already_val'] ?> </strong> &#10060;
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@ include "../config.php"
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;"> Incorrect password </strong> &#10060;
+                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?> </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
