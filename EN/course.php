@@ -136,6 +136,21 @@ session_start();                        // On démarre la session
           }
           if($data_courses['id'] == 14)
           {
+            include('menu-courses/challenge5.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 15)
+          {
+            include('menu-courses/xss_injection.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 16)
+          {
+            include('menu-courses/docker.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 17)
+          {
             include('menu-courses/Rsa_common_modulus.php');
             $counter++; 
           }
@@ -162,12 +177,15 @@ session_start();                        // On démarre la session
         include('menu-courses/tomcat.php');
         include('menu-courses/ssh.php');
         include('menu-courses/ufw.php');
+        include('menu-courses/xss_injection.php');
+        include('menu-courses/docker.php');
         include('menu-courses/unrealircd.php');
         include('menu-courses/postgreSQL.php');
         include('menu-courses/challenge1.php');
         include('menu-courses/challenge2.php');
         include('menu-courses/challenge3.php');
         include('menu-courses/challenge4.php');
+        include('menu-courses/challenge5.php');
         include('menu-courses/Rsa_challenge.php');
         include('menu-courses/RSA.php');
       }
