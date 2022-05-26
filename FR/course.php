@@ -134,6 +134,16 @@ session_start();                        // On démarre la session
             include('menu-courses/postgreSQL.php');
             $counter++;
           }
+          if($data_courses['id'] == 17)
+          {
+            include('menu-courses/challenge8.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 18)
+          {
+            include('menu-courses/DirBuster.php');
+            $counter++;
+          }
         }
         if($counter == 0)
         {
@@ -159,10 +169,12 @@ session_start();                        // On démarre la session
         include('menu-courses/ufw.php');
         include('menu-courses/unrealircd.php');
         include('menu-courses/postgreSQL.php');
+        include('menu-courses/DirBuster.php');
         include('menu-courses/challenge1.php');
         include('menu-courses/challenge2.php');
         include('menu-courses/challenge3.php');
         include('menu-courses/challenge4.php');
+        include('menu-courses/challenge8.php');
       }
       ?>
     </form>

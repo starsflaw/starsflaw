@@ -1,0 +1,14 @@
+Windows NT LAN Manager (NTLM) is a challenge-response authentication protocol used to authenticate a client to a resource 
+on an Active Directory domain. When the client requests access to a service associated with the domain, the service sends
+ a challenge to the client, requiring that the client to perform a mathematical operation using its authentication token, 
+and then return the result of this operation to the service. The service may validate the result or send it to the Domain 
+Controller (DC) for validation. If the service or DC confirm that the client’s response is correct, the service allows 
+access to the client. 
+
+
+
+
+
+
+
+Maybe you are looking for it or not. Who knows : adfgsjdk12345djhfdjjdthatwasajokenottheflaghahahahatryagain

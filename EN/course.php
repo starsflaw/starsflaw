@@ -154,6 +154,16 @@ session_start();                        // On démarre la session
             include('menu-courses/Rsa_common_modulus.php');
             $counter++; 
           }
+          if($data_courses['id'] == 18)
+          {
+            include('menu-courses/challenge8.php');
+            $counter++;
+          }
+          if($data_courses['id'] == 19)
+          {
+            include('menu-courses/DirBuster.php');
+            $counter++;
+          }
         }
         if($counter == 0)
         {
@@ -181,6 +191,7 @@ session_start();                        // On démarre la session
         include('menu-courses/docker.php');
         include('menu-courses/unrealircd.php');
         include('menu-courses/postgreSQL.php');
+        include('menu-courses/DirBuster.php');
         include('menu-courses/challenge1.php');
         include('menu-courses/challenge2.php');
         include('menu-courses/challenge3.php');
@@ -188,6 +199,7 @@ session_start();                        // On démarre la session
         include('menu-courses/challenge5.php');
         include('menu-courses/Rsa_challenge.php');
         include('menu-courses/RSA.php');
+        include('menu-courses/challenge8.php');
       }
       ?>
     </form>
