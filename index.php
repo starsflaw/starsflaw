@@ -46,7 +46,7 @@ session_start();      // On démarre la session
                     </p>
                     </br>
                     <h5 style="color: white; text-align: center";> 
-                     - The learning platform to learn about Cybersecurity / Pentest / Information systems -
+                     - The learning platform to learn about Cybersecurity / Pentest / Information systems security -
                     </br>
                     </br>
                     </h5>

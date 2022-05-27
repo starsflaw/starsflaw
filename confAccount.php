@@ -5,7 +5,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
 { 
     ?>
     <script language="Javascript">
-        document.location.replace("EN/index");
+        document.location.replace("index");
     </script>
     <?php
 }

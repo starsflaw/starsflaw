@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-lights" style="">
-    <a class="navbar-brand" href="index">
-        <img src="images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
+<nav class="navbar navbar-expand-lg navbar-light bg-lights">
+    <a class="navbar-brand" href="../index">
+        <img src="../images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
     </a>
-    <a class="navbar-brand" href="index">
-        <img src="images/starsflaw.png" width="93.255" height="40" alt="" loading="lazy">
+    <a class="navbar-brand" href="../index">
+        <img src="../images/starsflaw.png" width="93.255" height="40" alt="" loading="lazy">
     </a>
 
     <?php // Rendre le menu responsive ?>
@@ -20,16 +20,16 @@
         <?php // Utilisateur connecté ou non => liens Cours et À propos ?>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="course">Courses</a>
+                <a class="nav-link" href="../course">Courses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about">About us</a>
-            </li>  
-            <li class="nav-item">
-                <a class="nav-link" href="../../StarsFlaw/FR" onclick="location.href=this.href+scrt_var;return false;"><img src="images/french1.png" alt="french flag"></a>
+                <a class="nav-link" href="../about">About us</a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href=""><img src="images/english1.png" alt="english flag"></a>
+                <a class="nav-link" href=".?lang=fr" onclick="location.href=this.href;"><img src="../images/french1.png" alt="french flag"></a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href=".?lang=en" onclick="location.href=this.href;"><img src="../images/english1.png" alt="english flag"></a>
             </li> 
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -39,10 +39,10 @@
             {
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout">Disconnect</a>
+                    <a class="nav-link" href="../logout">Disconnected</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profil">Profile</a>
+                    <a class="nav-link" href="../profil">Profile</a>
                 </li>
                 <?php
             }
@@ -51,10 +51,10 @@
             {
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="register">Sign up</a>
+                    <a class="nav-link" href="../register">Sign up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Log in</a>
+                    <a class="nav-link" href="../login">Log in</a>
                 </li>
                 <?php
             }

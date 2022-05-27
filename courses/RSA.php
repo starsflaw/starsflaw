@@ -10,7 +10,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     <?php
 }
 //Include configuration des langues
-include "../config.php"
+include "../lang_config.php"
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include "../config.php"
     <head>
         <?php 
         //Include header
-        include "../../header.php" 
+        include "../header.php" 
         ?>
         <title><?php echo $rsa_course['title'] ?></title>
     </head>

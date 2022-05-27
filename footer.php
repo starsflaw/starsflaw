@@ -34,11 +34,11 @@
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
-                    <a style="color:white; font-size: 14px" href="EN/confidentiality">Confidentiality </a>
+                    <a style="color:white; font-size: 14px" href="confidentiality">Confidentiality </a>
                     |
-                    <a style="color:white; font-size: 14px" href="EN/legal-notice"> Legales Notices </a>
+                    <a style="color:white; font-size: 14px" href="legal-notice"> Legales Notices </a>
                     |
-                    <a style="color:white; font-size: 14px" href="EN/terms-of-service"> Terms of Service </a>
+                    <a style="color:white; font-size: 14px" href="terms-of-service"> Terms of Service </a>
                 </div>
             </div>
             <div class="row justify-content-center">
