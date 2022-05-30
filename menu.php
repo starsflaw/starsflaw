@@ -1,3 +1,4 @@
+<?php include "lang_config.php" ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-lights" style="">
     <a class="navbar-brand" href="index">
         <img src="images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
@@ -20,16 +21,16 @@
         <?php // Utilisateur connecté ou non => liens Cours et À propos ?>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="course">Courses</a>
+                <a class="nav-link" href="course"><?php echo $course['course'] ?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about">About us</a>
+                <a class="nav-link" href="about"><?php echo $about['about'] ?></a>
             </li>  
             <li class="nav-item">
-                <a class="nav-link" href=".?lang_fr" onclick="location.href=this.href;"><img src="images/french1.png" alt="french flag"></a>
+                <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang_fr" onclick="location.href=this.href;"><img src="images/french1.png" alt="french flag"></a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href=".?lang_en" onclick="location.href=this.href;"><img src="images/english1.png" alt="english flag"></a>
+                <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang_en" onclick="location.href=this.href;"><img src="images/english1.png" alt="english flag"></a>
             </li> 
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -39,10 +40,10 @@
             {
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout">Disconnect</a>
+                    <a class="nav-link" href="logout"><?php echo $logoutphp['logout'] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profil">Profile</a>
+                    <a class="nav-link" href="profil"><?php echo $profile['profile'] ?></a>
                 </li>
                 <?php
             }
@@ -51,10 +52,10 @@
             {
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="register">Sign up</a>
+                    <a class="nav-link" href="register"><?php echo $registerphp['signup'] ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Log in</a>
+                    <a class="nav-link" href="login"><?php echo $loginphp['login'] ?></a>
                 </li>
                 <?php
             }

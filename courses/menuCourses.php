@@ -1,3 +1,4 @@
+<?php include "../lang_config.php" ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-lights">
     <a class="navbar-brand" href="../index">
         <img src="../images/deathstarw.png" width="40" height="40" alt="" loading="lazy">
@@ -26,10 +27,10 @@
                 <a class="nav-link" href="../about">About us</a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href=".?lang=fr" onclick="location.href=this.href;"><img src="../images/french1.png" alt="french flag"></a>
+                <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang=fr" onclick="location.href=this.href;"><img src="../images/french1.png" alt="french flag"></a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href=".?lang=en" onclick="location.href=this.href;"><img src="../images/english1.png" alt="english flag"></a>
+                <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang=en" onclick="location.href=this.href;"><img src="../images/english1.png" alt="english flag"></a>
             </li> 
         </ul>
         <ul class="navbar-nav ml-auto">
