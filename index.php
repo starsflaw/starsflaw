@@ -1,28 +1,14 @@
 <?php
 session_start();      // On démarre la session
+include "lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <?php // En-tête de la page ?>
     <head>
-        <?php // Balises meta responsive ?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-
-        <?php // Bootstrap CSS ?>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        
-        <?php // jQuery et Bootstrap JS ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <?php // Feuille de style ?>
-        <link rel="stylesheet" href="style.css">
-
-        <?php // Titre principal et icône de la page ?>
+        <?php include "header.php" ?>
         <title>Star's Flaw</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
     <?php // Corps de la page ?>
@@ -45,8 +31,7 @@ session_start();      // On démarre la session
                     STAR'S fLaw
                     </p>
                     </br>
-                    <h5 style="color: white; text-align: center";> 
-                     - The learning platform to learn about Cybersecurity / Pentest / Information systems security -
+                    <h5 style="color: white; text-align: center";> <?php echo $index['description'] ?>
                     </br>
                     </br>
                     </h5>
@@ -74,11 +59,11 @@ session_start();      // On démarre la session
                         </div>
                         <a href="#carouselExample" class="carousel-control-prev"  role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                            <span class="sr-only"><?php echo $index['previous'] ?></span>
                         </a>
                         <a href="#carouselExample" class="carousel-control-next"  role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                            <span class="sr-only"><?php echo $index['next'] ?></span>
                         </a>
                     </div>
                 </div>
@@ -92,17 +77,17 @@ session_start();      // On démarre la session
             <div class="row justify-content-center">
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center;margin-left:83px">
-                    Lessons and tutorials to learn
+                    <?php echo $index['lesson'] ?>
                     </p>
                 </div>
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center">
-                    Challenges to practice
+                    <?php echo $index['challenge'] ?>
                     </p>
                 </div>
                 <div class="group col-sm">
                     <p style="font-size: 1.2em; color: white; text-align: center; margin-right:83px">
-                    A score to assess yourself
+                    <?php echo $index['score'] ?>
                     </p>
                 </div>
             </div>

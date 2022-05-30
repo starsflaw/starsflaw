@@ -1,6 +1,7 @@
 <?php
     require('db/connexionDB.php'); // Fichier PHP contenant la connexion à la BDD
     session_start();
+    include "lang_config.php" // Ajout langues
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,7 +16,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-        <title>Account confirmation</title>
+        <title><?php echo $conf['confirm'] ?></title>
         <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
     </head>
 
@@ -31,7 +32,7 @@
                     </br>
                     </br>
                     </br>
-                    <h1 style="color:white">Account confirmation</h1>
+                    <h1 style="color:white"><?php echo $conf['confirm'] ?></h1>
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -61,7 +62,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -80,7 +81,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="group col-sm-0">
-                            <strong style="color: rgba(0,176,0);"> Your account has been validated </strong>
+                            <strong style="color: rgba(0,176,0);"> <?php echo $conf['valid'] ?></strong>
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="group col-sm-0">
-                            <strong style="color: red;"> The link is wrong </strong>
+                            <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                         </div>
                     </div>
                 </div>

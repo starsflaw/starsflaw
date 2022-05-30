@@ -9,29 +9,15 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
   </script>
   <?php
 }
+include "lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
   <?php // En-tête de la page ?>
   <head>
-    <?php // Balises meta responsive ?>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1">
-
-    <?php // Bootstrap CSS ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
-    <?php // jQuery et Bootstrap JS ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <?php // Feuille de style ?>
-    <link rel="stylesheet" href="style.css">
-
-    <?php // Titre principal et icône de la page ?>
-    <title>Sign up</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+    <?php include "header.php" ?>
+    <title><?php echo $registerphp['signup'] ?></title>
   </head>
 
   <?php // Corps de la page ?>
@@ -47,7 +33,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           </br>
           </br>
           </br>
-          <h1 style="color:white">Registration</h1>
+          <h1 style="color:white"><?php echo $registerphp['signup'] ?></h1>
         </div>
       </div>
     </div>
@@ -57,31 +43,31 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
       <div class="container">
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="nickname" style="color:rgba(55,150,255)">Your username (required)</label>
+            <label for="nickname" style="color:rgba(55,150,255)"><?php echo $profile['username'] ?></label>
             <input type="text" class="form-control" id="nickname" name="nickname" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="email" style="color:rgba(55,150,255)">Your e-mail address (required)</label>
+            <label for="email" style="color:rgba(55,150,255)"><?php echo $registerphp['email'] ?></label>
             <input type="email" class="form-control" id="email" name="email" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="password" style="color:rgba(55,150,255)">Your password (required)</label>
+            <label for="password" style="color:rgba(55,150,255)"><?php echo $profile['password'] ?></label>
             <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label for="password2" style="color:rgba(55,150,255)">Confirm this new password (required)</label>
+            <label for="password2" style="color:rgba(55,150,255)"><?php echo $modif_pass['confirm'] ?></label>
             <input type="password" class="form-control" id="password2" name="password2" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-5">
-            <label style="color:rgba(55,150,255)" for="captcha">Please enter 3 black symbols</label> 
+            <label style="color:rgba(55,150,255)" for="captcha"><?php echo $registerphp['symbol'] ?></label> 
             <img src="captcha.php" alt="captcha image" style="margin:0 0 0 3px;border:2px solid #2d3645;border-radius:10px;">
 				    <input type="text" name="captcha" id="captcha" class="form-control" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white;margin:0 0 -10px 0;" required><br>
           </div>
@@ -90,18 +76,18 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="form-group col-sm-0">
             <input class="form-check-input" type="checkbox" id="check" name="check">
             <label class="form-check-label" for="defaultCheck1" style="color:white; font-size:12px">
-              I'v read and accepted <a target="_blank" href="terms-of-service">the general conditions of use </a> </br> as well as <a target="_blank" href="confidentiality.php"> the confidentiality policy </a>
+            <?php echo $registerphp['term_desc1'] ?> <a target="_blank" href="terms-of-service"><?php echo $registerphp['term_desc2'] ?> </a> </br> <?php echo $registerphp['term_desc3'] ?> <a target="_blank" href="confidentiality.php"> <?php echo $registerphp['term_desc4'] ?></a>
             </label>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-0">
-            <button type="submit" class="btn btn-primary" id="register" name="register">Sign up</button>
+            <button type="submit" class="btn btn-primary" id="register" name="register"><?php echo $registerphp['signup'] ?></button>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="form-group col-sm-0">
-            <p style="color:white">Already have an account ? <a href="login" style="color: rgba(55,150,255);"> Login</a> </p>
+            <p style="color:white"><?php echo $registerphp['account'] ?> <a href="login" style="color: rgba(55,150,255);"> <?php echo $loginphp['login'] ?></a> </p>
           </div>
         </div>
       </div>
@@ -139,7 +125,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="container">
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
-                  <strong style="color: red;"> Username already taken </strong>
+                  <strong style="color: red;"> <?php echo $modif_user['taken'] ?> </strong>
                   </br>
                   </br>
                   </br>
@@ -165,7 +151,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> E-mail not valid </strong>
+                <strong style="color: red;"> <?php echo $modif_email['invalid'] ?> </strong>
                 </br>
                 </br>
                 </br>
@@ -192,7 +178,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="container">
               <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
-                  <strong style="color: red;"> E-mail already taken </strong>
+                  <strong style="color: red;"> <?php echo $modif_email['taken'] ?> </strong>
                   </br>
                   </br>
                   </br>
@@ -222,7 +208,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> The password must contain upper case, lower case, numbers and special characters and must be at least 8 characters </strong>
+                <strong style="color: red;"> <?php echo $modif_pass['case'] ?> </strong>
                 </br>
                 </br>
                 </br>
@@ -240,7 +226,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> Password confirmation does not match </strong>
+                <strong style="color: red;"> <?php echo $modif_pass['match'] ?> </strong>
                 </br>
                 </br>
                 </br>
@@ -258,7 +244,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-1.5">
-                <strong style="color: red;"> Captcha is invalid </strong>
+                <strong style="color: red;"> <?php echo $registerphp['captcha'] ?> </strong>
                 </br>
                 </br>
                 </br>
@@ -276,7 +262,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
               <div class="group col-sm-0">
-                <strong style="color: red"> You cannot create an account without accepting the terms and conditions of use and the privacy policy </strong>
+                <strong style="color: red"> <?php echo $registerphp['accept_term'] ?> </strong>
                 </br>
                 </br>
                 </br>
@@ -330,7 +316,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
           <div class="container">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <strong style="color: rgba(0,176,0);"> A confirmation email has been sent to your address <?php echo $data_email['email'];?></strong>
+                    <strong style="color: rgba(0,176,0);"> <?php echo $registerphp['email_confirm'] ?> <?php echo $data_email['email'];?></strong>
                     </br>
                     </br>
                 </div>

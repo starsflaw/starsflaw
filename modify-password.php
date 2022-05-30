@@ -9,29 +9,15 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
     </script>
     <?php
 }
+include "lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <?php // En-tête de la page ?>
     <head>
-        <?php // Balises meta responsive ?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-
-        <?php // Bootstrap CSS ?>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        
-        <?php // jQuery et Bootstrap JS ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <?php // Feuille de style ?>
-        <link rel="stylesheet" href="style.css">
-
-        <?php // Titre principal et icône de la page ?>
-        <title>Modify password</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+        <?php include "header.php"?>
+        <title><?php echo $modif_pass['modify'] ?></title>
     </head>
 
     <?php // Corps de la page ?>
@@ -52,13 +38,13 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
             <div class="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index"><?php echo $menu['home'] ?></a></li>
                     <li class="breadcrumb-item"><a href="profil"><?php echo $data2['nickname']; ?></a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Modify password</li>
+                    <li class="breadcrumb-item active" aria-current="page"><?php echo $modif_pass['modify'] ?></li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Modify password</h1>
+            <h1><?php echo $modif_pass['modify'] ?></h1>
             </br>
             </br>
         </div>
@@ -69,26 +55,26 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
         <div class="container">
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-5">
-                    <label for="password" style="color:rgba(55,150,255)">Current password</label>
+                    <label for="password" style="color:rgba(55,150,255)"><?php echo $modif_pass['current'] ?></label>
                     <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                 </div>
             </div>
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-5">
-                    <label for="password" style="color:rgba(55,150,255)">New password</label>
+                    <label for="password" style="color:rgba(55,150,255)"><?php echo $modif_pass['new'] ?></label>
                     <input type="password" class="form-control" id="password2" name="password2" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                 </div>
             </div>
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-5">
-                    <label for="password" style="color:rgba(55,150,255)">Confirm password</label>
+                    <label for="password" style="color:rgba(55,150,255)"><?php echo $modif_pass['confirm'] ?></label>
                     <input type="password" class="form-control" id="password3" name="password3" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                 </div>
             </div>
             <div class="form-row justify-content-center">
                 <div class="form-group col-sm-0">
                     </br>
-                    <button type="submit" class="btn btn-primary" id="modify" name="modify">Save</button>
+                    <button type="submit" class="btn btn-primary" id="modify" name="modify"><?php echo $modif_pass['save'] ?></button>
                 </div>
             </div>
         </div>
@@ -117,7 +103,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="group col-sm-1.5">
-                            <strong style="color: red;"> Password confirmation does not match </strong>
+                            <strong style="color: red;"> <?php echo $modif_pass['match'] ?> </strong>
                         </div>
                     </div>
                 </div>
@@ -134,7 +120,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
             <div class="container">
                 <div class="row justify-content-center">
                 <div class="group col-sm-1.5">
-                 <strong style="color: red;"> The password must contain upper case, lower case, numbers and special characters and must be at least 8 characters </strong>
+                 <strong style="color: red;"> <?php echo $modif_pass['case'] ?> </strong>
                     </br>
                     </br>
                     </br>
@@ -176,7 +162,7 @@ if(!isset($_SESSION['nickname']))             // S'il n'y a pas d'utilisateur co
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="group col-sm-0">
-                                <strong style="color: red;"> The current password entered is incorrect </strong>
+                                <strong style="color: red;"> <?php echo $modif_pass['incorrect'] ?> </strong>
                             </div>
                         </div>
                     </div>

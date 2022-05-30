@@ -9,8 +9,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </script>
     <?php
 }
-//Include configuration des langues
-include "../lang_config.php"
+include "../lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>

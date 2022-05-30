@@ -9,29 +9,15 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
     </script>
     <?php
 }
+include "lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <?php // En-tête de la page ?>
     <head>
-        <?php // Balises meta responsive ?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-
-        <?php // Bootstrap CSS ?>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        
-        <?php // jQuery et Bootstrap JS ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <?php // Feuille de style ?>
-        <link rel="stylesheet" href="style.css">
-
-        <?php // Titre principal et icône de la page ?>
-        <title>Log in</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+        <?php include "header.php"?>
+        <title><?php echo $loginphp['login'] ?></title>
     </head>
 
     <?php // Corps de la page ?>
@@ -48,7 +34,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                 </br>
                 </br>
                 </br>
-                <h1 style="color:white">Log in</h1>
+                <h1 style="color:white"><?php echo $loginphp['login'] ?></h1>
                 </div>
             </div>
         </div>
@@ -58,21 +44,21 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
             <div class="container">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="pseudo" style="color:rgba(55,150,255)">Username or e-mail</label>
+                        <label for="pseudo" style="color:rgba(55,150,255)"><?php echo $loginphp['username'] ?></label>
                         <input type="text" class="form-control" id="pseudo" name="pseudo" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="password" style="color:rgba(55,150,255)">Your password</label>
+                        <label for="password" style="color:rgba(55,150,255)"><?php echo $loginphp['password'] ?></label>
                         <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                         </br>
-                        <a href="password" style="color: rgba(55,150,255);"> Password forgotten ? </a>
+                        <a href="password" style="color: rgba(55,150,255);"> <?php echo $loginphp['forgot'] ?> </a>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-0">
-                        <button type="submit" class="btn btn-primary" id="login" name="login">Log in</button>
+                        <button type="submit" class="btn btn-primary" id="login" name="login"><?php echo $loginphp['login'] ?></button>
                     </div>
                 </div>
             </div>
@@ -93,7 +79,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="group col-sm-0">
-                                <strong style="color: red;"> Username can't be empty </strong>
+                                <strong style="color: red;"> <?php echo $loginphp['empty_user'] ?> </strong>
                             </div>
                         </div>
                     </div>
@@ -108,7 +94,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="group col-sm-1.5">
-                                <strong style="color: red;"> Password can't be empty </strong>
+                                <strong style="color: red;"><?php echo $loginphp['empty_pass'] ?> </strong>
                             </div>
                         </div>
                     </div>
@@ -136,7 +122,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            <strong style="color: red;"> Please confirm your account by clicking on the link sent by email </strong>
+                                            <strong style="color: red;"> <?php echo $loginphp['confirm'] ?> </strong>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +146,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="group col-sm-0">
-                                        <strong style="color: red;"> Incorrect password </strong>
+                                        <strong style="color: red;"> <?php echo $loginphp['incorrect_pass'] ?> </strong>
                                     </div>
                                 </div>
                             </div>
@@ -174,30 +160,20 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="group col-sm-0">
-                                    <strong style="color: red;"> No account associated with this username </strong>
+                                    <strong style="color: red;"> <?php echo $loginphp['incorrect_user'] ?> </strong>
                                 </div>
                             </div>
                         </div>
                         <?php
                     }
-                } else {
-                    ?>
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="group col-sm-0">
-                                    <strong style="color: red;"> Incorrect Captcha </strong>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                }
+                } 
             }
             ?>
         </form>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <p style="color:white">Do not have an account yet ? <a href="register" style="color: rgba(55,150,255);">Register for free</a> </p>
+                    <p style="color:white"><?php echo $loginphp['account'] ?> <a href="register" style="color: rgba(55,150,255);"><?php echo $loginphp['register'] ?></a> </p>
                 </div>
             </div>
         </div>

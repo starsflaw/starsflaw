@@ -2,6 +2,7 @@
 require('db/connexionDB.php');                // Fichier PHP contenant la connexion à la BDD
 session_start();                              // On démarre la session
 if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connecté => redirection vers la page d'accueil
+include "lang_config.php"                     // Ajout langues
 { 
     ?>
     <script language="Javascript">
@@ -15,23 +16,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
 <html lang="fr">
     <?php // En-tête de la page ?>
     <head>
-        <?php // Balises meta responsive ?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-
-        <?php // Bootstrap CSS ?>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        
-        <?php // jQuery et Bootstrap JS ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <?php // Feuille de style ?>
-        <link rel="stylesheet" href="style.css">
-
-        <?php // Titre principal et icône de la page ?>
-        <title>Account confirmation</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+        <?php include "header.php"?>
     </head>
 
     <?php // Corps de la page ?>
@@ -63,7 +48,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -86,7 +71,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -110,7 +95,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -125,7 +110,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="group col-sm-0">
-                        <strong style="color: red;"> The link is wrong </strong>
+                        <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                     </div>
                 </div>
             </div>
@@ -164,7 +149,7 @@ if(isset($_SESSION['nickname']))              // S'il y a un utilisateur connect
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="group col-sm-0">
-                            <strong style="color: red;"> The link is wrong </strong>
+                            <strong style="color: red;"> <?php echo $conf['wrong'] ?> </strong>
                         </div>
                     </div>
                 </div>

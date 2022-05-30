@@ -9,8 +9,8 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </script>
     <?php
 }
-//Include configuration des langues
-include "../config.php"
+//Ajout langues
+include "../lang_config.php"
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ include "../config.php"
         //Include header
         include "../header.php" 
         ?>
-        <title><?php echo $rsa_chall['challenge'] ?></title>
+        <title><?php echo $reverse_chall['challenge'] ?></title>
     </head>
 
     <?php // Corps de la page ?>
@@ -38,11 +38,11 @@ include "../config.php"
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../index"><?php echo $menu['home'] ?></a></li>
                         <li class="breadcrumb-item"><a href="../course"><?php echo $menu['courses'] ?></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?php echo $rsa_chall['challenge'] ?></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?php echo $reverse_chall['challenge'] ?></li>
                     </ol>
                 </nav>
             </div> 
-            <h1> <?php echo $rsa_chall['title'] ?> </h1>
+            <h1> <?php echo $reverse_chall['title'] ?> </h1>
             </br>
             </br>
         </div>
@@ -55,10 +55,10 @@ include "../config.php"
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         </br>
-                        <?php echo $rsa_chall['description'] ?>
+                        <?php echo $reverse_chall['description'] ?>
                         </br>
                         </br>
-                        <?php echo $rsa_chall['goal'] ?> <strong> 15 points! </strong>
+                        <?php echo $reverse_chall['goal'] ?> <strong> 15 points! </strong>
                         </br>
                         </br>
 
@@ -105,7 +105,7 @@ include "../config.php"
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +10 points ! </strong> &#9989; 
+                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +15 points ! </strong> &#9989; 
                                             </div>
                                         </div>
                                     </div>

@@ -1,32 +1,17 @@
 <?php
 include('db/connexionDB.php');          // Fichier PHP contenant la connexion à la BDD
 session_start();                        // On démarre la session
+include "lang_config.php"               // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
   <?php // En-tête de la page ?>
   <head>
-    <?php // Balises meta responsive ?>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1">
-
-    <?php // Bootstrap CSS ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+    <?php include "header.php" ?>
     <?php // Nouvelle librairie pour exploiter les fonctions Ajax ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <?php // jQuery et Bootstrap JS ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <?php // Feuille de style ?>
-    <link rel="stylesheet" href="style.css">
-
-    <?php // Titre principal et icône de la page ?>
-    <title>Courses</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+    <title><?php echo $course['course'] ?></title>
   </head>
 
   <?php // Corps de la page ?>
@@ -39,7 +24,7 @@ session_start();                        // On démarre la session
       </br>
       </br> 
       </br>
-      <h1>Courses</h1>
+      <h1><?php echo $course['course'] ?></h1>
       </br>
       </br>
     </div>
@@ -171,7 +156,7 @@ session_start();                        // On démarre la session
           <div class="container" style="margin-top: 80px">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <strong style="color: white;"> No result </strong>
+                    <strong style="color: white;"> <?php echo $course['result'] ?> </strong>
                 </div>
             </div>
           </div>

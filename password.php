@@ -9,29 +9,15 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
     </script>
     <?php
 }
+include "lang_config.php" // Ajout langues
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <?php // En-tête de la page ?>
     <head>
-        <?php // Balises meta responsive ?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-
-        <?php // Bootstrap CSS ?>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        
-        <?php // jQuery et Bootstrap JS ?>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <?php // Feuille de style ?>
-        <link rel="stylesheet" href="style.css">
-
-        <?php // Titre principal et icône de la page ?>
-        <title>Password forgotten</title>
-        <link rel="icon" type="image/png" sizes="16x16" href="images/deathstarw.png">
+        <?php include "header.php" ?>
+        <title><?php echo $forgot_pass['forgot'] ?></title>
     </head>
 
     <?php // Corps de la page ?>
@@ -50,7 +36,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                     </br>
                     </br>
                     </br>
-                    <h1 style="color:white">Password forgotten ?</h1>
+                    <h1 style="color:white"><?php echo $forgot_pass['forgot'] ?> ?</h1>
                     </br>
                 </div>
             </div>
@@ -60,14 +46,14 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
             <div class="container">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-5">
-                        <label for="email" style="color:rgba(55,150,255)">Your email address (required)</label>
+                        <label for="email" style="color:rgba(55,150,255)"><?php echo $forgot_pass['email'] ?> </label>
                         <input type="email" class="form-control" id="email" name="email" value="<?php if(isset($mail)){ echo $email; }?>" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                     </div>
                 </div>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-sm-0">
                         </br>
-                        <button type="submit" class="btn btn-primary" id="forgotten" name="forgotten">Send</button>
+                        <button type="submit" class="btn btn-primary" id="forgotten" name="forgotten"><?php echo $forgot_pass['send'] ?></button>
                     </div>
                 </div>
             </div>
@@ -85,7 +71,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="group col-sm-0">
-                                <strong style="color: red;"> Please enter your email address </strong>
+                                <strong style="color: red;"> <?php echo $forgot_pass['enter_email'] ?> </strong>
                             </div>
                         </div>
                     </div>
@@ -135,7 +121,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="group col-sm-0">
-                                    <strong style="color: rgba(0,176,0);"> A request to reset your password has been sent to you by mail</strong>
+                                    <strong style="color: rgba(0,176,0);"> <?php echo $forgot_pass['reset'] ?></strong>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +134,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="group col-sm-0">
-                                    <strong style="color: red;"> No account associated with this username </strong>
+                                    <strong style="color: red;"> <?php echo $forgot_pass['no_user'] ?> </strong>
                                 </div>
                             </div>
                         </div>

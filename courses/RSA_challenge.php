@@ -10,7 +10,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     <?php
 }
 //Include configuration des langues
-include "../config.php"
+include "../lang_config.php"
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include "../config.php"
     <head>
         <?php 
         //Include header
-        include "../../header.php" 
+        include "../header.php" 
         ?>
         <title><?php echo $rsa_chall['challenge'] ?></title>
     </head>
@@ -58,7 +58,7 @@ include "../config.php"
                         <?php echo $rsa_chall['description'] ?>
                         </br>
                         </br>
-                        <?php echo $rsa_chall['goal'] ?> <strong> 15 points! </strong>
+                        <?php echo $rsa_chall['goal'] ?> <strong> 10 points! </strong>
                         </br>
                         </br>
 
