@@ -43,15 +43,15 @@ CREATE TABLE IF NOT EXISTS `courses` (
 --
 
 INSERT INTO `courses` (`id`, `description`, `password`) VALUES
-(1, 'Installation des outils Prérequis Installez les outils qui vous permettront de suivre les cours et réaliser les challenges qui vous sont proposés.', ''),
-(2, 'Vulnérabilité de ports VSFTPD Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Nmap et Metasploitable.', ''),
-(3, 'Vulnérabilité web Faille SQL Découvrez comment récupérer les informations d\'une base de données d\'un site non sécurisé avec SQLMAP.', ''),
-(4, 'Vulnérabilité Web Injection SQL Découvrez comment exploiter une injection SQL à travers une application Web vulnérable (DWVA) locale.', ''),
-(5, 'Vulnérabilité de ports Tomcat-Apache Découvrez comment obtenir un shell avec les droits root sur un hôte-cible en utilisant Tomcat-Apache.', ''),
-(6, 'Vulnérabilité de ports SSH Découvrez comment effectuer une attaque par brute force sur le protocle SSH sous trois différentes manières.', ''),
-(7, 'Difficulté Facile Challenge n°1 Une machine vulnérable avec un mot de passe à l\'intérieur, trouvez-le et obtenez une récompense de 10 points !', '$2y$14$uTewl.yV4Oory1/MLl15EO1sD2m/JOieTM58IUwqopHH9Xz9Ohne6'),
-(8, 'Difficulté Moyenne Challenge n°2 Exploitez une vulnérabilité web de la page pour trouver le mot de passe caché qui s\'y trouve et obtenez une récompense de 20 points !', '$2y$14$aAQ17klXlootocQcrq32t.AL2viImo436rX27QgTvTL9fOjjhes2i'),
-(9, 'Configuration firewall UFW Découvrez comment configurer un Firewall UFW sur la machine virtuelle vulnérable metasploitable2.', '');
+(1,'Difficulté Facile Challenge n°1 Une machine vulnérable avec un mot de passe à l''intérieur, trouvez-le et obtenez une récompense de 10 points !', '$2y$14$uTewl.yV4Oory1/MLl15EO1sD2m/JOieTM58IUwqopHH9Xz9Ohne6'),
+(2,'Difficulté Moyenne Challenge n°2 Exploitez une vulnérabilité web de la page pour trouver le mot de passe caché qui s''y trouve et obtenez une récompense de 20 points !', '$2y$14$aAQ17klXlootocQcrq32t.AL2viImo436rX27QgTvTL9fOjjhes2i'),
+(3,'Difficulté Moyenne Challenge n°3 Machine vulnérable contenant 3 flags',''),
+(4,'Difficulté Facile Challenge n°4 Machine vulnérable avec un flag à l''intérieur',''),
+(5,'Difficulté Facile Challenge n°5 XSS injection',''),
+(6,'Difficulté Facile Challenge n°6 RSA','C0mm0n m0dulus 1s 3asy t0 attack'),
+(7,'Difficulté Moyenne Challenge n°7 Reverse-shell','1mdpfac1l3atr0uv3r'),
+(8,'Difficulté Facile Challenge n°8 Dirbuster','abs8{H8ckth59kli}');
+
 
 -- --------------------------------------------------------
 
@@ -72,6 +72,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `point` int(11) NOT NULL DEFAULT '0',
   `challenge1` int(11) NOT NULL DEFAULT '0',
   `challenge2` int(11) NOT NULL DEFAULT '0',
+  `challenge3` int(11) NOT NULL DEFAULT '0',
+  `challenge4` int(11) NOT NULL DEFAULT '0',
+  `challenge5` int(11) NOT NULL DEFAULT '0',
+  `challenge6` int(11) NOT NULL DEFAULT '0',
+  `challenge7` int(11) NOT NULL DEFAULT '0',
+  `challenge8` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `nickname` (`nickname`)
