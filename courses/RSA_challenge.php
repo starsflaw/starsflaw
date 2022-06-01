@@ -65,8 +65,7 @@ include "../lang_config.php"
                         </br>
                         </br>
                     </p>
-                    <?php // TO DO WHEN CIPHER IS IN DOCKER ?>
-                    <form action="challenge1" method="POST">
+                    <form action="challenge6" method="POST">
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
@@ -84,23 +83,23 @@ include "../lang_config.php"
                         // Vérification du formulaire
                         if(isset($_POST['submit']))
                         {
-                            $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
+                            $password = $_POST['password']; // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 7));
+                            $result2->execute(array('id' => 6));
                             $data_psswd = $result2->fetch();
-
+                            echo $password;
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
-                            if(password_verify($password, $data_psswd['password']))
+                            if($password == $data_psswd['password'])
                             {
                                 $user = $_SESSION['nickname'];
-                                $result3 = $db->prepare('SELECT point, challenge1 FROM user WHERE nickname = :nickname');
+                                $result3 = $db->prepare('SELECT point, challenge6 FROM user WHERE nickname = :nickname');
                                 $result3->execute(array('nickname' => $user));
                                 $data_name = $result3->fetch();
-                                if($data_name['challenge1'] == 0)
+                                if($data_name['challenge6'] == 0)
                                 {
                                     $score = $data_name['point'] + 10;
-                                    $req = $db->prepare('UPDATE user SET point =:point, challenge1 =:challenge1 WHERE nickname = :nickname');
-                                    $req->execute(array('point' => $score, 'challenge1' => 1, 'nickname' => $user));
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge6 =:challenge6 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge6' => 6, 'nickname' => $user));
                                     ?>
                                     <div class="container">
                                         <div class="row justify-content-center">
@@ -131,7 +130,7 @@ include "../lang_config.php"
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?> </strong> &#10060;
+                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?></strong> &#10060;
                                         </div>
                                     </div>
                                 </div>

@@ -99,77 +99,57 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = $_POST['password']; // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 7));
+                            $result2->execute(array('id' => 8));
                             $data_psswd = $result2->fetch();
 
-                            if($password == 'abs8{H8ckth59kli}')
-                            { ?>
-                                <div class="container">
-                                     <div class="row justify-content-center">
-                                         <div class="group col-sm-0">
-                                            <strong style="color: green;"> Correct password </strong>
-                                         </div>
-                                     </div>
-                                 </div> <?php
-                            } else { ?>
-                            <div class="container">
-                                     <div class="row justify-content-center">
-                                         <div class="group col-sm-0">
-                                             &#10060; <strong style="color: red;"> Incorrect password </strong> &#10060;
-                                         </div>
-                                     </div>
-                                 </div>
-                            <?php
-                            }
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
-                            
-                            // if(password_verify($password, $data_psswd['password']))
-                            // {
-                            //     $user = $_SESSION['nickname'];
-                            //     $result3 = $db->prepare('SELECT point, challenge2 FROM user WHERE nickname = :nickname');
-                            //     $result3->execute(array('nickname' => $user));
-                            //     $data_name = $result3->fetch();
-                            //     if($data_name['challenge8'] == 0)
-                            //     {
-                            //         $score = $data_name['point'] + 15;
-                            //         $req = $db->prepare('UPDATE user SET point =:point, challenge8 =:challenge8 WHERE nickname = :nickname');
-                            //         $req->execute(array('point' => $score, 'challenge8' => 1, 'nickname' => $user));
-                            //         ?> <!--
-                            //         <div class="container">
-                            //             <div class="row justify-content-center">
-                            //                 <div class="group col-sm-0">
-                            //                     &#9989; <strong style="color: rgba(0,176,0);"> Bravo ! +15 points ! </strong> &#9989; 
-                            //                 </div>
-                            //             </div>
-                            //         </div>
-                            //         <?php
-                            //     }
-                            //     else
-                            //     {
-                            //         ?>
-                            //         <div class="container">
-                            //             <div class="row justify-content-center">
-                            //                 <div class="group col-sm-0">
-                            //                     &#10060; <strong style="color: red;"> Challenge already validated ! </strong> &#10060;
-                            //                 </div>
-                            //             </div>
-                            //         </div>
-                            //         <?php
-                            //     }
-                            // }
-                            // // Sinon => message d'erreur (mot de passe incorrect)
-                            // else
-                            // {
-                            //     ?>
-                            //     <div class="container">
-                            //         <div class="row justify-content-center">
-                            //             <div class="group col-sm-0">
-                            //                 &#10060; <strong style="color: red;"> Incorrect password </strong> &#10060;
-                            //             </div>
-                            //         </div>
-                            //     </div>
-                            //     <?php
-                            // } -->
+                            if($password == $data_psswd['password'])
+                            {
+                                $user = $_SESSION['nickname'];
+                                $result3 = $db->prepare('SELECT point, challenge8 FROM user WHERE nickname = :nickname');
+                                $result3->execute(array('nickname' => $user));
+                                $data_name = $result3->fetch();
+                                if($data_name['challenge8'] == 0)
+                                {
+                                    $score = $data_name['point'] + 15;
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge8 =:challenge8 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge8' => 8, 'nickname' => $user));
+                                    ?>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="group col-sm-0">
+                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +15 points ! </strong> &#9989; 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="group col-sm-0">
+                                                &#10060; <strong style="color: red;"> <?php echo $challenge['already_val'] ?> </strong> &#10060;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            // Sinon => message d'erreur (mot de passe incorrect)
+                            else
+                            {
+                                ?>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="group col-sm-0">
+                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?> </strong> &#10060;
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
                         }
                         ?>
                     </form>

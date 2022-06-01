@@ -78,24 +78,6 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                <!--
-                                    flag:<br/>
-                                    <input type="text" name="titre" value="" />
-                                </div><br/>
-                                <div>
-                                    Message:<br/>
-                                    <textarea name="message" rows="3" cols="50"></textarea>
-                                </div>
-                                <div>
-                                    <input type="submit" value="send" />
-                                </div>
-                            </form><br/><br/>
-                            <div>
-                                <div>Posted messages:</div><br/>
-                                <span><b>Welcome</b></span><br/>
-                                <span>N'hésitez pas à me laisser un message / Feel free to leave a message</span><br/><hr/>
-                            </div>
-                                -->
                                     <label for= "flag" style="color:rgba(55,150,255)">Flag :</label>
                                     <input type="flag" class="form-control" id="flag" name="flag" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required> 
                                 </div>
@@ -112,21 +94,21 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 7));
+                            $result2->execute(array('id' => 5));
                             $data_psswd = $result2->fetch();
 
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
-                            if(password_verify($password, $data_psswd['password']))
+                            if($password == $data_psswd['password'])
                             {
                                 $user = $_SESSION['nickname'];
-                                $result3 = $db->prepare('SELECT point, challenge2 FROM user WHERE nickname = :nickname');
+                                $result3 = $db->prepare('SELECT point, challenge5 FROM user WHERE nickname = :nickname');
                                 $result3->execute(array('nickname' => $user));
                                 $data_name = $result3->fetch();
-                                if($data_name['challenge2'] == 0)
+                                if($data_name['challenge5'] == 0)
                                 {
                                     $score = $data_name['point'] + 20;
-                                    $req = $db->prepare('UPDATE user SET point =:point, challenge2 =:challenge2 WHERE nickname = :nickname');
-                                    $req->execute(array('point' => $score, 'challenge2' => 1, 'nickname' => $user));
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge5 =:challenge5 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge5' => 5, 'nickname' => $user));
                                     ?>
                                     <div class="container">
                                         <div class="row justify-content-center">

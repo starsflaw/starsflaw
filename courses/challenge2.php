@@ -134,7 +134,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 8));
+                            $result2->execute(array('id' => 2));
                             $data_psswd = $result2->fetch();
 
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
