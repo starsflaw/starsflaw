@@ -273,9 +273,9 @@
 
     //Reverse_shell challenge
     $reverse_chall = array (
-        "challenge" => "Reverse-shell challenge"
-        "title" => "Find the flag in a file"
-        "description" => "learn how to get a remote access in wordpress page"
+        "challenge" => "Reverse-shell challenge",
+        "title" => "Find the flag in a file",
+        "description" => "learn how to get a remote access in wordpress page",
         "goal" => "The goal: get a shell inside a wordpress web page"
     );
 
