@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: db
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: password
+    
+  httpd:
+    depends_on:
+      - db
+    image: httpd:latest
+    build: .
+    ports:
+      - "8082:80"
+    restart: always
+volumes:
+  db_data: {}
