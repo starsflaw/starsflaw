@@ -136,7 +136,7 @@ include "lang_config.php"               // Ajout langues
           }
           if($data_courses['id'] == 17)
           {
-            include('menu-courses/Rsa_common_modulus.php');
+            include('menu-courses/RSA_challenge.php');
             $counter++; 
           }
           if($data_courses['id'] == 18)
