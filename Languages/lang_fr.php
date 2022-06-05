@@ -3,6 +3,7 @@
     $menu = array(
         "home" => "Accueil",
         "courses" => "Cours",
+        "challenges" => "Challenges"
     );
 
     //About
@@ -243,6 +244,7 @@
         "accept_term" => "Vous ne pouvez pas créer de compte sans accepter les conditions générales d'utilisation et la politique de confidentialité",
         "email_confirm" => "Un e-mail de confirmation vous a été envoyé à votre adresse",
     );
+      
     
 //Challenge
     //Can be used for all challenges

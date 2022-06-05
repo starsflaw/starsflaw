@@ -46,13 +46,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="../course">Cours</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploiter une vulnerabilité: Challenge n°3</li>
+                        <li class="breadcrumb-item"><a href="../index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="../Challenges">Challenges</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Exploit a vulnerability: Challenge n°3</li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploiter une vulnerabilité: Challenge n°3</h1>
+            <h1>Exploit a vulnerability: Challenge n°3</h1>
             </br>
             </br>
         </div>
@@ -64,18 +64,18 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-7">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                         Bienvenue dans ce troisième défi!
-                         </br>
-                         </br>
-                         Voici une machine vulnérable avec plusieurs flags.
-                         </br>
-                         </br>
-                         Le but: exploiter la vulnérabilité de la machine et obtenir 3 flags pour obtenir <strong> 10 points! </strong>
-                         </br>
-                         </br>
-                         Pour télécharger la machine virtuelle vulnérable, cliquez sur le lien suivant: <a href="../../vm/Challenge3.ova"> Challenge3.ova </a>
-                         </br>
-                         </br>
+                        Welcome to this third challenge!
+                        </br>
+                        </br>
+                        Here is a vulnerable machine with 3 flags inside.
+                        </br>
+                        </br>
+                        The goal: exploit the vulnerability in the machine and get the flags to get <strong> 10 points! </strong>
+                        </br>
+                        </br>
+                        To download the vulnerable virtual machine, click on the following link: <a href="../../vm/Challenge3.ova"> Challenge3.ova </a>
+                        </br>
+                        </br>
                     </p>
                     <form action="challenge3" method="POST">
                         <div class="container">
@@ -99,11 +99,11 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                             </div>
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button type="submit" class="btn btn-primary" id="submit" name="submit" style="margin-top:38%;">Valider</button>
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit" style="margin-top:38%;">Confirm</button>
                                 </div>
                             </div>
+                            
                         </div>
-
                         <?php
                         if(isset($_POST['submit'])) {
                             if($_POST['password1'] == 'us3r1{F14g:0ku74tbd3777y4}') {
@@ -111,7 +111,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            <strong style="color: green;"> Flag n°1 valider </strong> 
+                                            <strong style="color: green;"> Correct flag n°1 </strong> 
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                        &#10060; <strong style="color: red;"> Flag n°1 incorrect</strong> &#10060;
+                                        &#10060; <strong style="color: red;"> Incorrect flag n°1 </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            <strong style="color: green;">Flag n°2 valider</strong> 
+                                            <strong style="color: green;"> Correct flag n°2 </strong> 
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;">Flag n°2 incorrect</strong> &#10060;
+                                            &#10060; <strong style="color: red;"> Incorrect flag n°2 </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            <strong style="color: green;">Flag n°3 valider</strong> 
+                                            <strong style="color: green;"> Correct flag n°3 </strong> 
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;">Flag n°3 incorrect</strong> &#10060;
+                                            &#10060; <strong style="color: red;"> Incorrect flag n°3 </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>

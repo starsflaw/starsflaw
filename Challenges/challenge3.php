@@ -47,7 +47,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../index">Home</a></li>
-                        <li class="breadcrumb-item"><a href="../course">Courses</a></li>
+                        <li class="breadcrumb-item"><a href="../Challenges">Challenges</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Exploit a vulnerability: Challenge n°3</li>
                     </ol>
                 </nav>

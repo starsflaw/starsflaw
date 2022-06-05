@@ -46,13 +46,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="../course">Cours</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploiter une vulnérabilité: Challenge n°4</li>
+                        <li class="breadcrumb-item"><a href="../index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="../Challenges">Challenges</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Exploit a vulnerability: Challenge n°4</li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploiter une vulnerabilité: Challenge n°4</h1>
+            <h1>Exploit a vulnerability: Challenge n°4</h1>
             </br>
             </br>
         </div>
@@ -64,18 +64,18 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-7">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                        Bienvenue à ce quatrième défi!
+                        Welcome to this fourth challenge!
                         </br>
                         </br>
-                        Lors du démarrage de la machine virtuelle vulnérable, elle doit afficher une adresse IP. Il s'agit de l'adresse cible en fonction des paramètres que vous avez. Vous devriez vérifier l'adresse juste au cas où. Trouvez le flag.txt dans / root / et soumettez-le.
+                        Upon booting up the vulnerable virtual machine, it should display an IP address. This is the target address based on whatever settings you have. You should verify the address just incase. Find the flag.txt in /root/ and submit it.
                         </br>
                         </br>
-                        <img src = "../../images/challenge4.png" alt = "challenge4" class = "img-fluid" style = "box-shadow: 0 16px 10px -8px rgba (0, 0, 0,. 4); width: 30%; ">
+                        <img src="../images/challenge4.png" alt="6667" class="img-fluid" style="box-shadow: 0 16px 10px -8px rgba(0, 0, 0, .4);width:30%;">
                         </br>
-                        Le but: exploiter une vulnérabilité dans la machine et trouver le drapeau pour obtenir <strong> 10 points! </strong>
+                        The goal: exploit a vulnerability in the machine and find the flag to get <strong> 10 points! </strong>
                         </br>
                         </br>
-                        Pour télécharger la machine virtuelle vulnérable, cliquez sur le lien suivant: <a href="../../vm/Challenge4.ova"> Challenge4.ova </a>
+                        To download the vulnerable virtual machine, click on the following link: <a href="../../vm/Challenge4.ova"> Challenge4.ova </a>
                         </br>
                         </br>
                     </p>
@@ -83,13 +83,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                    <label for="password" style="color:rgba(55,150,255)">Flag pour le Challenge n°4 :</label>
+                                    <label for="password" style="color:rgba(55,150,255)">Flag for Challenge n°4 :</label>
                                     <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Valider</button>
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +121,8 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                  </div>
                             <?php
                             }
-
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
+                            
                             // if(password_verify($password, $data_psswd['password']))
                             // {
                             //     $user = $_SESSION['nickname'];
@@ -171,7 +171,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                             //     <?php
                             // } -->
                         }
-                        ?> 
+                        ?>
                     </form>
                 </div>
             </div>

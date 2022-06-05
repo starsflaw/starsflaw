@@ -11,7 +11,7 @@ include "lang_config.php"               // Ajout langues
     <?php include "header.php" ?>
     <?php // Nouvelle librairie pour exploiter les fonctions Ajax ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title><?php echo $course['course'] ?></title>
+    <title><?php echo $menu['challenges'] ?></title>
   </head>
 
   <?php // Corps de la page ?>
@@ -24,7 +24,7 @@ include "lang_config.php"               // Ajout langues
       </br>
       </br> 
       </br>
-      <h1><?php echo $course['course'] ?></h1>
+      <h1><?php echo $menu['challenges'] ?></h1>
       </br>
       </br>
     </div>
@@ -45,7 +45,7 @@ include "lang_config.php"               // Ajout langues
         </div>
       </div>
 
-      <?php // Cartes de cours
+      <?php // Cartes de Challenges
       if(isset($_GET['search']) AND !empty($_GET['search']))
       {
         $search = htmlspecialchars($_GET['search']);
@@ -56,62 +56,42 @@ include "lang_config.php"               // Ajout langues
         {
           if($data_courses['id'] == 1)
           {
-            include('menu-courses/prerequisite.php');
-            $counter++; 
+            include('menu-courses/challenge1.php');
+            $counter++;
           }
           if($data_courses['id'] == 2)
           {
-            include('menu-courses/vsftpd.php');
+            include('menu-courses/challenge2.php');
             $counter++;
           }
           if($data_courses['id'] == 3)
           {
-            include('menu-courses/sqlmap.php');
+            include('menu-courses/challenge3.php');
             $counter++;
           }
           if($data_courses['id'] == 4)
           {
-            include('menu-courses/sqldvwa.php');
+            include('menu-courses/challenge4.php');
             $counter++;
           }
           if($data_courses['id'] == 5)
           {
-            include('menu-courses/tomcat.php');
+            include('menu-courses/challenge5.php');
             $counter++;
           }
           if($data_courses['id'] == 6)
           {
-            include('menu-courses/ssh.php');
+            include('menu-courses/challenge6.php');
+            $counter++; 
+          }
+          if($data_courses['id'] == 7)
+          {
+            include('menu-courses/challenge7.php');
             $counter++;
           }
-          if($data_courses['id'] == 9)
+          if($data_courses['id'] == 8)
           {
-            include('menu-courses/ufw.php');
-            $counter++;
-          }
-          if($data_courses['id'] == 10)
-          {
-            include('menu-courses/unrealircd.php');
-            $counter++;
-          }
-          if($data_courses['id'] == 13)
-          {
-            include('menu-courses/postgreSQL.php');
-            $counter++;
-          }
-          if($data_courses['id'] == 15)
-          {
-            include('menu-courses/xss_injection.php');
-            $counter++;
-          }
-          if($data_courses['id'] == 16)
-          {
-            include('menu-courses/docker.php');
-            $counter++;
-          }
-          if($data_courses['id'] == 19)
-          {
-            include('menu-courses/DirBuster.php');
+	    include('menu-courses/challenge8.php');
             $counter++;
           }
         }
@@ -121,7 +101,7 @@ include "lang_config.php"               // Ajout langues
           <div class="container" style="margin-top: 80px">
             <div class="row justify-content-center">
                 <div class="group col-sm-0">
-                    <strong style="color: white;"> <?php echo $course['result'] ?> </strong>
+                    <strong style="color: white;"> <?php echo $Challenges['result'] ?> </strong>
                 </div>
             </div>
           </div>
@@ -130,19 +110,14 @@ include "lang_config.php"               // Ajout langues
       }
       else
       {
-        include('menu-courses/prerequisite.php');
-        include('menu-courses/vsftpd.php');
-        include('menu-courses/sqlmap.php');
-        include('menu-courses/sqldvwa.php');
-        include('menu-courses/tomcat.php');
-        include('menu-courses/ssh.php');
-        include('menu-courses/ufw.php');
-        include('menu-courses/xss_injection.php');
-        include('menu-courses/docker.php');
-        include('menu-courses/unrealircd.php');
-        include('menu-courses/postgreSQL.php');
-        include('menu-courses/DirBuster.php');
-        include('menu-courses/RSA.php');
+        include('menu-courses/challenge1.php');
+        include('menu-courses/challenge2.php');
+        include('menu-courses/challenge3.php');
+        include('menu-courses/challenge4.php');
+        include('menu-courses/challenge5.php');
+        include('menu-courses/challenge6.php');
+        include('menu-courses/challenge7.php');
+        include('menu-courses/challenge8.php');
       }
       ?>
     </form>

@@ -30,7 +30,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
         <link rel="stylesheet" href="../style.css">
 
         <?php // Titre principal et icône de la page ?>
-        <title>Challenge n°1</title>
+        <flag>Challenge n°5</flag>
         <link rel="icon" type="image/png" sizes="16x16" href="../images/deathstarw.png">
     </head>
 
@@ -46,13 +46,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="../course">Cours</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité : Challenge n°1</li>
+                        <li class="breadcrumb-item"><a href="../index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="../Challenges">Challenges</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Exploit a vulnerability: Challenge n°5</li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploitez une vulnérabilité : Challenge n°1</h1>
+            <h1>Exploit a vulnerability: Challenge n°5</h1>
             </br>
             </br>
         </div>
@@ -64,30 +64,27 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-7">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                        Bienvenue dans ce premier challenge !
+                        Welcome to the fifth challenge!
                         </br>
                         </br>
-                        Voici une machine vulnérable avec un mot de passe à l'intérieur. 
+                        Here is a vulnerable machine with 1 flag inside.
                         </br>
                         </br>
-                        L'objectif : exploitez une vulnérabilité de la machine et trouvez le mot de passe pour obtenir <strong>10 points !</strong>
-                        </br>
-                        </br>
-                        Pour télécharger la machine virtuelle vulnérable, cliquez sur le lien suivant : <a href="../vm/Challenge1.ova">Challenge1.ova</a>
-                        </br>
+                        The goal: find and steal the admin cookie and get the flags to get <strong> 10 points! </strong>
+                        </br> 
                         </br>
                     </p>
-                    <form action="challenge1" method="POST">
+                    <form action="challenge5" method="POST">
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                    <label for="password" style="color:rgba(55,150,255)">Mot de passe du Challenge n°1 :</label>
-                                    <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
+                                    <label for= "flag" style="color:rgba(55,150,255)">Flag :</label>
+                                    <input type="flag" class="form-control" id="flag" name="flag" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required> 
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Valider</button>
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -97,26 +94,26 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 7));
+                            $result2->execute(array('id' => 5));
                             $data_psswd = $result2->fetch();
 
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
-                            if(password_verify($password, $data_psswd['password']))
+                            if($password == $data_psswd['password'])
                             {
                                 $user = $_SESSION['nickname'];
-                                $result3 = $db->prepare('SELECT point, challenge1 FROM user WHERE nickname = :nickname');
+                                $result3 = $db->prepare('SELECT point, challenge5 FROM user WHERE nickname = :nickname');
                                 $result3->execute(array('nickname' => $user));
                                 $data_name = $result3->fetch();
-                                if($data_name['challenge1'] == 0)
+                                if($data_name['challenge5'] == 0)
                                 {
-                                    $score = $data_name['point'] + 10;
-                                    $req = $db->prepare('UPDATE user SET point =:point, challenge1 =:challenge1 WHERE nickname = :nickname');
-                                    $req->execute(array('point' => $score, 'challenge1' => 1, 'nickname' => $user));
+                                    $score = $data_name['point'] + 20;
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge5 =:challenge5 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge5' => 5, 'nickname' => $user));
                                     ?>
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#9989; <strong style="color: rgba(0,176,0);"> Bravo ! +10 points ! </strong> &#9989; 
+                                                &#9989; <strong style="color: rgba(0,176,0);"> Bravo ! +20 points ! </strong> &#9989; 
                                             </div>
                                         </div>
                                     </div>
@@ -128,7 +125,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#10060; <strong style="color: red;"> Challenge déjà validé ! </strong> &#10060;
+                                                &#10060; <strong style="color: red;"> Challenge already validated ! </strong> &#10060;
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +139,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;"> Mot de passe incorrect </strong> &#10060;
+                                            &#10060; <strong style="color: red;"> Incorrect password </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
@@ -160,3 +157,5 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     require_once('footerCourses.php'); 
     ?>
 </html>
+
+

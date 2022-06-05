@@ -25,7 +25,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about"><?php echo $about['about'] ?></a>
-            </li>  
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Challenge"><?php echo $menu['challenges'] ?></a> 
+            </li> 
             <li class="nav-item">
                 <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang_fr" onclick="location.href=this.href;"><img src="images/french1.png" alt="french flag"></a>
             </li> 

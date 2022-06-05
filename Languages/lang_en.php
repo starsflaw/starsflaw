@@ -3,6 +3,7 @@
     $menu = array(
         "home" => "Home",
         "courses" => "Courses",
+        "challenges" => "Challenges"
     );
 
     //About

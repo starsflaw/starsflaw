@@ -46,13 +46,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             <div class="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="../course">Cours</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Exploitez une vulnérabilité web : Challenge n°2</li>
+                        <li class="breadcrumb-item"><a href="../index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="../Challenges">Challenges</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Exploit a web vulnerability: Challenge n°2</li>
                     </ol>
                 </nav>
             </div> 
-            <h1>Exploitez une vulnérabilité web : Challenge n°2</h1>
+            <h1>Exploit a web vulnerability: Challenge n°2</h1>
             </br>
             </br>
         </div>
@@ -64,16 +64,16 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                 <div class="group col-sm-7">
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
-                        Bienvenue dans ce second challenge !
+                        Welcome to this second challenge!
                         </br>
                         </br>
-                        Vous trouverez ci-dessous le formulaire divin à travers lequel vous pourrez trouver le mot de passe du challenge n°2.
+                        You will find below the divine form through which you can find the password for challenge n ° 2.
                         </br>
                         </br>
-                        Malheureusement, il se peut que celui rencontre quelques difficultés pour fonctionner&#10060;, si c'est le cas, merci de revenir plus tard. &#128519;
+                        Unfortunately, this may have some difficulty in functioning &#10060;, if so, please come back later. &#128519;
                         </br>
                         </br>
-                        L'objectif : Trouvez le mot de passe pour obtenir <strong>20 points !</strong>
+                        The goal: Find the password to get <strong> 20 points! </strong>
                         </br>
                         </br>
                     </p>
@@ -87,7 +87,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                             </div>
                             <div class="row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button disabled type="submit" class="btn btn-warning" id="valid" name="valid">Valider</button>
+                                    <button disabled type="submit" class="btn btn-warning" id="valid" name="valid">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="group col-sm-0">
-                                        <strong style="color: rgba(45,54,69);"> Mot de passe : Le_Développeur_Est_Une_Ordure </strong>
+                                        <strong style="color: rgba(45,54,69);"> Password : Le_Développeur_Est_Une_Ordure </strong>
                                     </div>
                                 </div>
                             </div>
@@ -118,13 +118,13 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
-                                    <label for="password" style="color:rgba(55,150,255)">Mot de passe du Challenge n°2 :</label>
+                                    <label for="password" style="color:rgba(55,150,255)">Password for Challenge n°2 :</label>
                                     <input type="password" class="form-control" id="password" name="password" style="border:2px solid rgba(55,150,255);background-color:#2d3645;color:white" required>
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-0">
-                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Valider</button>
+                                    <button type="submit" class="btn btn-primary" id="submit" name="submit">Confirm</button>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +134,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                         {
                             $password = htmlspecialchars(trim($_POST['password'])); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 8));
+                            $result2->execute(array('id' => 2));
                             $data_psswd = $result2->fetch();
 
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
@@ -165,7 +165,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#10060; <strong style="color: red;"> Challenge déjà validé ! </strong> &#10060;
+                                                &#10060; <strong style="color: red;"> Challenge already validated ! </strong> &#10060;
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;"> Mot de passe incorrect </strong> &#10060;
+                                            &#10060; <strong style="color: red;"> Incorrect password </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>

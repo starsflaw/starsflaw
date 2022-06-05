@@ -27,8 +27,8 @@
                 <a class="nav-link" href="../about">About us</a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href="../Challenge">Challenges</a>
-            </li> 
+                <a class="nav-link" href="../Challenge">Challenge</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?=$_SERVER['PHP_SELF']?>?lang=fr" onclick="location.href=this.href;"><img src="../images/french1.png" alt="french flag"></a>
             </li> 

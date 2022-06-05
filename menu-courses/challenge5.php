@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="group col-sm-100">
             <div class="poster">
-                <a href="courses/challenge5" style="text-decoration:none">
+                <a href="Challenges/challenge5" style="text-decoration:none">
                     <div class="card mb-3" style="width: 900px; background-color: rgba(61, 72, 92); border : solid 0.5px white">
                         <div class="row no-gutters">
                             <div class="col-lg-4">

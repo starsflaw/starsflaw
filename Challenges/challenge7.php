@@ -9,7 +9,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
     </script>
     <?php
 }
-//Include configuration des langues
+//Ajout langues
 include "../lang_config.php"
 ?>
 
@@ -21,7 +21,7 @@ include "../lang_config.php"
         //Include header
         include "../header.php" 
         ?>
-        <title><?php echo $rsa_chall['challenge'] ?></title>
+        <title><?php echo $reverse_chall['challenge'] ?></title>
     </head>
 
     <?php // Corps de la page ?>
@@ -37,12 +37,12 @@ include "../lang_config.php"
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../index"><?php echo $menu['home'] ?></a></li>
-                        <li class="breadcrumb-item"><a href="../course"><?php echo $menu['courses'] ?></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?php echo $rsa_chall['challenge'] ?></li>
+                        <li class="breadcrumb-item"><a href="../Challenges"><?php echo $menu['challenges'] ?></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?php echo $reverse_chall['challenge'] ?></li>
                     </ol>
                 </nav>
             </div> 
-            <h1> <?php echo $rsa_chall['title'] ?> </h1>
+            <h1> <?php echo $reverse_chall['title'] ?> </h1>
             </br>
             </br>
         </div>
@@ -55,17 +55,17 @@ include "../lang_config.php"
                     <p style="font-size: 18px; text-align: justify; color: white">
                         </br>
                         </br>
-                        <?php echo $rsa_chall['description'] ?>
+                        <?php echo $reverse_chall['description'] ?>
                         </br>
                         </br>
-                        <?php echo $rsa_chall['goal'] ?> <strong> 10 points! </strong>
+                        <?php echo $reverse_chall['goal'] ?> <strong> 15 points! </strong>
                         </br>
                         </br>
 
                         </br>
                         </br>
                     </p>
-                    <form action="challenge6" method="POST">
+                    <form action="challenge7" method="POST">
                         <div class="container">
                             <div class="form-row justify-content-center">
                                 <div class="form-group col-sm-5">
@@ -83,28 +83,28 @@ include "../lang_config.php"
                         // Vérification du formulaire
                         if(isset($_POST['submit']))
                         {
-                            $password = $_POST['password']; // On récupère le mot de passe 
+                            $password = ($_POST['password']); // On récupère le mot de passe 
                             $result2 = $db->prepare('SELECT password FROM courses WHERE id = :id');
-                            $result2->execute(array('id' => 6));
+                            $result2->execute(array('id' => 7));
                             $data_psswd = $result2->fetch();
-                            echo $password;
+
                             // Et si le mot de passe rentré correspond à celui dans la base de données,
                             if($password == $data_psswd['password'])
                             {
                                 $user = $_SESSION['nickname'];
-                                $result3 = $db->prepare('SELECT point, challenge6 FROM user WHERE nickname = :nickname');
+                                $result3 = $db->prepare('SELECT point, challenge7 FROM user WHERE nickname = :nickname');
                                 $result3->execute(array('nickname' => $user));
                                 $data_name = $result3->fetch();
-                                if($data_name['challenge6'] == 0)
+                                if($data_name['challenge7'] == 0)
                                 {
-                                    $score = $data_name['point'] + 10;
-                                    $req = $db->prepare('UPDATE user SET point =:point, challenge6 =:challenge6 WHERE nickname = :nickname');
-                                    $req->execute(array('point' => $score, 'challenge6' => 6, 'nickname' => $user));
+                                    $score = $data_name['point'] + 15;
+                                    $req = $db->prepare('UPDATE user SET point =:point, challenge7 =:challenge7 WHERE nickname = :nickname');
+                                    $req->execute(array('point' => $score, 'challenge7' => 7, 'nickname' => $user));
                                     ?>
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="group col-sm-0">
-                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +10 points ! </strong> &#9989; 
+                                                &#9989; <strong style="color: rgba(0,176,0);"> <?php echo $challenge['bravo'] ?> +15 points ! </strong> &#9989; 
                                             </div>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@ include "../lang_config.php"
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="group col-sm-0">
-                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?></strong> &#10060;
+                                            &#10060; <strong style="color: red;"> <?php echo $challenge['incorrect'] ?> </strong> &#10060;
                                         </div>
                                     </div>
                                 </div>
