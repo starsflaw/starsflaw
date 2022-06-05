@@ -1,11 +1,10 @@
 body{
-    background: #1690A7;
+    background: #333333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
-
+    flex-direction: column;
 }
 *{
     font-family: sans-serif;
@@ -37,4 +36,50 @@ label{
     color: #888;
     font-size: 18px;
     padding: 10px;
+}
+
+button{
+    float: right;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+button:hover{
+    opacity: .7;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #a94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #fff;
+
+}
+
+a {
+    float: right;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .7;
 }

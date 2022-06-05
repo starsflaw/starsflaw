@@ -149,6 +149,11 @@ include "lang_config.php"               // Ajout langues
             include('menu-courses/DirBuster.php');
             $counter++;
           }
+                    if($data_courses['id'] == 20)
+          {
+            include('menu-courses/revershe-shell.php');
+            $counter++;
+          }
         }
         if($counter == 0)
         {
@@ -185,6 +190,7 @@ include "lang_config.php"               // Ajout langues
         include('menu-courses/Rsa_challenge.php');
         include('menu-courses/RSA.php');
         include('menu-courses/challenge8.php');
+        include('menu-courses/reverse-shell.php');
       }
       ?>
     </form>

@@ -59,8 +59,7 @@ if(!isset($_SESSION['nickname']))           // S'il n'y a pas d'utilisateur conn
             Cross-site scripting (XSS) is a security exploit which allows an attacker to inject into a website malicious client-side code. 
             This code is executed by the victims and lets the attackers bypass access controls and impersonate users. According to the Open Web 
             Application Security Project, XSS was the seventh most common Web app vulnerability in 2017.
-           <!-- <a target="_blank" style="text-decoration:underline" href="https://www.asafety.fr/mysql-injection-cheat-sheet/#Recuperer_le_nom_des_tables">https://www.asafety.fr/mysql-injection-cheat-sheet/#Recuperer_le_nom_des_tables</a> -->
-            <br></br>
+           
             These attacks succeed if the Web app does not employ enough validation or encoding. 
             The user's browser cannot detect the malicious script is untrustworthy, and so gives it access to any cookies,
             session tokens, or other sensitive site-specific information, or lets the malicious script rewrite the HTML content.
