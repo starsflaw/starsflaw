@@ -10,6 +10,7 @@ Star's Flaw is an learning platform that teaches cyber security through gamified
 ## Table of Contents:
 
    - [Installation](#installation)
+   - [Prerequisites](#prerequisites)
    - [Features](#features)
    - [About us](#about-us)
 
@@ -32,9 +33,33 @@ Star's Flaw is an learning platform that teaches cyber security through gamified
 
 ## Prerequisites
 
-   You can access to all the prerequisites if you lauch the web page after sign in.
+   You can access to all the prerequisites in the website after sign in.
    
-   The prerequisites are necessary for completing CTF and challenges.
+   The prerequisites are necessary for completing the first 4 CTF challenges.
+
+   - **Docker Desktop & Docker Hub**
+
+        Docker Desktop is a Mac or Windows environment that enables you tobuild and share containerized applications and microservices.
+   
+        We will use it to launch the other 4 challenges.
+ 
+     - Docker Desktop
+
+       To install Docker desktop, go to [https://docs.docker.com/desktop/windows/install/](https://docs.docker.com/desktop/windows/install/) 
+       to download it.
+
+        You will need to download WSL 2 if you are running Docker Desktop on Windows.
+
+     - WSL installation:
+
+       To install WSL 2, run __*wsl --install*__ on your PowerShell as administrator. 
+       
+       Then, go to [https://docs.microsoft.com/fr-fr/windows/wsl/install-manual](https://docs.microsoft.com/fr-fr/windows/wsl/install-manual) 
+       and follow the first 5 steps.
+       
+      You can now pull containers from Docker Hub.
+      Here is the link to Starsflaw DockerHub: [https://hub.docker.com/r/starsflaw/starsflaw/tags](https://hub.docker.com/r/starsflaw/starsflaw/tags)
+
    
 ## Features
 
