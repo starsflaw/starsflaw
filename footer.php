@@ -1,3 +1,5 @@
+<?php include "lang_config.php" //Ajout langues
+?> 
 <!DOCTYPE html>
 <html lang="fr">
     <?php // En-tête de la page ?>
@@ -34,16 +36,16 @@
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
-                    <a style="color:white; font-size: 14px" href="EN/confidentiality">Confidentiality </a>
+                    <a style="color:white; font-size: 14px" href="confidentiality"><?php echo $footer['confidentiality'] ?> </a>
                     |
-                    <a style="color:white; font-size: 14px" href="EN/legal-notice"> Legales Notices </a>
+                    <a style="color:white; font-size: 14px" href="legal-notice"> <?php echo $footer['notices'] ?> </a>
                     |
-                    <a style="color:white; font-size: 14px" href="EN/terms-of-service"> Terms of Service </a>
+                    <a style="color:white; font-size: 14px" href="terms-of-service"><?php echo $footer['services'] ?> </a>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="group col-sm-0" style="color:white; font-size: 14px">
-                    Star's Flaw: learning platform for learning about Cybersecurity
+                <?php echo $footer['starsflaw'] ?>
                 </div>
             </div>
             <div class="row justify-content-center">

@@ -1,0 +1,9 @@
+<Files flag.php>
+Order allow,deny
+Deny from allow
+</Files>
+
+<Files .htaccess>
+Order allow,deny
+Deny from allow
+</Files>

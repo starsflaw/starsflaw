@@ -122,3 +122,9 @@ img.img-fluid {
 #search::placeholder{
     color: rgba(170,170,170);
 }
+
+.footer {
+    padding: 20px;
+    background: #f5f6fa;
+    color: white;
+}

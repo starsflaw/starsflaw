@@ -199,6 +199,26 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                             </div>
                             <?php
                         }
+                        // Si la taille du mot de passe < à 8 caractères ou ne comprend pas de majuscules, de minuscules, de chiffres ou de caractères spéciaux => message d'erreur
+                        if(preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#', $password))
+                        {}
+                        else
+                        {
+                        $valid = 0;
+                        ?>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                            <div class="group col-sm-1.5">
+                                <strong style="color: red;"> Le mot de passe doit contenir majuscules, minuscules, chiffres et caractères spéciaux et doit faire au moins 8 caractères</strong>
+                                </br>
+                                </br>
+                                </br>
+                                </br>
+                            </div>
+                            </div>
+                        </div>
+                        <?php
+                        }
                         // Si mot de passe différent de confirmation de mot de passe => message d'erreur
                         if($password !== $password2)
                         {
@@ -217,7 +237,7 @@ if(isset($_SESSION['nickname']))                // S'il y a un utilisateur conne
                         if($valid2 == 1)
                         {
                             // On hash le mot de passe et on remplace le hash précédent par le nouveau hash du mot de passe saisi
-                            $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]); 
+                            $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 8]); 
                             // Requête préparée avec marqueurs nominatifs : Mettre à jour les champs token, confirmation_token et password de la table user lorsque id = $id (<=> $data_token['id'])
                             $req = $db->prepare('UPDATE user SET token = 0, confirmation_token =:confirmation_token, password =:password WHERE id = :id');
                             $req->execute(array('confirmation_token' => date('Y-m-d H:i:s'),'password' => $hash, 'id' => $data_token['id']));
